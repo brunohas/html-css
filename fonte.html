@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <title>Fonte</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        @font-face {
+            font-family: 'OldLondon';
+            src: url('fonte/OldLondon.ttf') format('truetype'), url('fonte/OldLondonAlternate.ttf') 
+            format('truetype'), url('fonte/Olondon_.otf') format('opentype'), url('fonte/Olondona.otf') format('opentype');
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>FONTE</h1>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul>
+                <li><a href="index.html" rel="prev">Home</a></li>
+                <li><a href="#">opc2</a></li>
+                <li><a href="#">opc3</a></li>
+            </ul>
+        </menu>
     </header>
     <main>
         <article>
@@ -39,7 +55,7 @@
                 <h3>Fonte Monoespaçada (monospace)</h3>
                 <ul>
                     <li style="font-family: 'Courier New', monospace;">Corrier New &rarr; AaBbCcDd</li>
-                    <li style="font-family: monospace">monospace &rarr; AaBbCcDd</li>
+                    <li><p style="font-family: monospace; font-size: 1.1em;" >monospace &rarr; AaBbCcDd</p></li>
                 </ul>
             </aside>
             <p>
@@ -49,7 +65,7 @@
                 <h3>Fonte cursiva (cursive)</h3>
                 <ul>
                     <li style="font-family: cursive;">cursive &rarr; AaBbCcDd</li>
-                    <li style="font-family: Comforter Brush, cursive; font-size: 1.1em;">Fonte importada do Google Fonts &rarr; AaBbCcDd</li>
+                    <li><p style="font-family: Comforter Brush, cursive; font-size: 1.2em;">Fonte importada do Google Fonts &rarr; AaBbCcDd</p></li>
                 </ul>
             </aside>
             <aside>
@@ -59,10 +75,103 @@
                     <li style="font-family: Rubik Vinyl, fantasy;">Fonte importada do Google Fonts &rarr; AaBbCcDd</li>
                 </ul>
             </aside>
+            <p>
+                Existem 4 tipos de alinhamentos, utilizamos o parâmetro <strong>text-aling:</strong> (left = esquerda / right = direita / center = centro). Também conseguimos utilizar o <strong>text-aling: justify;</strong> para fazer o alinhamento  nos 2 lados do texto. E para fazer aquele espaço no começo do parágrafo, utilizar o parâmetro <strong>text-indent: 20px;</strong>, e para fazer um espaço entre as linhas do parágrafo, utilizar o parâmetro <strong>line-height:</strong>. Não esquecer que todos esses parâmetros de CSS tem que estar dentro da tag &lt;style&gt;.
+            </p>
         </article>
+        <article>
+            <h2>FONTES EXTERNAS</h2>
+            <p>
+                Nós conseguimos importar e baixar fontes externas, importando ou baixando elas do <a href="https://fonts.google.com/" rel="external" target="_blank">Google Fonts</a> ou outro site. Para importar uma fonte, já foi explicado no texto acima, basta selecionar a fonte desejada e copiar o @import clicando na opção <strong>Get font &rarr; Get embed code</strong>, depois colar na tag de estilo.<br>Ex:
+            </p>
+            <aside>
+                <pre>
+                    <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Fontes do Google&lt;/title&gt;
+        <mark>&lt;style&gt;</mark>
+            <mark>@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Rubik+Vinyl&</mark>
+            <mark>display=swap');</mark>
+            <mark>@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');</mark>
+        <mark>&lt;/style&gt;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p <mark>style="font-family: 'Rubik Vinyl'; text-align: center;"</mark>&gt;
+            Segue o exemplo de importação de uma fonte do Google Fonts.
+        &lt;/p&gt;
+        &lt;p <mark>style="font-family: Comforter Brush; text-align: center;"</mark>&gt;
+            Segue o exemplo de importação de outra fonte do Google Fonts.
+        &lt;/p&gt;
+    &lt;/body&gt;
+                    </code>
+                </pre>
+                <p style="font-family: 'Rubik Vinyl'; text-align: center;">
+                    Segue o exemplo de importação de uma fonte do Google Fonts.
+                </p>
+                <p style="font-family: Comforter Brush; text-align: center;">
+                    Segue o exemplo de importação de uma fonte do Google Fonts.
+                </p>
+            </aside>
+            <p>
+                Já para baixar um fonte, baixamos o arquivo.zip e extraímos na mesma pasta do código-fonte, colocamos <strong>@font-face</strong> dentro da tag &lt;style&gt;, irá abrir 2 parâmetros: <strong>font-family:</strong> → nome para a fonte (colocar entre '')/ <strong>src: url();</strong> → colocar o nome igual a do arquivo extraído, depois acrescentar outro parâmetro <strong>format()</strong> → <strong>opentype (otf)</strong> / <strong>truetype (ttf)</strong> / <strong>embedded-opentype</strong> / <strong>truetype-aat (Apple Advanced Typography)</strong> / <strong>svg</strong>, colocar de acordo com o arquivo extraído (ver nas propriedades do arquivo). <br>Ex:     
+            </p>
+            <aside>
+                <pre>
+                    <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Fontes Externas&lt;/title&gt;
+        <mark>&lt;style&gt;</mark>
+            <mark>@font-face {font-family: 'OldLondon';</mark>
+            <mark>src: url('fonts/OldLondon.ttf') format('truetype'), url('fonts/OldLondonAlternate.ttf') format('truetype'),</mark> 
+            <mark>url('fonts/Olondon_.otf') format('opentype'), url('fonts/Olondona.otf') format('opentype');}</mark>
+        <mark>&lt;/style&gt;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p <mark>style="font-family: 'OldLondon'; text-align: center;"</mark>&gt;
+            Segue o exemplo de uma importação de uma fonte baixada.
+        &lt;/p&gt;
+    &lt;/body&gt;
+                    </code>
+                </pre>
+                <p style="font-family: OldLondon; text-align: center;">
+                    Segue o exemplo de uma importação de uma fonte baixada.
+                </p>
+            </aside>
+        </article>
+        <article>
+            <h2>DETECTANDO UMA FONTE</h2>
+            <p>
+                Para conseguir localizar uma fonte de um site, utilizar o Fonts Ninja (extensão do Google Chrome), basta entrar no site em que você deseja saber qual a fonte, e clicar no ícone do Fonts Ninja. Enquanto a extensão estiver aberta, basta passar o mouse encima do texto para saber qual sua fonte, tamanho, cor, etc...
+            </p>
+            <br>
+            <p>
+                Para conseguir localizar uma fonte de uma imagem, utilizamos os sites <a href="https://www.whatfontis.com/" rel="external" target="_blank">WhatFontIs</a> ou <a href="https://www.fontsquirrel.com/matcherator" rel="external" target="_blank">FontSquirrel</a> ou <a href="https://www.myfonts.com/pages/whatthefont" rel="external" target="_blank">MyFonts</a>. Basicamente todos funcionam arrastando a imagem até a área do site, e depois fazer algumas edições para a imagem ficar melhor de se visualizar.
+            </p>
+        </article>
+        <br>
     </main>
-    <p id="voltar">
-        <a href="index.html" rel="prev"><img src="imagens/voltar.png" alt="Voltar"></a>
-    </p>    
+    <footer>
+        <p>
+            Esse site foi feito por <strong>Bruno Henrique</strong> afins de estudos!
+        </p>
+    </footer>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
 </body>
 </html>

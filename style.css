@@ -121,6 +121,7 @@ main > article > p {
     text-indent: 20px;
     text-align: justify;
     font-size: 1.1em;
+    line-height: 1.5em;
 }
 
 main > article > aside > ul {
