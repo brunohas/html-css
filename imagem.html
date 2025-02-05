@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+</head>
+<body>
+    <header>
+        <h1>IMAGENS</h1>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul>
+                <li><a href="index.html" rel="prev">Home</a></li>
+                <li><a href="fonte.html" rel="next">Fonte</a></li>
+                <li><a href="audvid.html" rel="next">Áudio/Vídeo</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>IMAGENS NO SITE</h2>
+            <p>
+                Para pesquisar imagens, pode ser pelo google imagens mesmo, porém terá que escolher na opção que pesquise imagens sem direito autoral 'Marcadas para reutilização com modificação' ou 'Marcadas para reutilização'. Outras formas de pesquisar é com os sites: <a href="https://unsplash.com/pt-br" rel="external" target="_blank">Unsplash</a> (pesquisar em inglês), <a href="https://www.pexels.com/pt-br/" rel="external" target="_blank">Pexels</a> (pesquisar em inglês) ou <a href="https://www.freepik.com/" rel="external" target="_blank">Freepik</a>.
+            </p>
+            <p>
+                Normalmente essas imagens são muito pesadas, por isso, editamos as fotos no <strong>GIMP</strong>, para editar abrimos a imagem com o GIMP → Imagem → Redimencionar imagem → Mudar largura entre 100 (pequeno) e 1500 (grande) e clicar em TAB para recalcular a altura, depois exportamos a imagem para a pasta com o código fonte. Podemos adicionar a imagem de 3 formas: arquivo da mesma pasta, arquivo de sub-pastas, e carregando direto do site (não recomendado pois não conseguimos editar a imagem e ela fica muito pesada). 
+            </p>
+            <aside>
+                <h3>Mesma pasta</h3>
+                <p>
+                    Para colocar imagens no site, utilizamos a tag <strong>&lt;img&gt;</strong>, irá abrir 2 parâmetros: <strong>src=" "</strong> para colocar o nome do arquivo e <strong>alt=" "</strong> para identificar o que é a imagem. <br>Ex:
+                </p>
+                <pre><code>
+                    &lt;img src="foto1.jpg" alt="Skyline R34"&gt;
+                    <br>
+                    <img src="foto1.jpg" alt="Skyline R34">
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Sub-pasta</h3>
+                <p>
+                    Para colocar uma imagem no site utilizando sub-pastas, também utilizamos a tag <strong>&lt;img&gt;</strong>, porém na hora de preencher os parâmetros, precisamos colocar o nome da pasta em que esta a imagem separado com <strong>uma barra (/)</strong> o nome do arquivo. <br>Ex:
+                </p>
+                <pre><code>
+                    &lt;img src="imagens/foto2.jpg" alt="Supra mk4"&gt;
+                    <br>
+                    <img src="imagens/foto2.jpg" alt="Supra mk4">
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Direto do site</h3>
+                <p>
+                    Para colocar uma imagem direto do site, também utilizamos a tag <strong>&lt;img&gt;</strong>, e no lugar onde colocamos o nome do arquivo, para colocar uma imagem direto do site, colocamos a URL da imagem no <strong>src=" "</strong> (não recomendado pois não conseguimos editar a imagem, fica muito pesada).
+                </p>
+                <pre><code>
+        &lt;img src="https://media.istockphoto.com/id/521807412/pt/foto/nissan-silvia.jpg?s=612x612&w=0&k=20&c=80pKhwG1<br>        nw5x0QLRRQMUVuJlUaLqAjv9SOC5b9XAZnqU=" alt="Silvia S15"&gt;
+                    <br>
+                    <img src="https://media.istockphoto.com/id/521807412/pt/foto/nissan-silvia.jpg?s=612x612&w=0&k=20&c=80pKhwG1w5x0QLRRQMUVuJlUaLqAjv9SOC5b9XAZnqU=" alt="Silvia S15">
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>ICON</h2>
+            <p>
+                No site <a href="https://favicon.io/" rel="external" target="_blank">Favicon</a> conseguimos criar um icon para deixar no site (imagem que fica ao lado do título da página). Ou também podemos procurar por um icon já existente no site <a href="https://www.iconarchive.com/" rel="external" target="_blank">Icon Archive</a>.
+            </p>
+            <p>
+                Para colocar um icon em um site, abrimos a tag <strong>&lt;link:favicon&gt;</strong> dentro do <strong>&lt;head&gt;</strong>. Depois irá abrir 3 parâmetros <strong>rel="shortcut icon"</strong> (não muda nada), <strong>href="favicon.ico"</strong> (colocar mesmo nome do arquivo do icon) <strong>type="image/x-icon"&gt;</strong> (não muda nada).
+            </p>
+            <aside>
+                <p>
+                    Exemplo:
+                </p>
+                <pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Icon&lt;/title&gt;
+        <mark>&lt;link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon"&gt;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>IMAGENS DE FUNDO</h2>
+            <p>
+                Para colocar uma imagem de fundo, utilizamos o parâmetro <strong>background-image: url();</strong> dentro da tag de estilo, colocar o nome do arquivo na url. Também conseguimos mudar o tamanho da imagem com o parâmetro <strong>background-size:</strong>, conseguimos mudar se a imagem se repete ou não, usar o parâmetro <strong>background-repeat:</strong>, conseguimos mudar o posicionamento da imagem, usar o parâmetro <strong>background-positon:</strong>, e conseguimos mudar o vinculo da imagem, utilizar o parâmetro <strong>background-attachment: (fixed = fixar a imagem no fundo / scroll = rolar a imagem junto com o conteúdo)</strong>.
+            </p>
+            <p>
+                Sabemos que para fazer o alinhamento horizontal de uma imagem, utilizamos o parâmetro <strong>margin: auto;</strong>, agora para fazer um alinhamento vertical, adicionamos o parâmetro <strong>position: relative;</strong> na box de fundo e <strong>position: absolute;</strong> na box da frente. Com o <strong>position: absolute;</strong> conseguimos colocar outros parâmetros (top, left, bottom, right) para mexer a box da frente em relação a box do fundo, utilizar <strong>(left: 50%; top: 50%;)</strong>, logo após, colocar o parâmetro <strong>transform: translate()</strong> (aplica uma alteração de transformação [translate() = mexe no componente]), <strong>colocar (-50%, -50%)</strong>.<br>Ex:
+            </p>
+            <aside>
+                <h3>Alinhamento Vertical</h3>
+                <p>
+                    <strong>position: relative;</strong> para a box do fundo e <strong>position: absolute;</strong> + <strong>top: 50%;</strong> + <strong>left: 50%;</strong> + <strong>transform: translate(-50%, -50%)</strong> na box da frente.<br>Ex:
+                </p>
+                <pre><code>
+                    &lt;style&gt;
+                        body {
+                            position: relative;
+                        }
+
+                        main > img {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    &lt;/style&gt;
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Efeito Parallax</h3>
+                <p>
+                    Um efeito Parallax é uma técnica de design que cria a ilusão de profundidade e movimento em um site, dando a impressão de um ambiente em 3D. <a href="https://brunohas.github.io/projeto-cordel/" rel="external" target="_blank">Clique aqui</a> para ir na página com um efeito Parallax (abrir os arquivos para enterder melhor). Para criar um efeito Parallax: criamos uma tag &lt;section&gt; e damos uma sub-classe <strong>class=" "</strong> e damos um nome para identificar que terá uma imagem de fundo e outra sub-classe <strong>id=" "</strong> se tiver mais do que uma imagem, para que no CSS coloque uma imagem para cada "id". Depois adicionar <strong>background-image: url()</strong> para adicionar a imagem, <strong>background-position:</strong> para definir a posição da imagem, <strong>background-repeat:</strong> para definir se a imagem se repete ou não, <strong>background-size: cover;</strong> para a imagem de fundo cubrir todo o contêiner sem distorção (indireita a imagem), e <strong>background-attachment: fixed;</strong> para fixar a imagem no fundo. <br>Ex:
+                </p>
+                <pre><code>
+                    &lt;style&gt;
+                        section.img {    !- todas as class="img" -!
+                            background-attachment: fixed;
+                            background-position: center center;
+                            background-size: cover;
+                        }
+
+                        section#img1 {   !- imagem para primeiro id -!
+                            background-image: url(imagem1);
+                        }
+
+                        section#img2 {   !- imagem para o segundo id -!
+                            background-image: url(imagem2);
+                        }
+                    &lt;/style&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>IMAGEM DINÂMICA</h2>
+            <p>
+                Para fazer uma uma imagem dinâmica, utilizamos a tag <strong>&lt;picture&gt;</strong>, pois com ela conseguimos "trocar" a imagem para que caiba na tela no usuário. Abrimos a tag <strong>&lt;picture&gt;</strong> e dentro dessa tag abrimos uma tag <strong>&lt;img&gt;</strong> para a imagem principal, depois abrimos outra tag <strong>&lt;source:media:type&gt;</strong> para cada imagem substituta (deve ser a mesma imagem, porém com a resolução diferente). Depois irá abrir 3 parâmetros <strong>media="(min-width: )"</strong> (trocar min por max), <strong>srcset=" "</strong> (colocar nome do arquivo), e <strong>type="image/"</strong> (colocar o tipo do arquivo). A ordem é como se fosse uma pirâmide invertida, colocar a tag <strong>&lt;img&gt;</strong> em último e acima dela colocar as tag <strong>&lt;source:media:type&gt;</strong> de acordo com a quantidade de fotos e de tamanho (maior em último (tag &lt;img&gt;) / média no meio (tag &lt;source:media:type&gt;) / pequena acima do outro source (tag &lt;source:media:type&gt;)).
+            </p>
+            <p>
+                Na hora que abrir a tag <strong>&lt;source:media.type&gt;</strong> mudar a opção <strong>(min-width: )</strong> para <strong>(max-width: )</strong> e sempre colocar 20px amais do que a foto que você quer colocar, exemplo: a foto G tem tamanho de 1000px &rarr; no source da foto M coloco o max-width: 1020px para que se a tela não suportar a imagem principal = foto G abrir a foto M.
+            </p>
+            <p>
+                    Para entender melhor <a href="imgdinamica.html" rel="next" target="_self">clique aqui</a> para ir na página de exemplo.
+                </p>
+            <aside>
+                <h3>Exemplo:</h3>
+                <pre><code>
+    &lt;picture&gt;
+        &lt;source media="(max-width: 720px)" srcset="imagens/foto-p.png" type="image/png"&gt;  !-Se a tela for menor que 720px-!
+        &lt;source media="(max-width: 1020px)" srcset="imagens/foto-m.png" type="image/png"&gt; !-Se a tela for menor que 1050px-!
+        &lt;img src="imagens/foto-g.png" alt="Imagem flexível"&gt;                              !- Por padrão irá abrir essa imagem -!
+    &lt;/picture&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <br>
+    </main>
+    <footer>
+        <p>
+            Esse site foi feito por <strong>Bruno Henrique</strong> afins de estudos!
+        </p>
+    </footer>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
