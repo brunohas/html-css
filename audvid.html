@@ -26,7 +26,37 @@
             <p>
                 Para reproduzir um áudio MP3 em um site, utilizamos a tag <strong>&lt;audio&gt;</strong>, irá abrir um parâmetro <strong>src=" "</strong> (colocar o nome do arquivo) e também é preciso colocar os parâmetros <strong>autoplay</strong> para tocar a música assim que carregar a página (não é obrigatório), <strong>controls</strong> para aparecer um "controle" para dar play/pause e aumentar ou diminuir o volume do áudio, <strong>loop</strong> para o áudio se repetir (usa-se normalmete quando o áudio é curto).
             </p>
-            <audio src="midia/THE BOX MEDLEY FUNK 2 (part. MC Brinquedo, MC Tuto, MC Laranjinha e MC Cebezinho) ( Clipe Oficial ).mp3" controls></audio>
+            <aside>
+                <pre><code>
+    &lt;audio src="midia/THE BOX MEDLEY FUNK 2.mp3" controls&gt;&lt;/audio&gt;
+                </code></pre>
+                <audio src="midia/THE BOX MEDLEY FUNK 2 (part. MC Brinquedo, MC Tuto, MC Laranjinha e MC Cebezinho) ( Clipe Oficial ).mp3" controls></audio>
+            </aside>
+            <p>
+                Também existe outros tipos de formatos de áudio (WAV e OGG), ver se tem compatibilidade com o navegador. Outra maneira de reproduzir áudios também é com a tag <strong>&lt;audio&gt;</strong>, porém não é necessário o parâmetro que já vem incluso <strong>(pode apagar o src=" ")</strong> se quiser pode acrescentar o parâmetro <strong>preload=" "</strong> (<strong>auto</strong> = só considera que a página carregou depois de carregar todo o áudio (não recomendado) / <strong>metadata</strong> = só carrega o nome, data, duração do arquivo / <strong>none</strong> = só carrega quando o usuário apertar play no controle). Depois colocar a tag <strong>&lt;source:src&gt;</strong> dentro da tag <strong>&lt;audio&gt;</strong>, assim abrindo outro parâmetro <strong>type=" "</strong>, para áudios em MP3 colocar o <strong>type="audio/mpeg"</strong> / para áudios em WAV colocar o <strong>type="audio/wav"</strong> / para áudios em OGG colocar o <strong>type="OGG"</strong>.
+            </p>
+            <aside>
+                <h3>Exemplo:</h3>
+                <pre><code>
+    &lt;audio controls&gt;
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.mp3" type="audio/mpeg"&gt;  !- primeiro áudio a tentar carregar -!
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.wav" type="audio/wav"&gt;   !- se não carregar o primeiro, carrega o segundo -!
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.ogg" type="audio/ogg"&gt;   !- se não carregar o segundo, carrega o terceiro -!
+        &lt;p&gt;
+            Infelizmente seu navegador não consegue reproduzir áudio.     !- Só irá mostrar se não conseguir produzir o áudio -!
+        &lt;/p&gt;
+    &lt;/audio&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>VÍDEO</h2>
+            <p>
+                Os formatos mais utilizados em vídeos são o MP4 e M4V, existem outros como WebM (que é um arquivo bem pequeno, porém não tem muita qualidade de vídeo) e OGV (um formato que está intimamente ligado ao OGG, pode ser utilizado para armazenamento ou transmissão na web).
+            </p>
+            <p>
+                Para pesquisar vídeos, podemos também utilizar o site <a href="https://www.pexels.com/pt-br/" rel="external" target="_blank">Pexels</a> que é o mesmo para pesquisar imagens (sempre lembrar dos direitos autorais). Para converter/formatar um vídeo utilizamos o aplicativo <strong>HandBrake</strong> (só converte para MP4, M4V e WebM / para converter para OGV basta pesquisar no google "conversor ogv"), serve para converter o vídeo em algum outro tipo de arquivo para que o vídeo fique mais leve, ou para o vídeo ficar com uma resolução melhor. Não é indicado hospedar um arquivo muito no grande no site, pois o custo fica muito caro. Se for colocar algum arquivo muito pesado, é indicado colocar ele como um link externo.
+            </p>
         </article>
     </main>
     <footer>
