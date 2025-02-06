@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas e Tabelas</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        ol {
+            list-style-position: inside;
+            padding-left: 25px;
+        }
+
+        main > article > aside > nav > ul {
+            list-style-position: inside;
+            padding-left: 25px;
+            columns: 3;
+            padding-bottom: 10px;
+        }
+
+        dl {
+            padding-left: 30px;
+            padding-bottom: 15px;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        caption {
+            border: 1px solid black;
+
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LISTAS E TABELAS</h1>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul>
+                <li><a href="index.html" rel="prev">Home</a></li>
+                <li><a href="fonte.html" rel="next">Fonte</a></li>
+                <li><a href="imagem.html" rel="next">Imagens</a></li>
+                <li><a href="audio_video.html" rel="next">Áudio/Vídeo</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>LISTAS</h2>
+            <p>
+                Conseguimos fazer 2 tipos de listas, listas ordenadas (utilizar a tag <strong>&lt;ol&gt;</strong>) e listas não ordenadas (utilizar a tag <strong>&lt;ul&gt;</strong>). Para colocar um item em alguma dessas listas, utilizamos a tag <strong>&lt;li&gt;</strong>.
+            </p>
+            <aside>
+                <h3>Listas Ordenadas</h3>
+                <p>
+                    Como o nome já diz, é uma lista ordenada, porém conseguimos adicionar um parâmetro <strong>start=" "</strong> dentro da tag <strong>&lt;ol&gt;</strong> para conseguir escolher em qual número ou letra a lista irá começar. Também conseguimos mudar o ícone que fica na lista utilizando o parâmetro <strong>type=" "</strong>. 
+                    <ol><li type="1"><strong>type="1"</strong> &rarr; lista númerada</li></ol>
+                    <ol><li type="A"><strong>type="A"</strong> &rarr; lista alfabética maiúscula</li></ol>
+                    <ol><li type="a"><strong>type="a"</strong> &rarr; lista alfabética minúscula</li></ol>
+                    <ol><li type="I"><strong>type="I"</strong> &rarr; lista em número romano maiúscula</li></ol>
+                    <ol><li type="i"><strong>type="i"</strong> &rarr; lista em número romano minúscula</li></ol>
+                </p>
+            </aside>
+            <aside>
+                <h3>Listas não Ordenadas</h3>
+                <p>
+                    Para abrir uma lista não ordenada, utilizamos a tag <strong>&lt;ul&gt;</strong>, e para cada item da lista usar a tag <strong>&lt;li&gt;</strong>. Também conseguimos adicionar o parâmetro <strong>type=" "</strong> para mudar a "bolinha" da lista.
+                </p>
+                <nav>
+                    <ul><li type="disc"><strong>type="disc"</strong> &rarr; bolinha preta</li></ul>
+                    <ul><li type="circle"><strong>type="circle"</strong> &rarr; bolinha branca</li></ul>
+                    <ul><li type="square"><strong>type="square"</strong> &rarr; quadradinho preto</li></ul>
+                </nav>
+                <p>
+                    Em uma lista não ordenada conseguimos colocar um emoji no lugar da "bolinha", dentro da tag de estilo utilizar o parâmetro <strong>list-style-type: '\XXXX'</strong>, no lugar desses <strong>X</strong> colocar o número do emoji (<strong>'\00A0'</strong> faz um espaço em branco). E com o parâmetro <strong>list-style-position:</strong> conseguimos colocar a "bolinha" dentro (<strong>inside</strong>) ou fora (<strong>outside</strong>).
+                </p>
+            </aside>
+            <aside>
+                <h3>Listas Compostas</h3>
+                <p>
+                    Para fazer uma lista composta, basta se atentar a identação, nesse exemplo vou abrir uma lista ordenada dentro de uma lista não ordenada.
+                </p>
+                <pre><code>
+            &lt;ul&gt;                                           !- abrir lista não ordenada -!
+                &lt;li&gt;Nintendo&lt;/li&gt;                          !- item da lista não ordenada -!
+                &lt;ol&gt;                                       !- abrir lista ordenada -!
+                    &lt;li&gt;Pokemon Fire Red&lt;/li&gt;              !- item da lista ordenada -!
+                    &lt;li&gt;Super Mario Kart&lt;/li&gt;              !- item da lista ordenda -!
+                    &lt;li&gt;Kurby Super Stars&lt;/li&gt;             !- item da lista ordenada -!
+                &lt;/ol&gt;                                      !- fechamento a lista ordenada -!
+                &lt;li&gt;XBOX&lt;/li&gt;                              !- item da lista não ordenada -!
+                &lt;ol&gt;                                       !- abrir lista ordeanada -!
+                    &lt;li&gt;Gears Of War 2&lt;/li&gt;                !- item da lista ordenada -!
+                    &lt;li&gt;Forza&lt;/li&gt;                         !- item da lista ordenada -!
+                    &lt;li&gt;Prototype&lt;/li&gt;                     !- item da lista ordenada -!
+                &lt;/ol&gt;                                      !- fechamento da lista ordeanda -!
+                &lt;li&gt;PlayStation&lt;/li&gt;                       !- item da lista não ordenada -!
+                &lt;ol&gt;                                       !- abrir lista ordenada -!
+                    &lt;li&gt;Call of Duty&lt;/li&gt;                  !- item da lista ordenada -!
+                    &lt;li&gt;Grand Theft Auto&lt;/li&gt;              !- item da lista ordenada -!
+                    &lt;li&gt;Apex Legends&lt;/li&gt;                  !- item da lista ordeanda -!
+                &lt;/ol&gt;                                      !- fechamento da lista ordenada -!
+            &lt;/ul&gt;                                          !- fechamento lista não ordenada -!
+                </code></pre>
+                <p>
+                    Que no caso ficaria assim:
+                </p>
+                <nav>
+                    <ul>
+                        <li>Nintendo</li>
+                        <ol>
+                            <li>Pokemon Fire Red</li>
+                            <li>Super Mario Kart</li>
+                            <li>Kurby Super Stars</li>
+                        </ol>
+                        <li>XBOX</li>
+                        <ol>
+                            <li>Gears Of War 2</li>
+                            <li>Red Dead Redemption</li>
+                            <li>Prototype</li>
+                        </ol>
+                        <li>PlayStation
+                        <ol>
+                            <li>Call of Duty</li>
+                            <li>Grand Theft Auto</li>
+                            <li>Apex Legends</li>
+                        </ol>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <aside>
+                <h3>Lista de Definições</h3>
+                <p>
+                    Utilizar a tag <strong>&lt;dl&gt;</strong> para abrir a lista, tag <strong>&lt;dt&gt;</strong> para o item da lista, e a tag <strong>&lt;dd&gt;</strong> para a descrição do item.<br>Ex:
+                </p>
+                <pre><code>
+            &lt;dl&gt;
+                &lt;dt&gt;HTML&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de marcação para a criação do conteúdo de um site.&lt;/dd&gt;
+                &lt;dt&gt;CSS&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de marcação para a criação do desing de um site.&lt;/dd&gt;
+                &lt;dt&gt;JavaScript&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de programação para criação de interatividade de um site.&lt;/dd&gt;
+            &lt;/dl&gt;
+                </code></pre>
+                <p>
+                    Que no caso ficaria assim:
+                </p>
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Linguagem de marcação para a criação do conteúdo de um site.</dd>
+                    <dt>CSS</dt>
+                    <dd>Linguagem de marcação para a criação do desing de um site.</dd>
+                    <dt>JavaScript</dt>
+                    <dd>Linguagem de programação para criação de interatividade de um site.</dd>
+                </dl>
+            </aside>
+        </article>
+        <article>
+            <h2>TABELAS</h2>
+            <p>
+                Para criar tabelas em HTML, utilizamos a tag <strong>&lt;table&gt;</strong> para abrir a tabela, <strong>&lt;caption&gt;</strong> para o título / legenda da tabela junto com as tags <strong>&lt;tr&gt;</strong> (table row = linha da tabela), <strong>&lt;td&gt;</strong> (table data = dado da tabela (número)), e <strong>&lt;th&gt;</strong> (table head = cabeçalho da tabela (alfabética)). Quando criamos uma tabela e acrescentamos a tag de estilo <strong>border: 0px solid black;</strong> para criar linhas em volta de cada dado, porém elas ficam com um pequeno espaço entre elas, para tirar esse espaço, utilizamos a tag de estilo <strong>border-collapse: collapse;</strong>, e para ter um espaço utiliza-se a tag de estilo <strong>border-collapse: separate;</strong>.
+            </p>
+            <aside>
+                <h3>Tabelas Simples</h3>
+                <pre><code>
+        &lt;table&gt;                                          |          &lt;style&gt;                                            
+        &lt;caption&gt;Tabela simples&lt;/caption&gt;                |              table {             
+            &lt;tr&gt;                                         |                  width: 500px;                                            
+                &lt;td&gt;A1&lt;/td&gt;                              |                  border-collapse: collapse;            
+                &lt;td&gt;B1&lt;/td&gt;                              |                  margin: auto;                 
+                &lt;td&gt;C1&lt;/td&gt;                              |               }                 
+            &lt;/tr&gt;                                        |               caption {                       
+            &lt;tr&gt;                                         |                  border: 1px solid black;                
+                &lt;td&gt;A2&lt;/td&gt;                              |               }                 
+                &lt;td&gt;B2&lt;/td&gt;                              |               td {                     
+                &lt;td&gt;C2&lt;/td&gt;                              |                  border: 1px solid black;                              
+            &lt;/tr&gt;                                        |                  padding: 10px;                      
+            &lt;tr&gt;                                         |                  text-align: center;                   
+                &lt;td&gt;A3&lt;/td&gt;                              |                  vertical-align: middle;                   
+                &lt;td&gt;B3&lt;/td&gt;                              |               }                      
+                &lt;td&gt;C3&lt;/td&gt;                              |           &lt;/style&gt;                             
+            &lt;/tr&gt;                                        |                                    
+                </code></pre>
+                <p>
+                    Que no caso ficaria assim:
+                </p>
+                <table>
+                    <caption>Tabela Simples</caption>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>C1</td>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>C2</td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>B3</td>
+                        <td>C3</td>
+                    </tr>
+                </table>
+                <br>
+            </aside>
+            <p>
+                Para fazer tabelas mais complexas, ainda utilizamos a tag <strong>&lt;table&gt;</strong>, porém com mais algumas outras tags, <strong>&lt;thead&gt;</strong> para o cabeçalho da tabela, <strong>&lt;tbody&gt;</strong> para o corpo da tabela, <strong>&lt;tfoot&gt;</strong> para o rodapé da tabela. E dentro deles utilizamos as mesmas tags da tabela simples: <strong>&lt;tr&gt;</strong> (linha da tabela) <strong>&lt;td&gt;</strong> (dado da tabela) <strong>&lt;th&gt;</strong> (cabeçalho da tabela).
+            </p>
+            <pre><code>
+                                        &lt;table&gt;
+                                            &lt;caption&gt; &lt;/caption&gt;
+                                            &lt;thead&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th ou td&gt; (qnts vezes necessário)
+                                                &lt;/tr&gt; 
+                                            &lt;/thead&gt;
+                                            &lt;tbody&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th ou td&gt; (qnts vezes necessário)
+                                                &lt;/tr&gt;
+                                            &lt;/tbody&gt;
+                                            &lt;tfoot&gt;
+                                                &lt;tr&gt;
+                                                    &lt;th ou td&gt; (qnts vezes necessário)
+                                                &lt;/tr&gt;
+                                            &lt;/tfoot&gt;
+            </code></pre>
+            <p>
+                Para deixar claro para os mecânismos de busca, que um título de uma tabela é relacionado com a coluna, acrescentar o parâmetro <strong>scope="col"</strong>, e o título relacionado com a linha, utilizar o parâmetro <strong>scope="row"</strong>. Isso não causa nenhum efeito visual, serve só para especificar o relacionamento entre o título e os dados.
+            </p>
+            <p>
+                Conseguimos fazer um efeito zebrado nas tabelas usando uma tag de estilo, usamos na tag <strong>&lt;tr&gt;</strong>, utilizar <strong>nth-child(even)</strong> ou <strong>nth-child(odd)</strong>. Também podemos trocar o <strong>even (par) por 2n</strong>, e <strong>odd (ímpar) por 2n-1</strong>. Que no caso as tags de estilo ficariam assim:
+            </p>
+            <pre><code>
+                    tbody > tr:nth-child(even) {                                  tbody > tr:nth-child(odd) {
+                        background-color: lightgray;              OU                  background-color: lightgray;
+                    }                                                             }
+            </code></pre>
+            <p>
+                Para fazer um cabeçalho fixo em uma tabela, utilizamos as tags de estilo <strong>position: relative;</strong> na tag da tabela (<strong>table</strong>), e criamos outra tag de estilo (<strong>thead &gt; tr &gt; th</strong>) que indica que o <strong>&lt;th&gt;</strong> está dentro do <strong>&lt;tr&gt;</strong> que está dentro do <strong>&lt;thead&gt;</strong> e vai receber as seguintes tags de estilo: <strong>position: sticky;</strong> (colável) + <strong>top: 0;</strong> (colar na parte 0 "topo") + <strong>background-color: (msm cor do cabeçalho)</strong> (não é obrigatório). Que no caso ficariam assim: 
+            </p>
+            <pre><code>
+                    table{                                          thead > tr > th {
+                        position: relative;          +                  position: sticky;
+                    }                                                   top: 0;
+                                                                        background-color: msm do cabeçalho;
+                                                                    }
+            </code></pre>
+            <aside>
+                <h3>Tabelas Grandes</h3>
+                <pre><code>
+    &lt;table&gt;                                                                                     
+    &lt;caption&gt;Os 5 melhores times do Brasil&lt;/caption&gt;            
+        &lt;tr&gt;                                                                                  
+            &lt;td&gt;A1&lt;/td&gt;                                         
+            &lt;td&gt;B1&lt;/td&gt;                                            
+            &lt;td&gt;C1&lt;/td&gt;                                             
+        &lt;/tr&gt;                                                            
+        &lt;tr&gt;                                                        
+            &lt;td&gt;A2&lt;/td&gt;                                             
+            &lt;td&gt;B2&lt;/td&gt;                                                 
+            &lt;td&gt;C2&lt;/td&gt;                                                          
+        &lt;/tr&gt;                                                            
+        &lt;tr&gt;                                                           
+            &lt;td&gt;A3&lt;/td&gt;                                             
+            &lt;td&gt;B3&lt;/td&gt;                                                
+            &lt;td&gt;C3&lt;/td&gt;                                                  
+        &lt;/tr&gt;                                             
+                </code></pre>
+            </aside>
+        </article>
+        <br>
+    </main>
+    <footer>
+        <p>
+            Esse site foi feito por <strong>Bruno Henrique</strong> afins de estudos!
+        </p>
+    </footer>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

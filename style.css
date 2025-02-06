@@ -14,7 +14,7 @@ body, html {
 }
 
 body {
-    background-image: url(imagens/fundo.jpg);
+    background-image: url(imagens/fundo1.jpg);
     background-attachment: fixed;
     background-repeat: repeat;
     background-position: center center;
@@ -106,7 +106,7 @@ main > article > h2 {
 main > article > aside > h3 {
     color: black;
     text-indent: 50px;
-    font-weight: normal;
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 20px;
 }
@@ -115,6 +115,10 @@ main > article > aside {
     border: 1px solid black;
     margin: 20px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+main > article > aside > div {
+    text-align: center;
 }
 
 main > article > p {
@@ -144,6 +148,13 @@ main > article > aside > p {
     padding: 20px;
     text-align: justify;
     text-indent: 20px;
+}
+
+aside > video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 footer {

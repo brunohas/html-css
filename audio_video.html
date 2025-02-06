@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áudio e Vídeo</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+</head>
+<body>
+    <header>
+        <h1>ÁUDIO e VÍDEO</h1>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul>
+                <li><a href="index.html" rel="prev">Home</a></li>
+                <li><a href="fonte.html" rel="next">Fonte</a></li>
+                <li><a href="imagem.html" rel="next">Imagens</a></li>
+                <li><a href="lista_tabela.html" rel="next">Listas/Tabelas</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>ÁUDIO</h2>
+            <p>
+                Para reproduzir um áudio MP3 em um site, utilizamos a tag <strong>&lt;audio&gt;</strong>, irá abrir um parâmetro <strong>src=" "</strong> (colocar o nome do arquivo) e também é preciso colocar os parâmetros <strong>autoplay</strong> para tocar a música assim que carregar a página (não é obrigatório), <strong>controls</strong> para aparecer um "controle" para dar play/pause e aumentar ou diminuir o volume do áudio, <strong>loop</strong> para o áudio se repetir (usa-se normalmete quando o áudio é curto).
+            </p>
+            <aside>
+                <pre><code>
+    &lt;audio src="midia/THE BOX MEDLEY FUNK 2.mp3" controls&gt;&lt;/audio&gt;
+                </code></pre>
+                <audio src="midia/THE BOX MEDLEY FUNK 2 (part. MC Brinquedo, MC Tuto, MC Laranjinha e MC Cebezinho) ( Clipe Oficial ).mp3" controls></audio>
+            </aside>
+            <p>
+                Também existe outros tipos de formatos de áudio (WAV e OGG), ver se tem compatibilidade com o navegador. Outra maneira de reproduzir áudios também é com a tag <strong>&lt;audio&gt;</strong>, porém não é necessário o parâmetro que já vem incluso <strong>(pode apagar o src=" ")</strong> se quiser pode acrescentar o parâmetro <strong>preload=" "</strong> (<strong>auto</strong> = só considera que a página carregou depois de carregar todo o áudio (não recomendado) / <strong>metadata</strong> = só carrega o nome, data, duração do arquivo / <strong>none</strong> = só carrega quando o usuário apertar play no controle). Depois colocar a tag <strong>&lt;source:src&gt;</strong> dentro da tag <strong>&lt;audio&gt;</strong>, assim abrindo outro parâmetro <strong>type=" "</strong>, para áudios em MP3 colocar o <strong>type="audio/mpeg"</strong> / para áudios em WAV colocar o <strong>type="audio/wav"</strong> / para áudios em OGG colocar o <strong>type="audio/ogg"</strong>.
+            </p>
+            <aside>
+                <h3>Exemplo:</h3>
+                <pre><code>
+    &lt;audio controls&gt;
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.mp3" type="audio/mpeg"&gt;  !- primeiro áudio a tentar carregar -!
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.wav" type="audio/wav"&gt;   !- se não carregar o primeiro, carrega o segundo -!
+        &lt;source src="midia/THE BOX MEDLEY FUNK 2.ogg" type="audio/ogg"&gt;   !- se não carregar o segundo, carrega o terceiro -!
+        &lt;p&gt;
+            Infelizmente seu navegador não consegue reproduzir áudio.     !- Só irá mostrar se não conseguir produzir o áudio -!
+        &lt;/p&gt;
+    &lt;/audio&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>VÍDEO</h2>
+            <p>
+                Os formatos mais utilizados em vídeos são o MP4 e M4V, existem outros como WebM (que é um arquivo bem pequeno, porém não tem muita qualidade de vídeo) e OGV (um formato que está intimamente ligado ao OGG, pode ser utilizado para armazenamento ou transmissão na web). Para reproduzir um vídeo utilizamos a tag <strong>&lt;video&gt;</strong>, porém conseguimos fazer que nem no áudio, conseguimos colocar mais de um tipo de arquivo utilizando a tag <strong>&lt;video&gt;</strong> e adicionando a tag <strong>&lt;source:src&gt;</strong> para cada tipo de arquivo. Depois colocar de colocar a tag <strong>&lt;source:src&gt;</strong> dentro da tag <strong>&lt;audio&gt;</strong>, assim abrindo outro parâmetro <strong>type=" "</strong>, para vídeos em MP4 colocar o type="video/mp4" / para vídeos em WebM colocar o type="video/webm" / para vídeos em OGV colocar o type="video/ogv".
+            </p>
+            <p>
+                Para pesquisar vídeos, podemos também utilizar o site <a href="https://www.pexels.com/pt-br/" rel="external" target="_blank">Pexels</a> que é o mesmo para pesquisar imagens (sempre lembrar dos direitos autorais). Para converter/formatar um vídeo utilizamos o aplicativo <strong>HandBrake</strong> (só converte para MP4, M4V e WebM / para converter para OGV basta pesquisar no google "conversor ogv"), serve para converter o vídeo em algum outro tipo de arquivo para que o vídeo fique mais leve, ou para o vídeo ficar com uma resolução melhor. Não é indicado hospedar um arquivo muito no grande no site, pois o custo fica muito caro. Se for colocar algum arquivo muito pesado, é indicado colocar ele como um link externo.
+            </p>
+            <aside>
+                <h3>Vídeos hospedados localmente (dentro do servidor)</h3>
+                <p>
+                    Para reproduzir vídeo em um site, utilizamos a tag <strong>&lt;video&gt;</strong> (se o vídeo não couber na tela, você pode editar/formatar ou adicionar um parâmetro <strong>width: " "</strong> e colocar em quantos pixels de largura o vídeo vai ficar), colocar parâmetro <strong>controls</strong> para mostrar um controle para dar play/pause ou aumentar/diminuir o volume. Vídeos hospedados localmente, consomem muitos dados do servidor, assim ficando mais caro para hospedar. <br>Ex:
+                </p>
+                <pre><code>
+    &lt;video controls&gt;
+        &lt;source src="midia/video-drift-600.mp4" type="video/mp4"&gt;    !- primeiro vídeo a tentar carregar -!
+        &lt;source src="midia/video-drift-600.webm" type="video/webm"&gt;  !- se não carregar o primeiro, carrega o segundo -!
+        &lt;source src="midia/video-drift-600.ogv" type="video/ogv"&gt;    !- se não carregar o segundo, carrega o terceiro -!
+        &lt;p&gt;
+        Infelizmente seu navegador não consegue reproduzir vídeo. !-só irá mostrar se não conseguir reproduzir nenhum vídeo-!
+        &lt;/p&gt;
+    &lt;/video&gt;
+                </code></pre>
+                    <div>
+                        <video controls>
+                            <source src="midia/video-drift-600.mp4" type="video/mp4">
+                            <source src="midia/video-drift-600.webm" type="video/webm">
+                            <source src="midia/video-drift-600.ogv" type="video/ogv">
+                                <p>
+                                    Infelizmente seu navegador não consegue reproduzir vídeo.
+                                </p>
+                        </video>
+                    </div>
+            </aside>
+            <aside>
+                <h3>Vídeos hospedados externamente</h3>
+                <p>
+                    Os vídeos hospedados externamente tem como "benefício" não utilizar os dados do servidor para carregar o vídeo, assim ficando mais barato para hospedar. Para inserir um vídeo externo, copiamos o <strong>&lt;iframe&gt;</strong> gerado pelo site que contém o vídeo.
+                </p>
+                <ul>
+                    <li>Vídeos do Youtube &rarr; Para conseguir inserir um vídeo do Youtube no site, basta clicar em compartilhar no vídeo desejado e clicar em Incorporar (monta um <strong>&lt;iframe&gt;</strong>), depois só copiar e colar o código (conseguimos mudar o tamanho para ser exibido, basta alterar o <strong>width:</strong> e o <strong>heigth:</strong>).</li>
+                    <li>Vídeos do Vímeo &rarr; Para conseguir inserir um vídeo do Vimeo no site, basícamente é igual a do Youtube, porém o Vímeo é um aplicativo pago. (Não coloquei nenhum vídeo pois não tenho conta).</li>
+                </ul>
+                <div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vI5q91QMmB8?si=44lOAje7L-klAzJV&amp;start=885" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </aside>
+        </article>
+        <br>
+    </main>
+    <footer>
+        <p>
+            Esse site foi feito por <strong>Bruno Henrique</strong> afins de estudos!
+        </p>
+    </footer>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
