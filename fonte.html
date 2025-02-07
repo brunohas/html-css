@@ -14,7 +14,7 @@
             format('truetype'), url('fonte/Olondon_.otf') format('opentype'), url('fonte/Olondona.otf') format('opentype');
         }
 
-        ul {
+        ul.ex {
             list-style-position: inside;
             columns: 3;
         }
@@ -28,7 +28,7 @@
             <ul>
                 <li><a href="index.html" rel="prev">Home</a></li>
                 <li><a href="imagem.html" rel="next">Imagens</a></li>
-                <li><a href="audio_video.html" rel="next">Áudio/Vídeo</a></li>
+                <li><a href="audio_video.html" rel="next">Áudio/Vídeo/Links</a></li>
                 <li><a href="lista_tabela.html" rel="next">Listas/Tabelas</a></li>
             </ul>
         </menu>
@@ -242,39 +242,13 @@
             <p>
                 Símbolos que podemos usar na CSS que vimos:
             </p>
-            <ul>
+            <ul class="ex">
                 <li><strong>#</strong> &rarr; id</li>
                 <li><strong>.</strong> &rarr; class</li>
                 <li><strong>:</strong> &rarr; pseudo-class</li>
                 <li><strong>::</strong> &rarr; pseudo-element</li>
                 <li><strong>&gt;</strong> &rarr; children (filho)</li>
             </ul>
-        </article>
-        <article>
-            <h2>LINKS</h2>
-            <aside>
-                <h3>Links externos</h3>
-                <p>
-                    Para utilizar links externos usar a tag <strong>&lt;a&gt;</strong>, assim abrindo um parâmetro <strong>href=" "</strong> para colocar o link desejado. Depois colocamos mais 2 parâmetros: <strong>rel="external"</strong> (identificar que é um link externo) ou <strong>rel="nofollow"</strong> (avisa o mecânismo de busca que você não da o aval do conteúdo do link), e <strong>target="_self"</strong> (abrir o link sobre a página) ou <strong>target="_blank"</strong> (abrir o link em uma nova janela).
-                </p>
-            </aside>
-            <aside>
-                <h3>Links internos</h3>
-                <p>
-                    Para links internos também utiliza-se a tag <strong>&lt;a&gt;</strong>, abrindo o parâmetro <strong>href=" "</strong>, porém colocamos o nome do arquivo HTML no lugar (ex: index.html). Depois colocamos mais 2 parâmetros: <strong>rel="next"</strong> (próxima página) ou <strong>rel="prev"</strong> (página anterior), e <strong>target="_self"</strong> (abrir o link sobre a página) ou <strong>target="_blank"</strong> (abrir o link em uma nova janela). 
-                </p>
-            </aside>
-            <p>
-                Nas 2 opções conseguimos adicionar uma tag de estilo <strong>cursor:</strong> para mudar o cursor do mouse. 
-            </p>
-            <aside>
-                <ul>
-                    <li>wait &rarr; carregando</li>
-                    <li>not-allowed &rarr; "proibido"</li>
-                    <li>grab &rarr; pegar</li>
-                    <li>pointer &rarr; "mãozinha"</li>
-                </ul>
-            </aside>
         </article>
         <article>
             <h2>SÍMBOLOS E EMOJIS</h2>
