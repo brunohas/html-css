@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores e Degradê</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        ul.ex {
+            list-style-position: inside;
+            list-style-type: '\1F9E0\00A0';
+            padding-left: 50px;
+            columns: 3;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CORES e DEGRADÊ</h1>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <menu id="itens">
+            <ul>
+                <li><a href="index.html" rel="prev">Home</a></li>
+                <li><a href="fonte.html" rel="next">Fonte</a></li>
+                <li><a href="imagem.html" rel="next">Imagens</a></li>
+                <li><a href="audio_video.html" rel="next">Áudio/Vídeo/Links</a></li>
+                <li><a href="lista_tabela.html" rel="next">Listas/Tabelas</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>CORES</h2>
+            <p>
+                Para colocar cores no site, utilizamos tags de estilo dentro da tag <strong>&lt;style&gt;</strong>. Conseguimos colocar as cores de algumas formas, pelo nome (em inglês), por código hexadecimais, RGB (Red, Green, Blue) ou HSL (Hue Saturation Lightness). Segue alguns exemplos de tags de estilo para cores:
+            </p>
+            <aside>
+                <ul>
+                    <li>color: &rarr; cor da letra</li>
+                    <li>background-color: &rarr; cor do fundo</li>
+                    <li>text-shadow: &rarr; sombra da letra</li>
+                    <li>box-shadow: &rarr; sombra da caixa</li>
+                </ul>
+            </aside>
+            <p>
+                Agora vou te mostrar como colocar as cores:
+            </p>
+            <aside>
+                <h3>Por nome</h3>
+                <p>
+                    Para colocar cores pelo nome, colocamos alguma tag de estilo de cor (<strong>color: / background-color:</strong>) dentro da tag <strong>&lt;style&gt;</strong>, escolhemos qual tag que vamos estilizar e digitamos a nome da cor em inglês.<br>
+                </p>
+                <pre><code>
+        &lt;body&gt;                                               |    &lt;style&gt;
+            &lt;h1&gt;Cor por nome&lt;/h1&gt;                            |        h1 {
+                &lt;p&gt;Exemplo de cores por nome&lt;/p&gt;             |            <mark>background-color: blue;</mark>
+        &lt;/body&gt;                                              |        }
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Por códido hexadecimal</h3>
+                <p>
+                    Para colocar cores pelo código hexadecimal, colocamos alguma tag de estilo de cor (<strong>color: / background-color:</strong>) dentro da tag <strong>&lt;style&gt;</strong>, escolhemos qual tag que vamos estilizar, e digitamos o código da cor junto com um ( <strong>#</strong> ). Para ficar mais fácil, utilizamos o aplicativo <strong>GIMP</strong> (o mesmo para edição de fotos) para saber qual o código de cada cor.
+                </p>
+                <pre><code>
+        &lt;body&gt;                                               |    &lt;style&gt;
+            &lt;h1&gt;Cor por código hexadecimal&lt;/h1&gt;              |        h1 {
+                &lt;p&gt;Exemplo de cores por nome&lt;/p&gt;             |            <mark>background-color: #0000ff;</mark>
+        &lt;/body&gt;                                              |        }
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>RGB e RGBA</h3>
+                <p>
+                    Para colocar cores por <strong>RGB</strong>, colocamos alguma tag de estilo de cor (<strong>color: / background-color:</strong>) dentro da tag <strong>&lt;style&gt;</strong>, escolhemos qual tag que vamos estilizar e digitamos <strong>rgb(n°, n°, n°)</strong>, primeiro n° é a cor vermelha (0 à 255), o segundo n° é a cor verde (0 à 255), e o terceiro é a cor azul (0 à 255). Para utilizar o <strong>RGBA</strong>, acrescentamos mais a letra a e mais um número (<strong>rgba(n°, n°, n°, n°)</strong>) que seria o da transparência que vai de 0 à 1, 0 totalmente transparênte, 1 totalmente visível.
+                </p>
+                <pre><code>
+        &lt;body&gt;                                               |    &lt;style&gt;
+            &lt;h1&gt;Cor por RGB e RGBA&lt;/h1&gt;                      |        h1 {
+                &lt;p&gt;Exemplo de cores por nome&lt;/p&gt;             |            <mark>background-color: rgba(0, 0, 255, 0.5);</mark>
+        &lt;/body&gt;                                              |        }
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>HSL e HSLA</h3>
+                <p>
+                    Para colocar cores por <strong>HSL</strong>, colocamos alguma tag de estilo de cor (<strong>color: / background-color:</strong>) dentro da tag <strong>&lt;style&gt;</strong>, escolhemos qual tag que vamos estilizar e digitamos <strong>hsl(n°, n°%, n°%)</strong>, primeiro n° o tom (0 à 255), o segundo n° é a saturação (0% à 100%), e o terceiro é a luminosidade (0% à 100%). Para utilizar o <strong>HSLA</strong>, acrescentamos mais a letra a e mais um número (<strong>hsla(n°, n°%, n°%, n°)</strong>) que seria o da transparência que vai de 0 à 1, 0 totalmente transparênte, 1 totalmente visível.
+                </p>
+                <pre><code>
+        &lt;body&gt;                                               |    &lt;style&gt;
+            &lt;h1&gt;Cor por HSL e HSLA&lt;/h1&gt;                      |        h1 {
+                &lt;p&gt;Exemplo de cores por nome&lt;/p&gt;             |            <mark>background-color: hsla(240, 100%, 50%, 0.5);</mark>
+        &lt;/body&gt;                                              |        }
+                </code></pre>
+            </aside>
+            <p>
+                <a href="https://github.com/gustavoguanabara/html-css/blob/master/aulas-pdf/13%20-%20Cores.pdf" rel="external" target="_blank">Clique aqui</a> para saber um pouco mais sobre cores.
+            </p>
+        </article>
+        <article>
+            <h2>DEGRADÊ</h2>
+            <p>
+                Conseguimos fazer um degradê de cores de 2 tipos (em linha, em circulo), para ambos utilizamos a tag de estilo <strong>background-image:</strong> dentro da tag <strong>&lt;style&gt;</strong>, (sempre utilizar <strong>* {height: 100%;}</strong> na configuração global das CSS) e <strong>background-attachment: fixed;</strong> para deixar o fundo fixo (se não quiser, utilizar <strong>background-attachment: scroll;</strong> para o fundo rolar junto com o conteúdo).
+            </p>
+            <aside>
+                <h3>Degradê em linha</h3>
+                <p>
+                    Para fazer um degradê em linha utilizamos as tags de estilo <strong>background-image: linear-gradient(colocar as cores);</strong> + <strong>background-attachment: fixed;</strong> para deixar o fundo fixo, ou <strong>background-attachment: scroll;</strong> para o fundo rolar junto com o conteúdo. Conseguimos mudar a direção em que vai o degradê, adicionar os parâmetros <strong>(to top / to right / to bottom / to left)</strong> entre os parênteses do <strong>linear-gradient();</strong> ou também conseguimos utilizar ângulo para o direcionamento (ex: 45deg / 120deg). Exemplo:
+                </p>
+                <pre><code>
+&lt;style&gt;                                                        |&lt;style&gt;
+    * {                                                        |    * {
+        heigth: 100%;                                          |        heigth: 100%;
+    }                                                         ou    }
+    body {                                                     |    body {
+        background-image: linear-gradient(60deg, black, white);|        background-image: linear-gradient(to top, black, white);
+        background-attachment: fixed;                          |        background-attachment: fixed;
+    }                                                          |    }
+&lt;/style&gt;                                                       |&lt;/style&gt;
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Degradê em circulo</h3>
+                <p>
+                    Para fazer um degradê em circulo utilizamos as tags de estilo <strong>background-image: radial-gradient(circle, colocar as cores);</strong> + <strong>background-attachment: fixed;</strong> para deixar o fundo fixo, ou <strong>background-attachment: scroll;</strong> para o fundo rolar junto com o conteúdo. Exemplo:
+                </p>
+                <pre><code>
+                                                &lt;style&gt;
+                                                    * { 
+                                                        heigth: 100%;
+                                                    } 
+                                                    body {
+                                                        background-image: radial-gradient(circle, black, gray, white);
+                                                        background-attachment: fixed;
+                                                    }
+                                                &lt;/style&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <p>Agora segue algumas ferramentas úteis para fazer hârmonia de cores:</p>
+            <ul class="ex">
+                <li><a href="https://color.adobe.com/pt/create/color-wheel" rel="external" target="_blank">Adobe Color</a></li>
+                <li><a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" rel="external" target="_blank">Paletton</a></li>
+                <li><a href="https://coolors.co/" rel="external" target="_blank">Coolors</a></li>
+            </ul>    
+        </article>
+    </main>
+    <footer>
+        <p>
+            Esse site foi feito por <strong>Bruno Henrique</strong> afins de estudos!
+        </p>
+    </footer>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
