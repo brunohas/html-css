@@ -13,6 +13,11 @@
             src: url('fonte/OldLondon.ttf') format('truetype'), url('fonte/OldLondonAlternate.ttf') 
             format('truetype'), url('fonte/Olondon_.otf') format('opentype'), url('fonte/Olondona.otf') format('opentype');
         }
+
+        ul {
+            list-style-position: inside;
+            columns: 3;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +160,95 @@
             <p>
                 Para conseguir localizar uma fonte de uma imagem, utilizamos os sites <a href="https://www.whatfontis.com/" rel="external" target="_blank">WhatFontIs</a> ou <a href="https://www.fontsquirrel.com/matcherator" rel="external" target="_blank">FontSquirrel</a> ou <a href="https://www.myfonts.com/pages/whatthefont" rel="external" target="_blank">MyFonts</a>. Basicamente todos funcionam arrastando a imagem até a área do site, e depois fazer algumas edições para a imagem ficar melhor de se visualizar.
             </p>
+        </article>
+        <article>
+            <h2>Modelos de Caixas</h2>
+            <p>
+                É aplicavel ao HTML e CSS, é um conjunto para facilitar a organização do site. Básicamente cada caixa é o conteúdo que está em uma tag, por exemplo, <strong>&lt;h1&gt;Olá, Mundo!&lt;/h1&gt;</strong> &rarr; <strong>Olá, Mundo!</strong> (é a caixa). A caixa tem um tamanho e é especificado em 2 medidas muito importantes: <strong>height: (altura)</strong> e <strong>width: (largura)</strong>. Também existem outras medidas: <strong>border (borda)</strong>, <strong>padding(acolchoamento / preenchimento)</strong>, <strong>outline(contorno / traçado)</strong>, <strong>margin(margem)</strong>. Segue a anatomia de uma caixa:
+            </p>
+            <aside>
+                <div>
+                    <img src="imagens/modelo-de-caixa.png" alt="Modelo de Caixas">
+                </div>
+                <p>
+                    Para entender melhor, na página do navegador pressionar <strong>Ctrl + Shift + i</strong> ou clicar com o mouse direito na página e clicar em <strong>"Inspecionar"</strong> para abrir o DevTools (se editar no DevTools, não edita no código original).
+                </p>
+            </aside>
+            <aside>
+                <h3>Tipos de Caixas</h3>
+                <ul>
+                    <li><strong>box-level</strong> &rarr; é uma caixa que quebra de linha, ocupa a largura inteira (width), e quebra de linha para dar a continuidade do conteúdo.<br>Exemplos de tags: &lt;div&gt; / &lt;h1&gt;~&lt;h6&gt; / &lt;p&gt; / &lt;main&gt; / &lt;header&gt; / &lt;nav&gt; / &lt;video&gt; / ...</li>
+                    <li><strong>inline-level</strong> &rarr; é uma caixa que não quebra de linha, não ocupa a largura inteira (width), e da a continuidade do conteúdo na mesma linha.<br>Exemplos de tags: &lt;span&gt; / &lt;a&gt; / &lt;code&gt; / &lt;strong&gt; / &lt;em&gt; / &lt;sub&gt; / &lt;sup&gt; / ...</li>
+                </ul>
+                <p>
+                    Também conseguimos mudar um box-level para inline-level e vice-versa, basta acrescentar uma tag de estilo <strong>display: block</strong>(box-level) ou <strong>display: inline</strong> (inline-level).
+                </p>
+            </aside>
+        </article>
+        <article>
+            <h2>ID e CLASS</h2>
+            <aside>
+                <h3>ID</h3>
+                <p>
+                    O <strong>ID</strong> serve para identificar um parâmetro, por exemplo, em um código existem mais de um <strong>&lt;h1&gt;</strong>, o primeiro <strong>&lt;h1&gt;</strong> é o título do site, e os outros são os títulos do texto, para identificar que o primeiro <strong>&lt;h1&gt;</strong> não vai ter as mesmas características, abrimos um parâmetro <strong>(id=" ")</strong> dentro da tag <strong>&lt;h1&gt;</strong>. E depois na tag de estilo abrimos <strong>(h1#nome do id)</strong> para conseguir estilizar somente a tag <strong>&lt;h1 id=" "&gt;</strong>. (OBS: em HTML é id=" " em CSS é #).
+                </p>
+                <pre><code> 
+        &lt;body&gt;                                                |    &lt;style&gt;
+            &lt;<mark>h1 id="titulo"</mark>&gt;Título principal&lt;/h1&gt;             |        <mark>h1#titulo</mark> {
+            &lt;h1&gt;Título texto 1&lt;/h1&gt;                           |            font-size: 2em;    !- somente o h1 com o id -!
+                &lt;p&gt;Texto 1&lt;/p&gt;                                |            font-weigth: bold;
+            &lt;h1&gt;Título texto 2&lt;/h1&gt;                           |        }
+                &lt;p&gt;Texto 2&lt;/p&gt;                                |        h1 {
+            &lt;h1&gt;Título texto 3&lt;/h1&gt;                           |            font-size:1.5em;   !- todos os h1 que não tem o id -!
+                &lt;p&gt;Texto 3&lt;/p&gt;                                |            font-weigth: normal;
+        &lt;/body&gt;                                               |        }
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>CLASS</h3>
+                <p>
+                    O <strong>id</strong> só podemos utilizar 1 vez por tag (podemos utilizar vários id com nomes diferentes), já o <strong>class</strong>, conseguimos utilizar para mais de uma tag. Utilizamos igual o <strong>id</strong>, colocar o <strong>class=" "</strong> dentro da tag desejada, e dar um nome a ele. Já na tag de estilo abrimos com um ponto (<strong>.nome do class</strong>)
+                    para conseguir estilizar as tags que estejam com <strong>class=" "</strong>. Agora olhe um exemplo, quero cor de fundo somente para o sub-título do texto 2 e o sub-título do texto 3. (OBS: em HTML é class=" " em CSS é <strong>.</strong> ).
+                </p>
+                <pre><code>
+    &lt;body&gt;                                                |    &lt;style&gt;
+        &lt;h1&gt;Título principal&lt;/h1&gt;                         |        h2 {                !- somente o h2 sem class (do texto 1) -!
+        &lt;h2&gt;sub-título texto 1&lt;/h2&gt;                       |            color: black;
+            &lt;p&gt;texto 1&lt;/p&gt;                                |        }
+        &lt;<mark>h2 class="destaque"</mark>&gt;sub-título texto 2&lt;/h2&gt;      |        <mark>h2.destaque</mark> {       !- os h2 que tem o class="destaque" -!
+            &lt;p&gt;texto 2&lt;/p&gt;                                |            background-color: darkgray;
+        &lt;<mark>h2 class="destaque"</mark>&gt;sub-título texto 3&lt;/h2&gt;      |            color: white;
+            &lt;p&gt;texto 3&lt;/p&gt;                                |        }
+    &lt;/body&gt;                                               |    &lt;/style&gt;
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Pseudo-classes</h3>
+                <p>
+                    Enquanto o <strong>id=" "</strong> utiliza (<strong>#</strong>), o <strong>class=" "</strong> utiliza (<strong> . </strong>), as pseudo-classes utilizam ( <strong>:</strong> ) no CSS. As pseudo-classes são usadas para definir um estado especial de um elemento. Utilizar no elemento em que você deseja, alguns tipos de pseudo-classes:
+                </p>
+                <ul>
+                    <li><strong>:hover</strong> &rarr; passa o mouse por cima</li>
+                    <li><strong>:visited</strong> &rarr; link visitado</li>
+                    <li><strong>:active</strong> &rarr; link ativado (quando clica)</li>
+                </ul>
+            </aside>
+            <aside>
+                <h3>Pseudo-elementos</h3>
+                <p>
+                    O pseudo-elemento pode agir nas classes, nos elementos e nas ids, mexem no conteúdo periférico do elemento. Para pseudo-elemento utilizar ( <strong>::</strong> ), conseguimos colocar conteúdo sem o HTML, normalmente utiliza ( <strong>::before / ::after</strong> ) para saber se é para colocar o conteúdo antes ou depois.
+                </p>
+            </aside>
+            <p>
+                Símbolos que podemos usar na CSS que vimos:
+            </p>
+            <ul>
+                <li><strong>#</strong> &rarr; id</li>
+                <li><strong>.</strong> &rarr; class</li>
+                <li><strong>:</strong> &rarr; pseudo-class</li>
+                <li><strong>::</strong> &rarr; pseudo-element</li>
+                <li><strong>&gt;</strong> &rarr; children (filho)</li>
+            </ul>
         </article>
         <article>
             <h2>LINKS</h2>
