@@ -80,16 +80,15 @@ main {
     margin: auto;
     background-color: rgba(255, 255, 255, 0.385);
     box-shadow: 0px 0px 15px black;
-    padding-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 main > article {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px; 
+    margin: 50px; 
     padding: 20px;
 }
 
@@ -124,9 +123,9 @@ main > article > aside > div {
 main > article > p {
     text-indent: 20px;
     text-align: justify;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 1.5em;
-    padding: 30px;
+    padding: 10px;
 }
 
 main > article > aside > ul {

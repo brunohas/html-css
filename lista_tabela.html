@@ -26,21 +26,55 @@
         }
 
         table {
-            width: 500px;
+            width: 600px;
             border-collapse: collapse;
             margin: auto;
+            position: relative;
+            margin-bottom: 20px;;
         }
 
-        caption {
-            border: 1px solid black;
+        td.simples {
+            text-align: center;
+        }
 
+        caption, thead, tfoot {
+            border: 1px solid black;
+            background-color: rgb(99, 99, 99);
+            color: white;
+            font-size: 1.1em;
+            text-shadow: 2px 2px 3px black;
+            padding: 15px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            text-align: left;
+            
         }
 
         td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-            vertical-align: middle;
+            text-align: right;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: rgb(99, 99, 99);
+        }
+
+        thead > tr > th {
+            position: sticky;
+            top: 0;
+            background-color: rgb(99, 99, 99);
+        }
+
+        section {
+            list-style-position: inside;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            font-size: 0.8em;
         }
     </style>
 </head>
@@ -202,22 +236,21 @@
                 <table>
                     <caption>Tabela Simples</caption>
                     <tr>
-                        <td>A1</td>
-                        <td>B1</td>
-                        <td>C1</td>
+                        <td class="simples">A1</td>
+                        <td class="simples">B1</td>
+                        <td class="simples">C1</td>
                     </tr>
                     <tr>
-                        <td>A2</td>
-                        <td>B2</td>
-                        <td>C2</td>
+                        <td class="simples">A2</td>
+                        <td class="simples">B2</td>
+                        <td class="simples">C2</td>
                     </tr>
                     <tr>
-                        <td>A3</td>
-                        <td>B3</td>
-                        <td>C3</td>
+                        <td class="simples">A3</td>
+                        <td class="simples">B3</td>
+                        <td class="simples">C3</td>
                     </tr>
                 </table>
-                <br>
             </aside>
             <p>
                 Para fazer tabelas mais complexas, ainda utilizamos a tag <strong>&lt;table&gt;</strong>, porém com mais algumas outras tags, <strong>&lt;thead&gt;</strong> para o cabeçalho da tabela, <strong>&lt;tbody&gt;</strong> para o corpo da tabela, <strong>&lt;tfoot&gt;</strong> para o rodapé da tabela. E dentro deles utilizamos as mesmas tags da tabela simples: <strong>&lt;tr&gt;</strong> (linha da tabela) <strong>&lt;td&gt;</strong> (dado da tabela) <strong>&lt;th&gt;</strong> (cabeçalho da tabela).
@@ -265,27 +298,191 @@
             <aside>
                 <h3>Tabelas Grandes</h3>
                 <pre><code>
-    &lt;table&gt;                                                                                     
-    &lt;caption&gt;Os 5 melhores times do Brasil&lt;/caption&gt;            
-        &lt;tr&gt;                                                                                  
-            &lt;td&gt;A1&lt;/td&gt;                                         
-            &lt;td&gt;B1&lt;/td&gt;                                            
-            &lt;td&gt;C1&lt;/td&gt;                                             
-        &lt;/tr&gt;                                                            
-        &lt;tr&gt;                                                        
-            &lt;td&gt;A2&lt;/td&gt;                                             
-            &lt;td&gt;B2&lt;/td&gt;                                                 
-            &lt;td&gt;C2&lt;/td&gt;                                                          
-        &lt;/tr&gt;                                                            
-        &lt;tr&gt;                                                           
-            &lt;td&gt;A3&lt;/td&gt;                                             
-            &lt;td&gt;B3&lt;/td&gt;                                                
-            &lt;td&gt;C3&lt;/td&gt;                                                  
-        &lt;/tr&gt;                                             
+    &lt;table&gt;                                                |    &lt;style&gt;                           
+        &lt;caption&gt;Os 5 jogadores com mais títulos&lt;/caption&gt; |        table {
+        &lt;thead&gt;                                            |            width: 600px;
+            &lt;tr&gt;                                           |            border-collapse: collapse;                          
+                &lt;th scope="col"&gt;Nome&lt;/th&gt;                  |            position: relative;                
+                &lt;th scope="col"&gt;Títulos&lt;/th&gt;               |        }
+            &lt;/tr&gt;                                          |        caption, thead, tfoot {
+        &lt;/thead&gt;                                           |            border: 1px solid black;
+        &lt;tbody&gt;                                            |            background-color: rgb(99, 99, 99);            
+            &lt;tr&gt;                                           |            color: white; 
+                &lt;th&gt;Lionel Messi (Argentina)&lt;/th&gt;          |            font-size: 1.1em;                                  
+                &lt;td&gt;44&lt;/td&gt;                                |            text-shadow: 2px 2px 3px black;
+            &lt;/tr&gt;                                          |            padding: 15px;                  
+            &lt;tr&gt;                                           |        }                
+                &lt;th&gt;Daniel Alves (Brasil)&lt;/th&gt;             |        td, th {                                
+                &lt;td&gt;42&lt;/td&gt;                                |            border: 1px solid black;
+            &lt;/tr&gt;                                          |            padding: 10px;
+            &lt;tr&gt;                                           |        }
+                &lt;th&gt;Andrés Iniesta (Espanha)&lt;/th&gt;          |        tbody &gt; tr &gt; th {
+                &lt;td&gt;36&lt;/td&gt;                                |            text-aling: left;
+            &lt;/tr&gt;                                          |        }
+            &lt;tr&gt;                                           |        tbody &gt; tr &gt; td {        
+                &lt;th&gt;Gerard Piqué (Espanha)&lt;/th&gt;            |            text-aling: rigth;
+                &lt;td&gt;36&lt;/td&gt;                                |        }
+            &lt;/tr&gt;                                          |        tbody &gt; tr:nth-child(even) {
+            &lt;tr&gt;                                           |            background-color: rgb (99, 99, 99);
+                &lt;th&gt;Ryan Giggs (País de Gales)&lt;/th&gt;        |        }
+                &lt;td&gt;36&lt;/td&gt;                                |        thead &gt; tr &gt; th {
+            &lt;/tr&gt;                                          |            position: sticky;
+        &lt;/tbody&gt;                                           |            top: 0;
+        &lt;tfoot&gt;                                            |            background-color: rgb(99, 99, 99);
+            &lt;tr&gt;                                           |        }
+                &lt;th scope="row"&gt;Total de títulos&lt;/th&gt;      |
+                &lt;td&gt;194&lt;/td&gt;                               |
+            &lt;/tr&gt;                                          |
+        &lt;/tfoot&gt;                                           |  
                 </code></pre>
+                <p>
+                    Olhe um exemplo de tabela grande com efeito zebrado e cabeçalho fixo:
+                </p>
+                <table>
+                    <caption>Os 5 jogadores com mais títulos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Títulos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Lionel Messi (Argentina)</th>
+                            <td>44</td>
+                        </tr>
+                        <tr>
+                            <th>Daniel Alves (Brasil)</th>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <th>Andrés Iniesta</th>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <th>Gerard Piqué</th>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <th>Ryan Giggs</th>
+                            <td>36</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total de títulos</th>
+                            <td>194</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </aside>
+            <aside>
+                <h3>Mesclagem de células</h3>
+                <p>
+                    A mesclagem de células em HTML é feita com os atributos <strong>colspan=" "</strong> e <strong>rowspan=" "</strong>. Esses parâmetros são usados dentro das tags <strong>&lt;td&gt;</strong> ou <strong>&lt;th&gt;</strong>. O atributo <strong>colspan</strong> é usado para mesclar células em coluna. Já o atributo <strong>rowspan</strong> é usado para mesclar células em linhas. Basta digitar a quantidade em que deseja mesclar.
+                </p>
+                <pre><code>
+                                        &lt;table&gt;                                           
+                                        &lt;caption&gt;Tabela com mesclagem de células&lt;/caption&gt;                          
+                                            &lt;tr&gt;                                            
+                                                &lt;td&gt;A&lt;/td&gt;            
+                                                &lt;td colspan="2"&gt;B&lt;/td&gt;               
+                                            &lt;/tr&gt;                 
+                                            &lt;tr&gt;              
+                                                &lt;td rowspan="3"&gt;D&lt;/td&gt;                
+                                                &lt;td&gt;E&lt;/td&gt;                   
+                                                &lt;td rowspan="2"&gt;F&lt;/td&gt;                              
+                                            &lt;/tr&gt;                      
+                                            &lt;tr&gt;                 
+                                                &lt;td&gt;H&lt;/td&gt;
+                                            &lt;/tr&gt;
+                                            &lt;tr&gt;
+                                                &lt;td colspan="2"&gt;K&lt;/td&gt;
+                                        &lt;/table&gt;
+                </code></pre>
+                <table>
+                    <caption>Tabela com mesclagem de células</caption>
+                    <tr>
+                        <td class="simples">A</td>
+                        <td colspan="2" class="simples">B</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="simples">D</td>
+                        <td class="simples">E</td>
+                        <td rowspan="2" class="simples">F</td>
+                    </tr>
+                    <tr>
+                        <td class="simples">H</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="simples">K</td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+                <p>
+                    Você viu que na hora de mostrar um título de uma tabela que é relacionado com a coluna, acrescentar o parâmetro <strong>scope="col"</strong>, e o título relacionado com a linha, utilizamos o parâmetro <strong>scope="row"</strong>. Isso não causa nenhum efeito visual, serve só para especificar o relacionamento entre o título e os dados. E quando tiver uma mesclagem de células também indentificamos o título, porém se tiver uma mesclagem de linha, colocar o parâmetro <strong>scope="rowgroup"</strong> e quando tiver uma mesclagem em coluna, colocar o parâmetro <strong>scope="colgroup"</strong>.
+                </p>
+                <table>
+                    <caption>Filmes Favoritos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Grupo</th>
+                            <th scope="col">Nomes</th>
+                            <th scope="colgroup" colspan="3">Filmes</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <th scope="rowgroup" rowspan="3">Mulheres</th>
+                            <td class="simples">Ana Maria Santos</td>
+                            <td class="simples">Alien</td>
+                            <td class="simples">Rambo</td>
+                            <td class="simples">Vingadores</td>
+                        </tr>
+                        <tr>
+                            <td class="simples">Beatriz Souza</td>
+                            <td class="simples">Hulk</td>
+                            <td class="simples">Inception</td>
+                            <td class="simples">Batman</td>
+                        </tr>
+                        <tr>
+                            <td class="simples">Cláudia Melo</td>
+                            <td class="simples">Oblivion</td>
+                            <td class="simples">Matrix</td>
+                            <td class="simples">Big Hero</td>
+                        </tr>
+                        <tr>
+                            <th scope="rowgroup" rowspan="3">Homens</th>
+                            <td class="simples">Bruno Mendonça</td>
+                            <td class="simples">Intocáveis</td>
+                            <td class="simples">Amnésia</td>
+                            <td class="simples">Gladiador</td>
+                        </tr>
+                        <tr>
+                            <td class="simples">Daniel Lourenço</td>
+                            <td class="simples">Wall-E</td>
+                            <td class="simples">Oldboy</td>
+                            <td class="simples">Dangal</td>
+                        </tr>
+                        <tr>
+                            <td class="simples">Fabiano Mota</td>
+                            <td class="simples">Star Wars 5</td>
+                            <td class="simples">Taxi Driver</td>
+                            <td class="simples">Toy Stoty</td>
+                        </tr>
+                    </thead>
+                </table>
+                <section>
+                    <ul>
+                        <li>O título <strong>Grupo</strong> utiliza <strong>scope="col"</strong>, pois o item relacionado está na mesma coluna (mulheres/homens).</li>
+                        <li>O título <strong>Nomes</strong> utiliza <strong>scope="col"</strong>, pois o item relacionado está na mesma coluna. (nomes das mulheres)</li>
+                        <li>O título <strong>Filmes</strong> utiliza <strong>scope="colgroup"</strong>, pois os itens relacionados estão utilizando 3 colunas (nomes do filmes).</li>
+                        <li>O título <strong>Mulheres</strong> utiliza <strong>scope="rowgroup"</strong>, pois os itens relacionados estão utilizando 3 linhas (nomes das mulheres + filmes de cada).</li>
+                        <li>O título <strong>Homens</strong> utiliza <strong>scope="rowgroup"</strong>, pois os itens relacionados estão utilizando 3 linhas (nomes dos homens + filmes de cada).</li>
+                    </ul>
+                </section>
             </aside>
         </article>
-        <br>
     </main>
     <footer>
         <p>
