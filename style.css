@@ -128,6 +128,12 @@ main > article > p {
     padding: 10px;
 }
 
+main > article > ul {
+    list-style-position: inside;
+    font-size: 0.9em;
+    padding-left: 50px;
+}
+
 main > article > aside > ul {
     list-style-type: '\1F9E0\00A0';
     columns: 2;
@@ -135,6 +141,19 @@ main > article > aside > ul {
     padding-left: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+
+main > article > aside > ul.tres {
+    list-style-position: inside;
+    list-style-type: disc;
+    columns: 3;
+    font-size: 1.3em;
+}
+
+main > article > aside > ul.um {
+    list-style-position: inside;
+    list-style-type: disc;
+    font-size: 1.2em;
 }
 
 main > article > aside > ul > li {
@@ -154,6 +173,11 @@ aside > video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+iframe#tela {
+    width: 800px;
+    height: 400px;
 }
 
 footer {

@@ -125,6 +125,93 @@
                 </ul>
             </aside>
         </article>
+        <article>
+            <h2>IFRAME</h2>
+            <p>
+                Um iframe é uma etiqueta HTML que permite a incorporação de outro documento HTML dentro de uma página, ele pode ser usado em qualquer lugar da página, sem precisar incluí-lo na estrutura do layout do site. O iframe é usado para:
+            </p>
+            <ul>
+                <li>Exibir vídeos, mapas, anúncios e feeds de mídia social</li>
+                <li>Integrar conteúdo interativo</li>
+                <li>Carregar páginas externas dentro da página web</li>
+                <li>Visualizar conteúdos de terceiros</li>
+                <li>Adicionar um vídeo do Youtube em post</li>
+                <li>Inserir mapas do Google Maps em sites institucionais</li>
+            </ul>
+            <p>
+                Para modificar o comportamento do iframe, é possivel usar atributos como:
+            </p>
+            <ul>
+                <li><strong>width:</strong> e <strong>heigth:</strong> para definir a largura e altura do elemento (padrão é width: 300px; heigth: 150px;)</li>
+                <li><strong>sandbox:</strong> para aplicar camada extra de segurança</li>
+                <li><strong>::-webkit-scrollbar {width: 0px; heigth: 0px;}</strong> para eliminar barra de rolagem</li>
+            </ul>
+            <p>
+                Utilizar o iframe usando a tag <strong>&lt;iframe src=" " frameborder="0"&gt;</strong>, o <strong>src=" "</strong> é o direcionamento do link e o <strong>frameborder=" "</strong> é a borda da janela (0 = sem borda / 1 = com borda). Se atentar pois tem sites que tem uma proteção contra o iframe. E também existem dispositivos que não tem o suporte para o iframe, nesse caso, colocar uma âncora <strong>&lt;a&gt;</strong> dentro da tag <strong>&lt;iframe&gt;</strong>, para que se o iframe não abrir, tenha a âncora para direcionar a pessoa para o site, exemplo:
+            </p>
+            <aside>
+                <pre><code>
+&lt;iframe src="https://www.youtube.com/" frameborder="0"&gt;&lt;a href="https://www.youtube.com/" target="_blank"&gt;Youtube&lt;/a&gt;&lt;/iframe&gt;
+                </code></pre>
+            </aside>
+            <p>
+                Ainda dentro da tag <strong>&lt;iframe&gt;</strong> conseguimos acrescentar o parâmetro <strong>scolling="auto"</strong> (se o conteúdo ultrapassar o tamanho do iframe, ele vai criar uma barra de rolagem), <strong>scolling="yes"</strong> (mesmo que o conteúdo caiba no iframe, irá aparecer a barra de rolagem), ou <strong>scolling="no"</strong> (mesmo que o conteúdo seja maior, ele não vai permitir a barra de rolagem).<br>Exemplo: <iframe src="https://www.cursoemvideo.com/" frameborder="0" ><a href="https://www.cursoemvideo.com/" rel=external target="_blank">Curso em Vídeo</a></iframe>
+            </p>
+            <p>
+                Também conseguimos abrir uma página criada dentro do iframe, basta adicionar um parâmetro <strong>name=" "</strong> dentro da tag <strong>&lt;iframe&gt;</strong> e uma âncora <strong>&lt;a&gt;</strong> para direcionar qual página irá ser exibida no iframe (colocar o parâmetro <strong>target="nome dado no parâmetro adicionado do iframe"</strong>). Exemplo:
+            </p>
+            <aside>
+                <pre><code>
+                    &lt;p&gt;
+                        Clique em uma das páginas para ser direcionado.
+                &lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;<mark>&lt;a href="index.html" target="frame"&gt;</mark>Página das Tags&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;<mark>&lt;a href="imagem.html" target="frame"&gt;</mark>Página de Imagens&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;<mark>&lt;a href="lista_tabela.html" target="frame"&gt;</mark>Página das Listas e Tabelas&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/p&gt;
+                <mark>&lt;iframe name="frame" src="" frameborder="1"&gt;</mark>
+                </code></pre>
+                <p>
+                    Clique em uma das páginas para ser direcionado.
+                </p>
+                <ul class="tres">
+                    <li><a href="index.html" target="frame">Página das Tags</a></li>
+                    <li><a href="imagem.html" target="frame">Página de Imagens</a></li>
+                    <li><a href="lista_tabela.html" target="frame">Página das Listas e Tabelas</a></li>
+                </ul>
+                <div>
+                    <iframe id="tela" name="frame" src="" frameborder="1" scolling="yes"></iframe>
+                </div>
+                <p>
+                    Quando você cria um iframe desse jeito, a tela fica em branco até clicarem em algum link. Tirando o parâmetro <strong>src=" "</strong> e adicionando o parâmetro <strong>srcdoc=" "</strong> conseguimos colocar códigos HTML para exibir no iframe (escrever igual código).
+                </p>  
+            </aside>
+            <aside>
+                <h3>Segurança do iframe</h3>
+                <p>
+                    Se atentar na hora de colocar iframe no seu site, pois tem sites que capturam informações do usuário. Para bloquear essas possíveis ações, utilizar o parâmetro <strong>sandbox="sandbox"</strong> (é utilizado para isolar conteúdos não confiáveis em um iframe). Outra forma de deixar seu site mais seguro, utilizar o parâmetro <strong>referrerpolicy=" "</strong> (é uma ferramenta que controla a quantidade de informações de referência que os navegadores transmitem), o padrão é <strong>referrerpolicy="no-referrer-when-downgrade"</strong> (remove a referência ao fazer downgrade de protocolo, como de HTTPS para HTTP), se quiser tornar o que está carregado no iframe um pouco mais limitado, utilizar o parâmetro <strong>referrerpolicy="no-referrer"</strong> (o conteúdo que está carregado no iframe não vai coletar nenhuma informação do usuário). Então para uma segurança forte do iframe, utilizar os parâmetros <strong>sandbox="sandbox"</strong> + <strong>referrerpolicy="no-referrer"</strong> dentro da tag do iframe. Se o iframe for da mesma origem conseguimos desligar algumas configurações, utilizamos também o parâmetro <strong>sandbox=" "</strong>, agora vou mostrar algumas configurações de sandbox:
+                </p>
+                <ul>
+                    <li><strong>sandbox="allow-same-origin"</strong> &rarr; permite que o conteúdo seja tratado sendo da mesma origem.</li>
+                    <li><strong>sandbox="allow-forms"</strong> &rarr; permite formulários.</li>
+                    <li><strong>sandbox="allow-scripts"</strong> &rarr; permite scripts.</li>
+                    <li><strong>sandbox="allow-orientation-lock"</strong> &rarr; permite bloquear a orientação da tela.</li>
+                    <li><strong>sandbox="allow-pointer-lock"</strong> &rarr; reativa as <abbr title="uma interface de programação de aplicativos que permite que o usuário controle o cursor do mouse">APIs</abbr> de bloqueio dentro do iframe.</li>
+                    <li><strong>sandbox="allow-popups"</strong> &rarr; permite pop-ups.</li>
+                    <li><strong>sandbox="allow-popups-to-escape-sandbox"</strong> &rarr; permite que pop-ups abram novas janelas sem herdar o sandboxing.</li>
+                    <li><strong>sandbox="allow-top-navigation"</strong> &rarr; permite que o conteúdo navegue em seu contexto de navegação de nível superior.</li>
+                    <li><strong>sandbox="no-values"</strong> &rarr; aplica todas as restições, desativando a maioria das funcionalidades do conteúdo incorporado.</li>
+                </ul>
+                <p>
+                    Conseguimos adicionar vídeos do <a href="https://www.youtube.com/" rel="external" target="_blank">Youtube</a>, e do <a href="https://vimeo.com/" rel="external" target="_blank">Vímeo</a>, conseguimos adicionar o mapa do <a href="https://www.google.com.br/maps/preview" rel="external" target="_blank">Google Maps</a>, e do <a href="https://www.waze.com/pt-PT/live-map/" rel="external" target="_blank">Waze</a>, conseguimos adicionar planilhas, apresentações, etc do <a href="https://docs.google.com/document/u/0/?hl=pt-BR" rel="external" target="_blank">Google Docs</a>. Basta copiar o <strong>código de Incorporação</strong>, normalmente conseguimos clicando em compartilhar. Exemplo:
+                </p>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.824253980288!2d-46.616346124544265!3d-23.610635063404583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba26626927b%3A0xfda71d0d7476caa!2sR.%20Anga%C3%ADba%20-%20Vila%20Brasilio%20Machado%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004288-040!5e0!3m2!1spt-BR!2sbr!4v1739049027294!5m2!1spt-BR!2sbr" width="600" height="450" style="border:1;" allowfullscreen="auto" loading="lazy" referrerpolicy="no-referrer"><a href="https://www.google.com.br/maps/place/R.+Anga%C3%ADba+-+Vila+Brasilio+Machado,+S%C3%A3o+Paulo+-+SP,+04288-040/@-23.6106351,-46.6163461,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5ba26626927b:0xfda71d0d7476caa!8m2!3d-23.61064!4d-46.6137712!16s%2Fg%2F1ymsyp1_2?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D" rel="external" target="_blank">Google Maps</a></iframe>
+                </div>
+            </aside>
+        </article>
     </main>
     <footer>
         <p>
