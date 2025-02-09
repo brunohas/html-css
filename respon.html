@@ -26,7 +26,44 @@
     <main>
         <article>
             <h2>RESPONSIVIDADE</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vitae tempora accusamus explicabo, ea soluta doloremque optio exercitationem at temporibus id maxime nesciunt magni, incidunt recusandae quisquam ad molestias voluptatibus?</p>
+            <p>
+                A responsividade de um site é a capacidade de se adaptar a diferentes tamanhos de tela. O objetivo é proporcionar uma boa experiência de visualização ao usuário, independentemente do dispositivo que esteja sendo utilizado. Para saber melhor a medida ou visualizar em tela de celular, utilizar a extensão do Google Chrome <strong>Window Resizer</strong>.
+            </p>
+            <aside>
+                <h3>Responsividade da tela</h3>
+                <p>
+                    Para criar essa responsividade, utilizamos os parâmetros <strong>min-width:</strong> (largura mínima da tela) e <strong>max-width:</strong> (largura máxima da tela). Normalmente a largura mínima será de 320px (pois é a largura de alguns celulares mais antigos).
+                </p>
+                <pre><code>
+                                            &lt;style&gt;
+                                                * {
+                                                    margin: 0px;
+                                                    padding: 0px;
+                                                }
+                                                main {
+                                                    min-width: 300px;
+                                                    max-width: 1000px;
+                                                    margin: auto;
+                                                }
+                                            &lt;/style&gt;
+                </code></pre>
+            </aside>
+            <aside>
+                <h3>Responsividade da imagem</h3>
+                <p>
+                    Para fazer a responsividade de uma imagem, adicionar a tag de estilo somente para a imagem (<strong>img {width: 100%;}</strong>) para que ela "quebre" a largura junto com a janela.
+                </p>
+                <pre><code>
+                                            &lt;style&gt;
+                                                img {
+                                                    width: 100%;
+                                                }
+                </code></pre>
+                <p>
+                    Ou também podemos utilizar a tecnica da <a href="imagem.html" rel="next" target="_blank">imagem dinâmica</a> mostrada na página Imagens.
+                </p>
+            </aside>
+           
         </article>
     </main>
     <footer>
