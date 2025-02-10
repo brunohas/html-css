@@ -25,7 +25,160 @@
         </menu>
     </header>
     <main>
-
+        <article>
+            <h2>FORMULÁRIOS</h2>
+            <p>
+                Um formulário é um local onde o visitante consegue colocar dados. Para criar um formulário, utilizamos a tag <strong>&lt;form&gt;</strong>, todos os dados tem que estar entre a tag <strong>&lt;form&gt;</strong> e <strong>&lt;/form&gt;</strong>, para perguntar os dados do visitante, acrescentamos a tag <strong>&lt;input&gt;</strong> e para fazer uma ligação com o input acrescentamos a tag <strong>&lt;label&gt;</strong>. Também conseguimos adicionar os parâmetros <strong>required</strong> para que o campo não possa ser enviado sem nenhum caractere (conseguimos mudar o mínimo e o máximo de caracteres, <strong>minlength=" "</strong> e <strong>maxlength=" "</strong>), <strong>placeholder=" </strong>" para detalhar a caixa de pergunta, <strong>size</strong> para mudar o tamanho da caixa, <strong>autocomplete=" "</strong> para completar com os dados salvos pelo navegador, e também conseguimos agrupar os formulários envelopando com a tag <strong>&lt;fieldset&gt;</strong> (<strong>&lt;legend&gt;</strong> para dar uma legenda ao grupo / <strong>action=" "</strong> para onde os dados são enviados).<br>Segue um exemplo da anatomia:
+            </p>
+            <aside>
+                <pre><code>
+<mark>&lt;form action="cadastro.php"&gt;</mark>                  !- action=" " para onde os dados são enviados -!
+    <mark>&lt;fieldset&gt;</mark>                                !- para agrupar os formulários -!
+        <mark>&lt;legend&gt;Dados Pessoais&lt;/legend&gt;</mark>       !- legenda ao grupo -!
+        &lt;p&gt;
+            <mark>&lt;label for="inome"&gt;Nome &lt;/label&gt;</mark>  !- label for="inome" fazendo a ligação com o input do nome -!
+            <mark>&lt;input type="text" name="nome" id="inome" required placeholder="Digite seu nome"&gt;</mark> !- input:text = pergunta o nome -!  
+        &lt;/p&gt;
+        &lt;p&gt;
+            <mark>&lt;label for="isobrenome"&gt;Sobrenome &lt;/label&gt;</mark> !- label for="isobrenome" fazendo a ligação com o input do sobrenome -! 
+            <mark>&lt;input type="text" name="sobrenome" id="isobrenome" required placeholder="Digite seu sobrenome"&gt;</mark> 
+        &lt;/p&gt;                                                                   !- input:text para perguntar o sobrenome -!
+        &lt;p&gt;
+            <mark>&lt;input type="submit" value="Enviar"&gt;</mark> !- input:submit para criar um botão para enviar -!
+            <mark>&lt;input type="reset" value="Limpar"&gt;</mark>  !- input:reset para criar um botão para limpar -!
+        &lt;/p&gt;
+    <mark>&lt;/fieldset&gt;</mark>
+<mark>&lt;/form&gt;</mark>
+                </code></pre>
+                <p>
+                    Que no caso ficaria assim:
+                </p>
+                <form action="cadastro.py">
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <p>
+                            <label for="inome">Nome </label>
+                            <input type="text" name="nome" id="inome" required placeholder="Digite seu nome:">
+                        </p>
+                        <p>
+                            <label for="isobrenome">Sobrenome </label>
+                            <input type="text" name="sobrenome" id="isobrenome" required placeholder="Digite seu sobrenome:">
+                        </p>
+                        <p>
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Limpar">
+                        </p>
+                    </fieldset>
+                </form>
+            </aside>
+            <p>
+                Existem vários tipos de input, agora vou citar alguns:
+            </p>
+            <aside>
+                <h3>Tipos de input mais comuns</h3>
+                <ol>
+                    <li><strong>input:hidden</strong> &rarr; uma entrada de formulário que está oculta, geralmente para armazenar valores que o usuário não precisa ver.</li>
+                    <li><strong>input:text</strong> &rarr; define um campo de entrada de texto de linha única.</li>
+                    <li><strong>input:password</strong> &rarr; define um campo de senha através de um asterisco.</li>
+                    <li><strong>input:submit</strong> &rarr; define um botão para enviar dados do formulário.</li>
+                    <li><strong>input:button</strong> &rarr; define um botão.</li>
+                    <li><strong>input:radio</strong> &rarr; são conjuntos de botões que permite que o usuário selecione APENAS UMA das opções exibidas (colocar o mesmo name="" nas opções e id="" diferentes).</li>
+                    <li><strong>input:checkbox</strong> &rarr; caixas de seleção permitem que um usuário selecione ZERO ou MAIS opções.</li>
+                    <li><strong>input:search</strong> &rarr; é usado para campos de pesquisa.</li>
+                    <li><strong>input:reset</strong> &rarr; define um botão de redefinição que redefinirá todos os valores do formulário para seus valores padrão.</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>Tipos de input com validação</h3>
+                <ol>
+                    <li><strong>input:tel</strong> &rarr; é usado para inserir um número de telefone (pattern="^\(\d{2}\)\d{4, 5}-\d{4}$ &rarr; para aceitar somente números (XX)XXXX-XXXX ou (XX)XXXXX-XXXX).</li>
+                    <li><strong>input:url</strong> &rarr; valida que a entrada é uma URL.</li>
+                    <li><strong>input:email</strong> &rarr; valida que a entrada é um e-mail.</li>
+                    <li><strong>input:number</strong> &rarr; define um campo de entrada numérica (você também pode definir restrições sobre quais números são aceitos).</li>
+                    <li><strong>input:range</strong> &rarr; define um controle para inserir um número cujo valor exato não é importante (como um controle deslizante). O intervalo padrão é de 0 a 100 (no entanto, você pode definir restrições sobre quais números são aceitos com os atributos <strong>min</strong>, <strong>max</strong>, e <strong>:step</strong>).</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>Tipos de input de data</h3>
+                <ol>
+                    <li><strong>input:date</strong> &rarr; qualquer entrada de data.</li>
+                    <li><strong>input:month</strong> &rarr; permite selecionar um único mês.</li>
+                    <li><strong>input:week</strong> &rarr; permite que o usuário selecione uma semana e ano.</li>
+                    <li><strong>input:time</strong> &rarr; permite selecionar um horário específico.</li>
+                    <li><strong>input:datetime-local</strong> &rarr; permite selecionar a combinação de data/hora.</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>Outros tipos de input</h3>
+                <ol>
+                    <li><strong>input:file</strong> &rarr; No GET não funciona; define um botão para carregar um arquivo para o servidor (normalmente para enviar fotos).</li>
+                    <li><strong>input:image</strong> &rarr; o mais estranho de todos, para botões gráficos de envio (o caminho para a imagem é especificado no atributo <strong>src=" "</strong>).</li>
+                    <li><strong>input:color</strong> &rarr; é usado para campos de entrada que devem conter uma cor.</li>
+                </ol>    
+                <p>
+                    Existem 2 tipos de métodos de envio de formulário, <strong>GET</strong> (padrão) e o <strong>POST</strong>. Temos que adicionar o parâmetro <strong>method=" "</strong> para conseguimos mudar o método de envio.
+                </p>
+                <ol>
+                    <li><strong>GET</strong> &rarr; é utilizado quando os dados não forem sensíveis (nome, peso, altura, etc...), quando utilizamos o método <strong>GET</strong> só podemos enviar até 3000 bits (aproximadamente 3000 letras).</li>
+                    <li><strong>POST</strong> &rarr; é utilizado quando os dados são mais sensíveis (senha, foto, número de cartão de crédito, quando os dados excedem os 3000 bits, etc...). O mais ideal para a proteção de dados é utilizar o HTTPS (estudar mais pra frente <strong>HTTPS</strong> e <strong>RegEx</strong> &rarr; expressões regulares).</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>Output</h3>
+                <p>
+                    A tag <strong>&lt;output&gt;</strong> é um elemento no qual um site ou aplicativo pode mostrar os resultados de um cálculo ou o resultado de uma ação do usuário, o objetivo do <strong>output</strong> é otimizar o produto e entragar mais valor para os usuários, é geralmente utilizado para representar o resultado de um cálculo. E para fazer uma ligação com o <strong>&lt;input&gt;</strong> utilizamos o parâmetro <strong>oninput=" "</strong> (serve para somente mostrar na tela, ele não é enviado junto com o formulário).
+                </p>
+                <pre><code>
+&lt;form action="cadastro.py"&gt;    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Soma dos números&lt;/legend&gt;
+        &lt;p&gt;
+            &lt;label for="in1"&gt;Primeiro número: &lt;/label&gt;                         !- label for="in1" ligação com input 1° número -!
+            &lt;input type="number" name="n1" id="in1" min="0" max="50" required  !- input:number p/ perguntar primeiro número -!
+            <mark>oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)"</mark>&gt; !- (JavaScript) pega o valor digitado -!
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="in2"&gt;Segundo número: &lt;/label&gt;                          !- label for="in2" ligação com input 2° número -!
+            &lt;input type="number" name="n2" id="in2" min="0" max="50" required  !- input:number p/ perguntar segundo número -!
+            <mark>oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)"</mark>&gt; !- (JavaScript) paga o valor digitado -!
+        &lt;/p&gt;
+        &lt;p&gt;
+            <mark>&lt;label for="isoma"&gt;Soma: &lt;/label&gt;</mark>                               !- label for="isoma" ligação com o output da soma -!
+            <mark>&lt;output name="soma" id="isoma"&gt;0&lt;/output&gt;</mark>                       !- output p/ mostrar na tela a soma -!
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;input type="submit" value="Enviar"&gt;                            !- input:submit p/ criar botão para enviar -!
+            &lt;input type="reset" value="Limpar"&gt;                             !- input:reset p/ criar botão para limpar -!
+        &lt;/p&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                </code></pre>
+            <p>
+                Que no caso ficaria assim:
+            </p>
+            <form action="cadastro.py">
+                <fieldset>
+                    <legend>Soma dos números</legend>
+                    <p>
+                        <label for="in1">Primeiro número: </label>
+                        <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+                    </p>
+                    <p>
+                        <label for="in2">Segundo número: </label>
+                        <input type="number" name="n2" id="in2" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+                    </p>
+                    <p>
+                        <label for="isoma">Soma: </label>
+                        <output name="soma" id="isoma">0</output>
+                    </p>
+                    <p>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Limpar">
+                    </p>
+                </fieldset>
+            </form>
+            </aside>
+        </article>    
     </main>
     <footer>
         <p>
