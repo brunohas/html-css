@@ -132,6 +132,7 @@ main > article > ul {
     list-style-position: inside;
     font-size: 0.9em;
     padding-left: 50px;
+    line-height: 20px;
 }
 
 main > article > aside > ul {

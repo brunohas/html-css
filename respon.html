@@ -182,7 +182,68 @@
         </article>
         <article>
             <h2>MEDIA QUERY</h2>
-            
+            <p>
+                Media Query é um módulo do CSS que permitem ajustar a visualização de uma página para diferentes dispositivos. Elas são utilizadas para tornar um site responsivo, adaptando a apresentação do conteúdo a uma gama específica de dispositivos. As media queries permitem definir expressões que limitam o escopo das folhas de estilo, aplicam especificidades para celulares, tablets e desktops, determinam a visualização das informações contidas na página, detecta carecterísticas importantes do dispositivo, como largura e altura da viewport, orientação da tela e resolução da mesma.
+            </p>
+            <p>
+                Resumindo, media queries são vários links de CSS do mesmo programa, porém para definições difirentes tipo, um CSS para demonstração da tela pequena, outro CSS para demonstração de tela grande, e outro CSS para impressão. Adicionamos um parâmetro <strong>media=" "</strong> (<strong>media="all"</strong> &rarr; adequa o layout para todos os tipos de mídia / <strong>media="screen"</strong> &rarr; define como o layout será exibido em diferentes dispositivos, como desktops, laptops, tablets e smartphones / <strong>media="print"</strong> &rarr; exclusivo para impressoras) dentro da tag <strong>&lt;link:css&gt;</strong>.
+            </p>
+            <aside>
+                <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="pt-br"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Media Query&lt;/title&gt;
+            <mark>&lt;link rel="stylesheet" href="tudo.css" media="all"</mark>          !- link:css para todos os tipos de mídia -!
+            <mark>&lt;link rel="stylesheet" href="tela.css" media="screen"</mark>       !- link:css para as telas -!
+            <mark>&lt;link rel="stylesheet" href="impressora.css" media="print"</mark>  !- link:css para impressão -!
+        &lt;/head&gt;
+        &lt;body&gt;
+    
+        &lt;/body&gt;
+                </code></pre>
+            </aside>
+        </article>
+        <article>
+            <h2>MEDIA FEATURES</h2>
+            <p>
+                As media features são usadas em conjunto com as media queries, elas são úteis para criar sites responsivos, que se adaptam a diferentes tamanhos de tela, orientações do dispositivo e preferências do usuário, <strong>são adicionadas entre (parênteses)</strong> junto com o parâmetro <strong>media=" "</strong>, por exemplo:
+            </p>
+            <aside>
+                <pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Media Features&lt;/title&gt;
+        &lt;link rel="stylesheet" href="tudo.css" media="all"                                       !- CSS principal -!
+        &lt;link rel="stylesheet" href="retrato.css" <mark>media="screen and (orientation: portrait)"</mark>     !- CSS p/ aparelho deitado -!
+        &lt;link rel="stylesheet" href="impressora.css" <mark>media="screen and (orientation: landscape)"</mark> !- CSS p/ aparelho em pé -!
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+                </code></pre>
+            </aside>
+            <p>    
+                Elas podem ser usadas para identificar características do dispositivo, identificar preferências do usuário, adaptar sites e aplicações de acordo com as preferências do usuário, definir regras para dispositivos em retrato ou paisagem. Agora segue alguns tipos de media features:
+            </p>
+            <ul>
+                <li><strong><abbr title="max-width = largura máxima / min-width = largura mínima">(width)</abbr></strong> &rarr; largura do viewport</li>
+                <li><strong><abbr title="max-heigth = altura máxima / min-heigth = altura mínima">(heigth)</abbr></strong> &rarr; altura do viewport</li>
+                <li><strong><abbr title="landscape = em pé / portrait = deitado">(orientation)</abbr></strong> &rarr; orientação do viewport</li>
+                <li><strong>(aspect-radio)</strong> &rarr; proporção da largura para a altura do viewport</li>
+                <li><strong>(resolution)</strong> &rarr; densidade de pixels do dispositivo</li>
+                <li><strong>(prefers-color-scheme)</strong> detecta se o tema é claro ou escuro</li>
+                <li><strong>(prefers-reduced-motion)</strong> detecta se o usuário prefere animações reduzidas</li>
+                <li><strong>(inverted-colors)</strong> &rarr; detecta se o navegador tem inversão de cores</li>
+            </ul>
+            <aside>
+                <h3>Typical Device Breakpoints</h3>
+            </aside>
         </article>
     </main>
     <footer>
