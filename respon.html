@@ -21,6 +21,7 @@
                 <li><a href="lista_tabela.html" rel="next">Listas/Tabelas</a></li>
                 <li><a href="cores.html" rel="next">Cores</a></li>
                 <li><a href="form.html" rel="next">Formulários</a></li>
+                <li><a href="media-query.html" rel="next">Media Query</a></li>
             </ul>
         </menu>
     </header>
@@ -28,8 +29,8 @@
         <article>
             <h2>RESPONSIVIDADE</h2>
             <p>
-                A responsividade de um site é a capacidade de se adaptar a diferentes tamanhos de tela. O objetivo é proporcionar uma boa experiência de visualização ao usuário, independentemente do dispositivo que esteja sendo utilizado. Para saber melhor a medida ou visualizar em tela de celular, utilizar a extensão do Google Chrome <strong>Window Resizer</strong>.
-            </p>
+                A responsividade de um site é a capacidade de se adaptar a diferentes tamanhos de tela. O objetivo é proporcionar uma boa experiência de visualização ao usuário, independentemente do dispositivo que esteja sendo utilizado. Para saber melhor a medida ou visualizar em tela de celular, utilizar a extensão do Google Chrome <strong>Window Resizer</strong>. <a href="https://brunohas.github.io/projeto-android/" rel="external" target="_blank">Clique aqui</a> para ir no meu primeiro projeto com responsividade.
+            </p> 
             <aside>
                 <h3>Responsividade da tela</h3>
                 <p>
@@ -41,10 +42,11 @@
                                                     margin: 0px;
                                                     padding: 0px;
                                                 }
-                                                main {
-                                                    min-width: 300px;
-                                                    max-width: 1000px;
-                                                    margin: auto;
+                                                
+                                                body, html {
+                                                    heigth: 100vh;
+                                                    min-width: none;
+                                                    max-width: 100vw;
                                                 }
                                             &lt;/style&gt;
                 </code></pre>
@@ -58,6 +60,9 @@
                                             &lt;style&gt;
                                                 img {
                                                     width: 100%;
+                                                    display: block;
+                                                    margin: auto;
+                                                    max-width: largura da imagem;
                                                 }
                 </code></pre>
                 <p>
