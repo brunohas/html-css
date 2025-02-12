@@ -7,6 +7,11 @@
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        b {
+            font-variant: small-caps;
+        }
+    </style>
 </head>
 <body onresize="mudouTamanho()">
     <header>
@@ -187,36 +192,124 @@
                     <li>background: &rarr; (color: &rarr; image: &rarr; position: &rarr; repeat: &rarr; [size]: &rarr; attachment: )</li>
                 </ul>
             </aside>
-            <pre><code>
-                ::webkit-scrollbar &rarr; remove a barra de rolagem
-            </code></pre>
-        </article>
-        <article>
-            <h2>Typical Device Breakpoints</h2>
-             <p>
-                Breakpoints são usados para criar sites responsivos que se adaptam a diferentes tamanhos de tela e dispositivos. Os pontos de interrupção comuns de dispositivos para web design responsivo incluem:
-            </p>
             <aside>
+                <h3>CSS para ajustes de texto</h3>
+                <ol>
+                    <li><strong>text-align:</strong> &rarr; alinhamento horizontal do texto (left / right / center / justify)</li>
+                    <li><strong>vertical-align:</strong> &rarr; alinhamento vertical do texto (text-top / sub / bottom / middle / top / baseline)</li>
+                    <li><strong>text-decoration:</strong> &rarr; decoração adicional (underline / overline / line-through)</li>
+                    <li><strong>text-indent:</strong> &rarr; espaço na primeira linha do parágrafo (20px ~ 40px)</li>
+                    <li><strong>text-transform:</strong> &rarr; controle de maiúsculas e minúsculas (uppercase / lowercase / capitalize)</li>
+                    <li><strong>color:</strong> &rarr; cor do texto</li>
+                    <li><strong>text-shadow:</strong> &rarr; sombra no texto (0px 0px 0px cor)</li>
+                    <li><strong>line-heigth:</strong> &rarr; espaço entre as linhas de um parágrafo</li>
+                    <li><strong>font-style:</strong> &rarr; estilo da fonte (normal / italic / oblique)</li>
+                    <li><strong>font-weight:</strong> &rarr; "peso" da fonte (lighter / normal / bold / bolder)</li>
+                    <li><strong>font-size:</strong> &rarr; tamanho da fonte</li>
+                    <li><strong>font-family</strong> &rarr; tipo de fonte</li>
+                    <li><strong>font-variant:</strong> &rarr; especificar que o texto será exibido em fonte versalete (normal / small-caps = <b>exemplo de fonte versalete</b>)</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>CSS para ajuste de fundo</h3>
+                <ol>
+                    <li><strong>background-color:</strong> &rarr; cor de fundo</li>
+                    <li><strong>background-image: linear-gradient( )</strong> &rarr; degradê em linha (to top / to right / to bottom / to left + cores)</li>
+                    <li><strong>background-image: radial-gradient( )</strong> &rarr; degradê em circulo (circle + cores)</li>
+                    <li><strong>background-image: url( )</strong> &rarr; imagem de fundo</li>
+                    <li><strong>background-position:</strong> &rarr; posição da imagem - 1° vertical 2° horizontal (center / top / rigth / bottom / left)</li>
+                    <li><strong>background-repeat:</strong> &rarr; se repete ou não a imagem (no-repeat / repeat / repeat-x / repeat-y / <abbr title="imagem toca as quatro bordas internas do box e são espaçadas de modo a se distribuirem igualmente">space</abbr> / <abbr title="imagem toca as quatro bordas internas do box e são redimensionadas de modo a preencherem o fundo tocando umas nas outras">round</abbr>)</li>
+                    <li><strong>background-size:</strong> &rarr; tamanho da imagem</li>
+                    <li><strong>background-attachment:</strong> &rarr; se fixa ou rola a imagem (fixed / scroll)</li>
+                    <li><strong>background-clip:</strong> &rarr; define a área da box onde a imagem de fundo é aplicada (<abbr title="a imagem ocupa até a área de padding do box, inclusive, se houver uma e não ocupa a área de bordas">padding-box</abbr> / <abbr title="a imagem ocupa até a área das bordas do box, inclusive, se houver uma - este é o comportamento padrão">border-box</abbr> / <abbr title="a imagem ocupa até a área de conteúdo do boxe não ocupa as áreas de padding e bordas se houver">content-box</abbr>)</li>
+                    <li><strong>background-origin:</strong> &rarr; define a posição de origem da imagem (<abbr title="a imagem tem por origem o canto superior esquerdo do box sem considerar as bordas do box, se houver uma">padding-box</abbr> / <abbr title="a a imagem tem por origem o canto superior esquerdo do box considerada das bordas do box, se houver uma - este é o comportamento padrão">border-box</abbr> / <abbr title="a imagem tem por origem o canto superior esquerdo do box sem considerar o padding e as bordas do box, se houver">content-box</abbr> )</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>CSS para ajuste de borda</h3>
+                <ol>
+                    <li><strong>border:</strong> &rarr; maneira abreviada para todas as 4 bordas (<abbr title="sem borda">none</abbr> / <abbr title="borda contínua">solid</abbr> / <abbr title="borda pontilhada">dotted</abbr> / <abbr title="borda tracejada">dashed</abbr> / <abbr title="borda dupla">double</abbr> / <abbr title="borda entalhada">groove</abbr> / <abbr title="borda em ressalto">ridge</abbr> / <abbr title="borda em baixo relevo">inset</abbr> / <abbr title="borda em alto relevo">outset</abbr>)</li>
+                    <li><strong>border-width:</strong> &rarr; define a espessura da borda</li>
+                    <li><strong>border-style:</strong> &rarr; define o estilo da borda (<abbr title="sem borda">none</abbr> / <abbr title="borda contínua">solid</abbr> / <abbr title="borda pontilhada">dotted</abbr> / <abbr title="borda tracejada">dashed</abbr> / <abbr title="borda dupla">double</abbr> / <abbr title="borda entalhada">groove</abbr> / <abbr title="borda em ressalto">ridge</abbr> / <abbr title="borda em baixo relevo">inset</abbr> / <abbr title="borda em alto relevo">outset</abbr>)</li>
+                    <li><strong>border-color:</strong> &rarr; define a cor da borda</li>
+                    <li><strong>border-radius:</strong> &rarr; arredonda as pontas da borda</li>
+                    <li><strong>border-image-source: url( )</strong> &rarr; borda decorada</li>
+                    <li><strong>border-image-slice:</strong> &rarr; fatiar a imagem (+/- 20)</li>
+                    <li><strong>border-image-repeat:</strong> &rarr; repetir a imagem (repeat / stretch)</li>
+                    <li><strong>border-image-width:</strong> &rarr; defini a espessura das bordas</li>
+                    <li><strong>border-image-outset:</strong> &rarr; define uma área externa á área da borda para onde a imagem será deslocada</li>
+                    <li><strong>border-collapse:</strong> &rarr; junta as borda (collapse / separate)</li>
+                    <li><strong>box-shadow:</strong> &rarr; sombra de uma box (0px 0px 0px cor)</li>
+                    <li><strong>box-sizing: border-box</strong> &rarr; permite incluir o preenchimento e a borda na largura e altura de um elemento</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>CSS para ajuste de listas</h3>
+                <ol>
+                    <li><strong>list-style-image: url( )</strong> &rarr; define uma imagem como marcador de lista</li>
+                    <li><strong>list-style-position:</strong> &rarr; define a posição do marcador de lista (outside / inside)</li>
+                    <li><strong>list-style-type:</strong> &rarr; define o tipo do marcador de lista (none / disc / circle / square / decimal / decimal-leading-zero / lower-roman / upper-roman / lower-alpha / upper-alpha / lower-geek / lower-latin / upper-latin / hebrew / armenian / georgian / cjk-ideographic / hiragana / katakana / higarana-iroha / katakana-iroha)</li>
+                    <li><strong>columns:</strong> &rarr; divide a lista em colunas</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>CSS para ajuste de tabelas</h3>
+                <ol>
+                    <li><strong>border:</strong> &rarr; criar a borda dos dados da tabela</li>
+                    <li><strong>border-collapse:</strong> &rarr; p/ colar ou separar as bordas criadas (collapse / separate)</li>
+                    <pre><code>
+        tbody > tr:nth-child(odd) {   |            table {                             thead > tr > th {
+            background-color: ;       |                position: relative;        +        position: sticky;
+        }                             |            }                                       top: 0;
+            <mark>p/ tabela zebrada</mark>         |               <mark>p/ cabeçalho fixo</mark>                    background-color: ;
+                                      |                                                }
+                    </code></pre>
+                </ol>
+            </aside>
+            <aside>
+                <h3>CSS para ajuste de altura e largura</h3>
                 <ul>
-                    <li>pequenas telas: ~ 600px</li>
-                    <li>celular: 601px ~ 768px</li>
-                    <li>tablet: 769px ~ 992px</li>
-                    <li>desktop: 993px ~ 1200px</li>
-                    <li>grandes telas: > 1201px</li>
+                    <li><strong>min-heigth:</strong> &rarr; altura mínima</li>
+                    <li><strong>max-heigth:</strong> &rarr; altura máxima</li>
+                    <li><strong>heigth:</strong> &rarr; altura total</li>
+                    <li><strong>min-width:</strong> &rarr; largura mínima</li>
+                    <li><strong>max-width:</strong> &rarr; largura máxima</li>
+                    <li><strong>width:</strong> &rarr; largura total</li>
                 </ul>
             </aside>
-            <p>
-                Os pontos de interrupção típicos do dispositivo para 2025 incluem:
-            </p>
             <aside>
+                <h3>CSS para ajuste de espaçamento interno e margem</h3>
                 <ul>
-                    <li>Mobile &rarr; 360px, 390px, 393px e 412px</li>
-                    <li>Tablet &rarr; 768px, 1024px, 1280px e 800px</li>
-                    <li>Desktop &rarr; 1920px, 1366px, 1536px e 1280px</li>
+                    <li><strong>padding-top:</strong> &rarr; define o espaçamento superior</li>
+                    <li><strong>padding-rigth:</strong> &rarr; define o espaçamento à direita</li>
+                    <li><strong>padding-bottom:</strong> &rarr; define o espaçamento inferior</li>
+                    <li><strong>padding-left:</strong> &rarr; define o espaçamento à esquerda</li>
+                    <li><strong>padding:</strong> &rarr; abreviação para definir os 4 espaçamentos</li>
+                    <li><strong>margin-top:</strong> &rarr; define a margem superior</li>
+                    <li><strong>margin-rigth:</strong> &rarr; define a margem direita</li>
+                    <li><strong>margin-bottom:</strong> &rarr; define a margem inferior</li>
+                    <li><strong>margin-left:</strong> &rarr; define a margem esquerda</li>
+                    <li><strong>margin:</strong> &rarr; abreviação para definir as 4 margens</li>
                 </ul>
             </aside>
+            <aside>
+                <h3>display:</h3>
+                <ol>
+                    <li><strong>display: none;</strong> &rarr; faz com que o elemento HTML não seja renderizado (apaga na visualização)</li>
+                    <li><strong>display: block;</strong> &rarr; faz com que o elemento HTML seja renderizado como bloco (ocupa linha inteira)</li>
+                    <li><strong>display: inline;</strong> &rarr; faz com que o elemento HTML seja renderizado inline, dentro do bloco na mesma linha</li>
+                    <li><strong>display: inline-block;</strong> &rarr; funciona somente para os elementos HTML que sejam <strong>display: inline;</strong></li>
+                    <li><strong>display: list-item;</strong> &rarr; faz com que o elemento HTML seja renderizado como um item de lista (irá aparecer um marcador de lista)</li>
+                    <li><strong>display: run-in;</strong> &rarr; segundo o W3C: "Se um box nível de bloco (que não seja flutuado ou absolutamente posicionado) segue-se a um box run-in este torna-se o primeiro box inline do box nível de bloco. Caso contrário, o box run-in é um box nível de bloco (somente no Opera)</li>
+                    <li><strong>display: compact;</strong> &rarr; segundo o W3C: "Se um box nível de bloco (que não seja flutuado ou absolutamente posicionado) segue-se a um box compact este será formatado como um one-line inline box. [...com suas peculiaridades de margens...] Caso contrário, o box compact é um box nível de bloco."</li>
+                    <li><strong>display: table;</strong> &rarr; faz com que o elemento HTML seja renderizado como tabela</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>position:</h3>
+
+            </aside>
         </article>
-        <br>
     </main>
     <footer>
         <p>
