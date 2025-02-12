@@ -201,6 +201,12 @@ input {
     margin: 5px;
 }
 
+p.destaque {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 footer {
     background-color: black;
     color: white;
