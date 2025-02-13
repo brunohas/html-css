@@ -318,11 +318,10 @@
                 <ol>
                     <li><strong>display: none;</strong> &rarr; faz com que o elemento HTML não seja renderizado (apaga na visualização)</li>
                     <li><strong>display: block;</strong> &rarr; faz com que o elemento HTML seja renderizado como bloco (ocupa linha inteira)</li>
-                    <li><strong>display: inline;</strong> &rarr; faz com que o elemento HTML seja renderizado inline, dentro do bloco na mesma linha</li>
+                    <li><strong>display: inline;</strong> &rarr; faz com que o elemento HTML seja renderizado inline, dentro do bloco na mesma linha (não ocupa linha inteira)</li>
                     <li><strong>display: inline-block;</strong> &rarr; funciona somente para os elementos HTML que sejam <strong>display: inline;</strong></li>
                     <li><strong>display: list-item;</strong> &rarr; faz com que o elemento HTML seja renderizado como um item de lista (irá aparecer um marcador de lista)</li>
-                    <li><strong>display: run-in;</strong> &rarr; segundo o W3C: "Se um box nível de bloco (que não seja flutuado ou absolutamente posicionado) segue-se a um box run-in este torna-se o primeiro box inline do box nível de bloco. Caso contrário, o box run-in é um box nível de bloco (somente no Opera)</li>
-                    <li><strong>display: compact;</strong> &rarr; segundo o W3C: "Se um box nível de bloco (que não seja flutuado ou absolutamente posicionado) segue-se a um box compact este será formatado como um one-line inline box. [...com suas peculiaridades de margens...] Caso contrário, o box compact é um box nível de bloco."</li>
+                    <li><strong>display: run-in;</strong> &rarr; exibe um elemento como block ou inline, dependendo do contexto</li>
                     <li><strong>display: table;</strong> &rarr; faz com que o elemento HTML seja renderizado como tabela</li>
                 </ol>
             </aside>
@@ -368,15 +367,20 @@
             <aside>
                 <h3>transition:</h3>
                 <p>
-                    A propriedade <strong>transition:</strong> permite definir a transição entre 2 estados de um elemento. Estados diferentes podem ser definidos usando pseudo-classes tais como <strong>:hover</strong> ou <strong>:active</strong>, ou usando JavaScript.
+                    A propriedade <strong>transition:</strong> é um mecanismos que permitam a mudança de estilização de um elemento HTML de uma forma suave e controlada no tempo.
                 </p>
                 <ol>
-                    <li><strong><abbr title="A transition-behavior só é relevante quando usada em conjunto com outras propriedades de transição, principalmente transition-property e transition-duration, pois nenhuma transição ocorre se nenhuma propriedade for animada durante um período de tempo diferente de zero.">transition-behavior:</abbr> allow-discrete;</strong> &rarr; transições serão iniciadas no elemento para propriedades animadas discretas</li>
-                    <li><strong>transition-behavior: normal;</strong> &rarr; transições não serão iniciadas no elemento para propriedades animadas discretas</li>
-                    <li><strong>transition-delay:</strong> &rarr; (atraso de transição) determina o tempo de duração da espera antes de iniciar um efeito de transição quando seu valor muda (n°s)</li>
-                    <li><strong>transition-duration:</strong> &rarr; define o tempo que uma animação de transição deve levar para ser concluída (n°s)</li>
-                    <li><strong>transition-property:</strong> &rarr; define as propriedades CSS às quais um efeito de transição deve ser aplicado (all / none)</li>
-                    <li><strong><abbr title="ease / ease-in / ease-out / ease-in-out / linear / step-start / step-end">transition-timing-function:</abbr></strong> &rarr; é usada para descrever como os valores intermediários das propriedades CSS sendo afetados por um efeito de transição são calculados. Em essência isso permite você estabelecer uma curva de aceleração, para que então a velocidade da transição possa variar durante sua duração. Essa curva de aceleração é definida usando <strong>timing-function</strong> para cada propriedade a ser transicionada</li>
+                    <li><strong>transition-property:</strong> &rarr; define as propriedades CSS às quais serão aplicadas as transições (ex: <abbr title="transição na borda e cor de texto">div {transition-property: border, color;}</abbr>)</li>
+                    <li><strong>transition-duration:</strong> &rarr; define o tempo que uma animação de transição deve levar para ser concluída (ex: <abbr title="dura 0.5s a transição">div{transition-duration: 0.5s}</abbr>)</li>
+                    <li><strong><abbr title="ease = aumenta a velocidade em direção ao meio da transição, desacelerando novamente no final 
+ease-in = começa lentamente, com a velocidade de transição aumentando até completar
+ease-out = inicia a transição rapidamente, desacelerando à medida que a transição continua
+ease-in-out = começa a transição lentamente, acelera e depois desacelera novamente
+linear = transições em velocidade uniforme
+step-start = denota uma função contínua à esquerda, de modo que o primeiro salto ocorre quando a transição começa
+step-end = denota uma função contínua à direita, de modo que o último salto acontece quando a animação termina">transition-timing-function:</abbr></strong> &rarr; define a forma como a transição progride no tempo (ex: <abbr title="transição em velocidade uniforme">div{transition-timing-function: linear;}</abbr>)</li>
+                    <li><strong>transition-delay:</strong> &rarr; define o tempo de espera em segundos para início da transição (<abbr title="2s para inicio da transição">div{transition-delay: 2s;}</abbr>)</li>
+                    <li><strong>transition:</strong> &rarr; abreviação para {transition-property: &rarr; transition-duration: &rarr; transition-timing-function: &rarr; transition-delay}</li>
                 </ol>
             </aside>
             <aside>
@@ -390,6 +394,20 @@
                     <li><strong>translate: n°, n°;</strong> &rarr; (2 valores) especifica o deslocamento ao longo dos eixos X e Y (respectivamente) de uma 2D translation</li>
                     <li><strong>translate: n°, n°, n°;</strong> &rarr; (3 valores) especifica o deslocamento dos eixos X, Y e Z (respectivamente) de uma 3D translation</li>
                 </ol>
+            </aside>
+            <aside>
+                <h3>calc( )</h3>
+                <p>
+                    A função <strong>calc( )</strong> permite que se definam valores CSS com uso de expressões matemáticas, ou seja, o valor adotado para a propriedade é o resultado de uma expressão matemática.
+                </p>
+                <p>
+                    Os operadores matemáticos válidos são: <strong>+</strong> (soma), <strong>-</strong> (subtração), <strong>*</strong> (multiplicação) e <strong>/</strong> (divisão). As unidades de medida CSS válidas na expressão matemática são as unidades CSS para: comprimento, ângulo, tempo, frequência e números inteiros e fracionários. Na expressão matemática que define o valor CSS é permitido que se misture diferentes unidades de medida. A sintaxe geral para uso desta função é conforme mostrada a seguir:
+                </p>
+                <pre><code>
+                                <abbr title="exemplo: body / main / div">seletor</abbr> { 
+                                    <abbr title="exemplo: width / height">propriedade:</abbr> calc(expressão matemática);
+                                }
+                </code></pre>
             </aside>
         </article>
     </main>
