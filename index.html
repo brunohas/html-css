@@ -87,16 +87,20 @@
                 </ul>
             </aside>
             <aside>
-                <h3>Tags para imagens e objeto</h3>
+                <h3>Tags para imagens, áudio, vídeo e objeto</h3>
                 <ul>
                     <li>&lt;img&gt; &rarr; inserir imagens em uma página</li>
+                    <li>&lt;picture&gt; &rarr; para fazer imagem dinâmica</li>
                     <li>&lt;map&gt; &rarr; define uma área clicável no mapa de imagem (usado com &lt;area&gt;)</li>
                     <li>&lt;area&gt; &rarr; define uma área clicável dentro da imagem (usado dentro do &lt;map&gt;)</li>
                     <li>&lt;object&gt; &rarr; define um contêiner para um recurso externo, como uma imagem, página web, reprodutor de mídia ou app plug-in</li>
+                    <li>&lt;audio&gt; &rarr; inserir áudio em uma página</li>
+                    <li>&lt;video&gt; &rarr; inserir vídeo em uma página</li>
+                    <li>&lt;iframe&gt; &rarr; incorporar um outro documento HTML dentro de uma página</li>
                 </ul>
             </aside>
             <aside>
-                <h3>Tags de listas</h3>
+                <h3>Tags para listas</h3>
                 <ul>
                     <li>&lt;ul&gt; &rarr; lista não ordenada</li>
                     <li>&lt;ol&gt; &rarr; lista ordenada</li>
@@ -107,7 +111,7 @@
                 </ul>
             </aside>
             <aside>
-                <h3>Tags de tabelas simples</h3>
+                <h3>Tags para tabelas simples</h3>
                 <ul>
                     <li>&lt;table&gt; &rarr; abre a tabela</li>
                     <li>&lt;caption&gt; &rarr; título/legenda da tabela</li>
@@ -117,13 +121,24 @@
                 </ul>
             </aside>
             <aside>
-                <h3>Tags de tabelas grandes/complexas</h3>
+                <h3>Tags para tabelas grandes/complexas</h3>
                 <ul>
                     <li>&lt;table&gt; &rarr; abre a tabela</li>
                     <li>&lt;caption&gt; &rarr; título/legenda da tabela</li>
                     <li>&lt;thead&gt; &rarr; cabeçalho da tabela &rarr; tr &rarr; td ou th</li>
                     <li>&lt;tbody&gt; &rarr; corpo da tabela &rarr; tr &rarr; td ou th</li>
                     <li>&lt;tfoot&gt; &rarr; rodapé da tabela &rarr; tr &rarr; td ou th</li>
+                </ul>
+            </aside>
+            <aside>
+                <h3>Tags para formulários</h3>
+                <ul>
+                    <li>&lt;form&gt; &rarr; abre o formulário</li>
+                    <li>&lt;fieldset&gt; &rarr; agrupar o formulário</li>
+                    <li>&lt;legend&gt; &rarr; título/legenda ao grupo</li>
+                    <li>&lt;input&gt; &rarr; pergunta</li>
+                    <li>&lt;label&gt; &rarr; faz a ligação com o &lt;input&gt;</li>
+                    <li>&lt;output&gt; &rarr; mostra na tela</li>
                 </ul>
             </aside>
         </article>
@@ -297,6 +312,9 @@
             </aside>
             <aside>
                 <h3>display:</h3>
+                <p>
+                    O atributo <strong>display:</strong> define o comportamento do elemento em relação aos demais elementos do documento.
+                </p>
                 <ol>
                     <li><strong>display: none;</strong> &rarr; faz com que o elemento HTML não seja renderizado (apaga na visualização)</li>
                     <li><strong>display: block;</strong> &rarr; faz com que o elemento HTML seja renderizado como bloco (ocupa linha inteira)</li>
@@ -310,7 +328,68 @@
             </aside>
             <aside>
                 <h3>position:</h3>
-
+                <p>
+                    A propriedade <strong>position:</strong> define como um elemento deve ser posicionado na página. Ela funciona em conjunto com as propriedades top, bottom, left, right para determinar a posição final de um elemento.
+                </p>
+                <ol>
+                    <li><strong>position: static;</strong> &rarr; posiciona o elemento no canto superior esquerdo do documento (padrão)</li>
+                    <li><strong>position: fixed;</strong> &rarr; o elemento fica fixo na tela, mesmo que a página tenha rolagem (pode ser usado para criar menus de navegação que continuam visíveis)</li>
+                    <li><strong>position: sticky;</strong> &rarr; o elemento fica fixo em relação ao rolamento da página, mas não em relação à tela</li>
+                    <li><strong>position: relative;</strong> &rarr; o elemento não muda de posição, mas é possível alterar a sua posição em relação à sua posição inicial</li>
+                    <li><strong>position: absolute;</strong> &rarr; o elemento pode ter 2 comportamentos diferentes, dependendo do valor do elemento pai</li>
+                </ol>
+                <p>
+                    A propriedade <strong>position:</strong> pode ser acompanhada de outras, tais como, <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong>, e <strong>left</strong>. Essas propriedades determinam como ficará a localização final do objeto. O valor <strong>postition: static;</strong> ignora o valor dessas propriedades. 
+                </p>
+            </aside>
+            <aside>
+                <h3>transform:</h3>
+                <p>
+                    A propriedade <strong>transform:</strong> permite modificar o espaço coordenado do modelo de formatação CSS. Usando-a, elementos podem ser traduzidos, rotacionados, ter seu tamanho ajustado e inclinados de acordo com os valores definidos.
+                </p>
+                <ol>
+                    <li><strong>transform: matrix( )</strong> &rarr; especifica uma matriz de transformação 2D composta dos 6 valores especificados (n°, n°, n°, n°, n°, n°).</li>
+                    <li><strong>transform: rotate( )</strong> &rarr; gira o elemento no sentido horário em torno de sua origem pelo ângulo especificado (n°deg).</li>
+                    <li><strong>transform: scale( )</strong> &rarr; especifica uma operação de escala 2D descrita por [sx, sy]. Se sy não for especificado, vai ser igual ao sx (n°, n°).</li>
+                    <li><strong>transform: scaleX( )</strong> &rarr; especifica uma operação de escala usando o vetor [sx, 1] (n°).</li>
+                    <li><strong>transform: scaleY( )</strong> &rarr; especidica uma operação de escala usando o vetor [1, sy] (n°).</li>
+                    <li><strong>transform: skew( )</strong> &rarr; inclina o elemento em torno dos eixos X e Y pelos ângulos especificados (n°deg, n°deg).</li>
+                    <li><strong>transform: skewX( )</strong> &rarr; inclina o elemento em torno do eixo X pelo ângulo escolhido (n°deg).</li>
+                    <li><strong>transform: skewY( )</strong> &rarr; inclina o elemento em torno do exio Y pelo ângulo escolhido (n°deg).</li>
+                    <li><strong>transform: translate( )</strong> &rarr; especifica uma translação 2D pelo vetor [tx, ty]. Se ty não for especificado, vai ser igual ao tx (n°, n°)</li>
+                    <li><strong>transform: translateX( )</strong> &rarr; traduz o elemento pela quantidade fornecida ao longo do eixo X (n°)</li>
+                    <li><strong>transform: translateY( )</strong> &rarr; traduz o elemento pela quantidade fornecida ao longo do eixo Y (n°)</li>
+                    <li><strong>transform-origin: posição + posição + n°;</strong> &rarr; rotação em 3D</li>
+                </ol>
+                <p>
+                    Se a propriedade tem um valor diferente de <strong>none</strong>, um contexto de empilhamento será criado. Neste caso, o objeto atuará como um bloco recipiente para <strong>position: fixed;</strong> para os elementos que estão contidos.
+                </p>
+            </aside>
+            <aside>
+                <h3>transition:</h3>
+                <p>
+                    A propriedade <strong>transition:</strong> permite definir a transição entre 2 estados de um elemento. Estados diferentes podem ser definidos usando pseudo-classes tais como <strong>:hover</strong> ou <strong>:active</strong>, ou usando JavaScript.
+                </p>
+                <ol>
+                    <li><strong><abbr title="A transition-behavior só é relevante quando usada em conjunto com outras propriedades de transição, principalmente transition-property e transition-duration, pois nenhuma transição ocorre se nenhuma propriedade for animada durante um período de tempo diferente de zero.">transition-behavior:</abbr> allow-discrete;</strong> &rarr; transições serão iniciadas no elemento para propriedades animadas discretas</li>
+                    <li><strong>transition-behavior: normal;</strong> &rarr; transições não serão iniciadas no elemento para propriedades animadas discretas</li>
+                    <li><strong>transition-delay:</strong> &rarr; (atraso de transição) determina o tempo de duração da espera antes de iniciar um efeito de transição quando seu valor muda (n°s)</li>
+                    <li><strong>transition-duration:</strong> &rarr; define o tempo que uma animação de transição deve levar para ser concluída (n°s)</li>
+                    <li><strong>transition-property:</strong> &rarr; define as propriedades CSS às quais um efeito de transição deve ser aplicado (all / none)</li>
+                    <li><strong><abbr title="ease / ease-in / ease-out / ease-in-out / linear / step-start / step-end">transition-timing-function:</abbr></strong> &rarr; é usada para descrever como os valores intermediários das propriedades CSS sendo afetados por um efeito de transição são calculados. Em essência isso permite você estabelecer uma curva de aceleração, para que então a velocidade da transição possa variar durante sua duração. Essa curva de aceleração é definida usando <strong>timing-function</strong> para cada propriedade a ser transicionada</li>
+                </ol>
+            </aside>
+            <aside>
+                <h3>translate:</h3>
+                <p>
+                    A propriedade <strong>translate:</strong> permite que você especifique transformações <strong>translate:</strong> individualmente e independentemente da propriedade <strong>transform:</strong>. É mais adequado para o uso de interface de usuário, e nos poupa quando se trata de lembrar a ordem exata que devemos especificar nos valores das funções de <strong>transform:</strong>.
+                </p>
+                <ol>
+                    <li><strong>translate: none;</strong> &rarr; especifica que nenhum deslocamento deva ser aplicado</li>
+                    <li><strong>translate: n°;</strong> &rarr; (único valor) especifica o deslocamento ao longo do eixo X</li>
+                    <li><strong>translate: n°, n°;</strong> &rarr; (2 valores) especifica o deslocamento ao longo dos eixos X e Y (respectivamente) de uma 2D translation</li>
+                    <li><strong>translate: n°, n°, n°;</strong> &rarr; (3 valores) especifica o deslocamento dos eixos X, Y e Z (respectivamente) de uma 3D translation</li>
+                </ol>
             </aside>
         </article>
     </main>
