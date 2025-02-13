@@ -247,29 +247,83 @@
                     <li><strong>:invalid</strong> &rarr; define o estilo de campos de formulário quando estão no estado inválido (conteúdo no formato incorreto)</li>
                     <li><strong>:checked</strong> &rarr; define o estilo de campos do tipo radio, checkbox ou option quando selecionado</li>
                     <li><strong>:focus</strong> &rarr; define o estilo do campo quando estiver em foco (campo em edição / selecionado)</li>
+                    <li><strong><abbr title="Se você precisar estilizar um botão default de um formulário ao qual não tenha sido definido um atributo classe use a pseudoclasse :default.">:default</abbr></strong> &rarr; define o estilo de campos de formulário entre um grupo de elementos similares</li>
+                    <li><strong>:disabled</strong> &rarr; define o estilo de campos de formulário que tenham sido desabilitados</li>
+                    <li><strong>:empty</strong> &rarr; casa com elementos que não tem qualquer tipo de conteúdo</li>
+                    <li><strong>:enabled</strong> &rarr; casa com elementos que estão habilitados</li>
+                    <li><strong>:in-range</strong> &rarr; casa com elementos que definem uma faixa de valores e cujos valores estejam dentro da faixa especificada</li>
+                    <li><strong>:out-of-range</strong> &rarr; casa com elementos que definem uma faixa de valores e cujos valores estejam fora da faixa especificada</li>
+                    <li><strong>:indeterminate</strong> &rarr; casa com elementos input do tipo radio buttons e check boxes que foram desmarcados pelo usuário ou que foram carregados na página sem estarem marcados</li>
+                    <li><strong>:optional</strong> &rarr; casa com campos do tipo input que não são de preenchimento obrigatório, ou seja, campos que não contêm o atributo required</li>
+                    <li><strong>:read-only</strong> &rarr; casa com elementos que não podem ser editados pelo usuário. É idêntica à pseudoclasse :disabled e o atributo que foi definido na marcação HTML é quem determina qual pseudoclasse usar.</li>
+                    <li><strong>:read-write</strong> &rarr; casa com elementos que podem ser editados pelo usuário. Casa também com elementos aos quais foi definido o atributo contenteditable na marcação HTML</li>
+                    <li><strong>:required</strong> &rarr; casa com elementos input aos quais foi definido o atributo required na marcação HTML.</li>
                 </ol>
             </aside>
             <aside>
                 <h3>Pseudo-classes comumente usadas em listas e tabelas</h3>
                 <ol>
-                    <li><strong>:first-child</strong> &rarr; permite estilizar o elemento que é o primeiro filho do elemento pai</li>
-                    <li><strong>:last-child</strong> &rarr; permite estilizar o elemento que é o último filho do elemento pai</li>
-                    <li><strong>:nth-child</strong> &rarr; permite estilizar o elemento que é o n-ésimo filho do elemento pai</li>
-                    <li><strong>:first-of-type</strong> &rarr; permite alterar a primeira ocorrência de um elemento dentro de seu container</li>
+                    <li><strong>:nth-child(even)</strong> &rarr; usado para fazer efeito zebrado (2n)</li>
+                    <li><strong>:nth-child(odd)</strong> &rarr; usado para fazer efeito zebrado (2n-1)</li>
                 </ol>
             </aside>
-
-
-
-
-
-
-
-
             <aside>
-                <h3>Pseudo-elementos</h3>
+                <h3>Pseudo-classes estruturais</h3>
+                <ol>
+                    <li><strong>:first-child</strong> &rarr; casa com o elemento primeiro filho de seu elemento pai</li>
+                    <li><strong>:last-child</strong> &rarr; casa com o elemento último filho de seu elemento pai</li>
+                    <li><strong>:first-of-type</strong> &rarr; casa com o primeiro elemento de um determinado tipo que seja filho de seu elemeto pai</li>
+                    <li><strong>:last-of-type</strong> &rarr; casa com o último elemento de um determinado tipo que seja filho de seu elemento pai.</li>
+                    <li><strong>:not</strong> &rarr; pseudoclasse de negação</li>
+                    <li><strong>:target</strong> &rarr; casa com o elemento ao qual foi definido um atributo <strong>ID</strong></li>
+                    <li><strong>:only-child</strong> &rarr; casa com o filho único de um elemento.</li>
+                    <li><strong>:only-of-type</strong> &rarr; casa com elementos que não têm irmãos do seu tipo. Ele é idêntico ao elemento <strong>:only-child</strong> exceto pelo fato de que casa com um determinado tipo de elemento o que faz com que o seletor seja mais específico.</li>
+                    <li><strong><abbr title="A pseudoclasse :nth admite um argumento que consiste em uma fórmula a ser inserida entre parênteses. A fórmula poderá ser um simples número inteiro, algo do tipo an+b ou as palavras chaves odd ou even.
+
+                        A fórmula an+b:
+                        a letra a é um número inteiro;
+                        a letra n é o literal n (ou seja, a própria letra n);
+                        o sinal + é o operador matemático que pode ser soma (+) ou subtração (-);
+                        a letra b é um número inteiro que deverá estar presente na fórmula somente se for usado o operador matemático.">:nth-child( )</abbr></strong> &rarr; casa com um ou mais elementos dependendo da ordem em que eles aparecem na marcação HTML</li>
+                    <li><strong>:nth-last-child( )</strong> &rarr; é idêntica à pseudoclasse <strong>:nth-child</strong> exceto que o casamento se dá contando-se os elementos filhos de trás para frente.</li>
+                    <li><strong>:nth-of-type( )</strong> &rarr; é idêntica à pseudoclasse :nth-child, a principal diferença é que se trata de um seletor mais específico, pois casa com elementos filhos de determinado tipo.</li>
+                    <li><strong>:nth-last-of-type( )</strong> &rarr; é idêntica à pseudoclasse :nth-of-type exceto que o casamento se dá contando-se os elementos filhos de trás para frente.</li>
+                </ol>
+            </aside>
+        </article>
+        <article>
+            <h2>PSEUDO-ELEMENTOS</h2>
+            <p>
+                O pseudo-elemento pode agir nas classes, nos elementos e nas ids, mexem no conteúdo periférico do elemento. Para pseudo-elemento utilizar ( <strong>::</strong> ), conseguimos colocar conteúdo sem o HTML, normalmente utiliza ( <strong>::before / ::after</strong> ) para saber se é para colocar o conteúdo antes ou depois.
+            </p>
+            <aside>
+                <h3>::before / :before</h3>
                 <p>
-                    O pseudo-elemento pode agir nas classes, nos elementos e nas ids, mexem no conteúdo periférico do elemento. Para pseudo-elemento utilizar ( <strong>::</strong> ), conseguimos colocar conteúdo sem o HTML, normalmente utiliza ( <strong>::before / ::after</strong> ) para saber se é para colocar o conteúdo antes ou depois.
+                    O pseudoelemento :before e seu vizinho :after cria conteúdo (textual ou de forma) em um elemento HTML regular. Ressaltamos mais uma vez que tais conteúdos não estão presentes no DOM embora possam ser manipulados como se estivessem. A propriedade content é uma funcionalidade das CSS.
+                </p>
+            </aside>
+            <aside>
+                <h3>::after / :after</h3>
+                <p>
+                    O pseudoelemento :after é usado para criar conteúdo (seja texto ou formas) em um elemento HTML. Tais conteúdos não serão incluídos no DOM, mas podem ser manipulados com CSS como se ali estivessem. para que isso seja possível é necessário que a propriedade content seja declarada nas CSS.
+                </p>
+            </aside>
+            <aside>
+                <h3>::first-letter / :first-letter</h3>
+                <p>
+                    O pseudoelemento :first-letter casa com aprimeira letra de uma linha de texto. Se for incluída uma imagem, vídeo, ou tabela antes do texto, mesmo assim, o casamento com a primeira letra não será alterado. É uma ótima funcionalidade para usar-se em parágrafos, por exemplo, com a finalidade de melhorar o apelo visual tipográfico sem precisar se recorrer a imagens ou recursos externos.
+                </p>
+            </aside>
+            <aside>
+                <h3>::first-line / :first-line</h3>
+                <p>
+                    O pseudoelemento :first-line casa com a primeira linha do texto de um elemento. Ele só causa efeito textos dentro de elementos nível de bloco e não causa efeito em elementos inline. Quando usado para estilizar um parágrafo, somente a primeira linha do parágrafo será estilizada, mesmo com o texto se distribuindo por várias linhas.
+                </p>
+            </aside>
+            <aside>
+                <h3>::selection</h3>
+                <p>
+                    O pseudoelemento ::selection casa com a porção do documento que tenha sido selecionada. Até segunda ordem os navegadores com engine baseadas em Gecko requerem o prefixo proprietário ::-moz-selection.
                 </p>
             </aside>
             <p>

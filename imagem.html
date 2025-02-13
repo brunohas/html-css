@@ -226,6 +226,33 @@
                 </code></pre>
             </aside>
         </article>
+        <article>
+            <h2>FILTROS DA IMAGEM</h2>
+            <p>
+                Os filtross gráficos são obtidos com uso da propriedade CSS <strong>filter:</strong> com valor expresso por uma ou mais funções CSS destinadas a aplicar efeitos em um elemento da marcação HTML. As funções previstas nas especificações para aplicação dos efeitos de filtragem são listadas a seguir:
+            </p>
+            <ol>
+                <li><strong>img {filter: blur( );}</strong> &rarr; foco/desfoque da imagem (0px ~ 10px)</li>
+                <li><strong>img {filter: brightness( );}</strong> &rarr; aumentar/dimuir brilho da imagem (0% ~ 300%)</li>
+                <li><strong>img {filter: contrast( );}</strong> &rarr; aumentar/diminuir contraste da imagem (0% ~ 300%)</li>
+                <li><strong>img {filter: grayscale( );}</strong> &rarr; preto e branco (0% ~ 100%)</li>
+                <li><strong>img {filter: invert( );}</strong> &rarr; inverter cores da imagem (0% ~ 100%)</li>
+                <li><strong>img {filter: opacity( );}</strong> &rarr; opacidade na imagem (0% ~ 100%)</li>
+                <li><strong>img {filter: saturate( );}</strong> &rarr; saturação da imagem (0% ~ 300%)</li>
+                <li><strong>img {filter: sepia( );}</strong> &rarr; converter cores da imagem p/ tons sépia (0% ~ 100%)</li>
+                <li><strong>img {filter: hue-rotate( );}</strong> &rarr; converter cores da imagem p/ tons em acordo com o ângulo da propriedade hue da cor (0deg ~ 360deg)</li>
+                <li><strong>img {filter: drop-shadow( );}</strong> &rarr; sombras na imagem (0px 0px 0px cor)</li>
+            </ol>
+            <p>
+                A especificação prevê a possibilidade de se aplicar mais de um filtro a uma imagem. A sintaxe para aplicação de filtros múltiplos é constituida por uma lista das funções de filtragem separadas por espaço em branco. No exemplo mostrado a seguir aplicamos os filtros <strong>saturate( )</strong>, <strong>invert( )</strong> e <strong>drop-shadow( )</strong>. Exemplo:
+            </p>
+            <pre><code>
+                       img {
+                        filter: saturare(35%) invert(65%) drop-shadow(10px 10px 10px black);
+                       }
+            </code></pre>
+            <img src="foto1.jpg" alt="Fot" style="filter: saturate(35%) invert(65%) drop-shadow(10px 10px 10px black); display: block; margin: auto;">
+        </article>
     </main>
     <footer>
         <p>
