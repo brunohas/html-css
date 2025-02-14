@@ -7,6 +7,41 @@
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu"/>
+    <style>
+        div.container {
+            background-color: lightsalmon;
+            display: flex;
+        }
+        div.item {
+            border: 1px solid black;
+            text-align: center;
+            flex: auto;
+        }
+        div.ritem {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        div.row {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: row;
+        }
+        div.rrow {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        div.column {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: column;
+        }
+        div.rcolumn {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -187,6 +222,19 @@
     &lt;/body&gt;
             </code></pre>
            </aside>
+           <aside>
+            <h3>Typical Device Breakpoints</h3>
+            <p>
+                Os <strong>Breakpoints</strong> de dispositivo são pontos de interrupção que determinam como um site se adapta a diferentes tamanhos de tela. Alguns pontos de interrupção comuns para dispositivos em 2025 incluem:
+            </p>
+            <ol>
+                <li><strong>Dispositivos extra pequenos</strong> &rarr; telefones, 600px e inferiores (<strong>@media screen and (max-width: 600px)</strong>)</li>
+                <li><strong>Dispositivos pequenos</strong> &rarr; tablets retratos e telefones grandes, 600px e superiores (<strong>@media screen and (min-width: 600px)</strong>)</li>
+                <li><strong>Dispositivos médios</strong> &rarr; tablets em paisagem, 768px e superiores (<strong>@media screen and (min-width: 768px)</strong>)</li>
+                <li><strong>Dispositivos grandes</strong> &Rarr; laptops/desktops, 992px e superiores (<strong>@media screen and (min-width: 992px)</strong>)</li>
+                <li><strong>Dispositivos extragrandes</strong> &rarr; laptops e desktops grandes, 1200px e superiores (<strong>@media screen and (min-width: 1200px)</strong>)</li>
+            </ol> 
+        </aside>
         </article>
         <article>
             <h2>MEDIA QUERY</h2>
@@ -252,18 +300,144 @@
             <p>
                 <a href="https://brunohas.github.io/projeto-mobile-first/" rel="external" target="_blank">Clique aqui</a> para ir na página com um exemplo de media queries junto com media features (abrir os arquivos para entender melhor).
             </p>
+        </article>
+        <article>
+            <h2>FLEXBOX</h2>
+            <p>
+                O Flexbox é uma funcionalidade do CSS que permite organizar elementos em uma página da web de forma flexível, podemos organizar elementos em linhas e colunas, alinhar elementos horizontalmente e verticalmente, criar layouts dinâmicos, criar páginas que funcionam bem em diferentes tamanhos de tela, etc. Para usar o flexbox, é necessário especificar um container (pai) e atribuir a propriedade <strong>display: flex;</strong>, e para os itens (filho) que estão dentro do container, atribuir a propriedade <strong>flex: auto;</strong> para que consiga ficar flexível. Por exemplo:
+            </p>
+            <pre><code>
+            &lt;body&gt;                                     |        &lt;style&gt;
+        (pai) &rarr; &lt;div class="container"&gt;                |            div.container {
+        (filho)  &rarr;  &lt;div class="item"&gt;A&lt;/div&gt;          |                background-color: lightsalmon;
+        (filho)  &rarr;  &lt;div class="item"&gt;B&lt;/div&gt;          |                <mark>display: flex;</mark>
+        (filho)  &rarr;  &lt;div class="item"&gt;C&lt;/div&gt;          |            }
+        (filho)  &rarr;  &lt;div class="item"&gt;D&lt;/div&gt;          |            div.item {
+        (filho)  &rarr;  &lt;div class="item"&gt;E&lt;/div&gt;          |                border: 1px solid black;
+        (filho)  &rarr;  &lt;div class="item"&gt;F&lt;/div&gt;          |                text-align: center;
+                &lt;/div&gt;                                 |                <mark>flex: auto;</mark>
+            &lt;/body&gt;                                    |            }
+                                                       |        &lt;/style&gt;
+            </code></pre>
+            <div class="container">
+                <div class="item">A</div>
+                <div class="item">B</div>
+                <div class="item">C</div>
+                <div class="item">D</div>
+                <div class="item">E</div>
+                <div class="item">F</div>
+            </div>
+            <h4>flex-direction</h4>
+            <p>
+                A propriedade <strong>flex-direction</strong> do CSS define a direção em que os elementos flexíveis serão exibidos. Ela é usada para definir o eixo principal e a direção (normal ou invertida). 
+            </p>
             <aside>
-                <h3>Typical Device Breakpoints</h3>
+                <h3>flex-direction: row; (padrão)</h3>
                 <p>
-                    Os <strong>Breakpoints</strong> de dispositivo são pontos de interrupção que determinam como um site se adapta a diferentes tamanhos de tela. Alguns pontos de interrupção comuns para dispositivos em 2025 incluem:
+                    Alinha os elementos em linha, da esquerda para direita.
                 </p>
-                <ol>
-                    <li><strong>Dispositivos extra pequenos</strong> &rarr; telefones, 600px e inferiores (<strong>@media screen and (max-width: 600px)</strong>)</li>
-                    <li><strong>Dispositivos pequenos</strong> &rarr; tablets retratos e telefones grandes, 600px e superiores (<strong>@media screen and (min-width: 600px)</strong>)</li>
-                    <li><strong>Dispositivos médios</strong> &rarr; tablets em paisagem, 768px e superiores (<strong>@media screen and (min-width: 768px)</strong>)</li>
-                    <li><strong>Dispositivos grandes</strong> &Rarr; laptops/desktops, 992px e superiores (<strong>@media screen and (min-width: 992px)</strong>)</li>
-                    <li><strong>Dispositivos extragrandes</strong> &rarr; laptops e desktops grandes, 1200px e superiores (<strong>@media screen and (min-width: 1200px)</strong>)</li>
-                </ol> 
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="row"&gt;                      |            div.row {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: row;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |                }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+                    <div class="row">
+                        <div class="ritem">A</div>
+                        <div class="ritem">B</div>
+                        <div class="ritem">C</div>
+                        <div class="ritem">D</div>
+                        <div class="ritem">E</div>
+                        <div class="ritem">F</div>
+                    </div>
+            </aside>
+            <aside>
+                <h3>flex-direction: row-reverse;</h3>
+                <p>
+                    Alinha os elementos em linha, da direita para esquerda.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="rrow"&gt;                     |            div.rrow {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: row-reverse;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px
+                    &lt;/body&gt;                                    |                ;}
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+                    <div class="rrow">
+                        <div class="ritem">A</div>
+                        <div class="ritem">B</div>
+                        <div class="ritem">C</div>
+                        <div class="ritem">D</div>
+                        <div class="ritem">E</div>
+                        <div class="ritem">F</div>
+                    </div>
+            </aside>
+            <aside>
+                <h3>flex-direction: column;</h3>
+                <p>
+                    Alinha os elementos em uma única coluna, de cima para baixo.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="column"&gt;                   |            div.column {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: column;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |                }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+                    <div class="column">
+                        <div class="ritem">A</div>
+                        <div class="ritem">B</div>
+                        <div class="ritem">C</div>
+                        <div class="ritem">D</div>
+                        <div class="ritem">E</div>
+                        <div class="ritem">F</div>
+                    </div>
+            </aside>
+            <aside>
+                <h3>flex-direction: column-reverse;</h3>
+                <p>
+                    Alinha os elementos em uma única coluna, de baixo para cima.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="rcolumn"&gt;                  |            div.rcolumn {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: column-reverse;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |                }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+                    <div class="rcolumn">
+                        <div class="ritem">A</div>
+                        <div class="ritem">B</div>
+                        <div class="ritem">C</div>
+                        <div class="ritem">D</div>
+                        <div class="ritem">E</div>
+                        <div class="ritem">F</div>
+                    </div>
             </aside>
         </article>
     </main>

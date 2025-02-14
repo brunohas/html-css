@@ -113,6 +113,14 @@ main > article > aside > h3 {
     padding-bottom: 20px;
 }
 
+h4 {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-indent: 30px;
+    padding: 20px;
+}
+
 main > article > aside {
     border: 1px solid black;
     margin: 20px;
