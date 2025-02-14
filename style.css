@@ -149,9 +149,9 @@ main > article > aside > ul {
 
 main > article > aside > ul.tres {
     list-style-position: inside;
-    list-style-type: disc;
+    list-style-type: '\1F9E0\00A0';
     columns: 3;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 main > article > aside > ul.um {
