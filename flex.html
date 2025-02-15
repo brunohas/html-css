@@ -6,14 +6,11 @@
     <title>Flexbox</title>
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
         body, html {
+            min-width: 1100px;
             height: 100vh;
-            min-width: none;
             font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgrey;
         }
         h1 {
             text-align: center;
@@ -29,11 +26,24 @@
             padding: 20px;
             font-weight: normal;
         }
+        aside {
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.66);
+            min-width: 450px;
+            max-width: 1000px;
+            background-color: white;
+            margin: auto;
+        }
         div.item {
             background-color: lightskyblue;
             border: 1px solid black;
             padding: 5px;
             width: 200px;
+        }
+        div.ritem {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            padding: 5px;
         }
         div.row {
             background-color: lightsalmon;
@@ -70,13 +80,99 @@
             display: flex;
             flex-wrap: wrap-reverse;
         }
+        div.flex1 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        div.flex2 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        div.flex3 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row wrap-reverse;
+        }
+        div.flex4 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row-reverse nowrap;
+        }
+        div.flex5 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row-reverse wrap;
+        }
+        div.flex6 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row-reverse wrap-reverse;
+        }
+        div.flex7 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        div.flex8 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: column wrap;
+        }
+        div.flex9 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: column wrap-reverse;
+        }
+        div.flex10 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: column-reverse nowrap;
+        }
+        div.flex11 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: column-reverse wrap;
+        }
+        div.flex12 {
+            display: flex;
+            flex-flow: column-reverse wrap-reverse;
+            padding-bottom: 50px;
+        }
+        img {
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+        }
     </style>
 </head>
 <body>
     <h1>Exemplos de Flexbox</h1>
     <hr>
     <h2>flex-direction</h2>
-    <h3>flex-direction: row; (alinha da esquerda p/ direita)</h3>
+    <h3>flex-direction: row; (alinha da esquerda p/ direita) - padrão</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-direction: row;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="row">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -86,6 +182,25 @@
         <div class="item">F</div>
     </div>
     <h3>flex-direction: row-reverse; (alinha da direita p/ esquerda)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-direction: row-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="rrow">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -95,6 +210,25 @@
         <div class="item">F</div>
     </div>
     <h3>flex-direction: column; (alinha em uma única coluna de cima para baixo)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-direction: column;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="column">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -104,6 +238,25 @@
         <div class="item">F</div>
     </div>
     <h3>flex-direction: column-reverse; (alinha em uma única coluna de baixo para cima)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-direction: column-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="rcolumn">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -115,7 +268,26 @@
     <br>
     <hr>
     <h2>flex-wrap</h2>
-    <h3>flex-wrap: nowrap; (não permite quebra de linha)</h3>
+    <h3>flex-wrap: nowrap; (não permite quebra de linha) - padrão</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-wrap: nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="nowrap">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -125,6 +297,25 @@
         <div class="item">F</div>
     </div>
     <h3>flex-wrap: wrap; (quebra de linha qnd um dos itens flexíveis não puder mais ser compactado)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-wrap: wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="wrap">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -134,6 +325,25 @@
         <div class="item">F</div>
     </div>
     <h3>flex-wrap: wrap-reverse; (quebra de linha na direção contrária, ou seja, para linha de cima)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-wrap: wrap-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
     <div class="rwrap">
         <div class="item">A</div>
         <div class="item">B</div>
@@ -145,17 +355,336 @@
     <br>
     <hr>
     <h2>flex-flow</h2>
-    <h3>flex-flow: row nowrap; (alinha esquerda p/ direita + não permite quebra de linha)</h3>
+    <h3>flex-flow: row nowrap; (alinha esquerda p/ direita + não permite quebra de linha) - padrão</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex1">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: row wrap; (alinha esquerda p/ direita + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex2">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: row wrap-reverse; (alinha esquerda p/ direita + quebra de linha ao contrária, para a linha acima)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex3">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: row-reverse nowrap; (alinha direita p/ esquerda + não permite quebra de linha)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row-reverse nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex4">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: row-reverse wrap; (alinha direita p/ esquerda + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row-reverse wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex5">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: row-reverse wrap-reverse; (alinha direita p/ esquerda + quebra de linha ao contrária, para a linha acima)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row-reverse wrap-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                width: 200px;
+                                                               |            }
+                                                               |        &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex6">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     <h3>flex-flow: column nowrap; (alinha única coluna de cima para baixo + não permite quebra de linha)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex7">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
     <h3>flex-flow: column wrap; (alinha única coluna de cima para baixo + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex8">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
     <h3>flex-flow: column wrap-reverse; (alinha única coluna de cima para baixo + quebra de linha ao contrária, para a linha acima)</h3>
-    <h3>flex-flow: column-reverse nowrap; (alinha única coluna de baixo para cima + não permite quebra de linha)</h3> 
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column wrap-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex9">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
+    <h3>flex-flow: column-reverse nowrap; (alinha única coluna de baixo para cima + não permite quebra de linha)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column-reverse nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex10">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
     <h3>flex-flow: column-reverse wrap; (alinha única coluna de baixo para cima + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column-reverse wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex11">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
     <h3>flex-flow: column-reverse wrap-reverse; (alinha única coluna de baixo para cima + quebra de linha ao contrária, para a linha acima)</h3>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column-reverse wrap-reverse;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |           }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <br>
+    <div class="flex12">
+        <div class="ritem">A</div>
+        <div class="ritem">B</div>
+        <div class="ritem">C</div>
+        <div class="ritem">D</div>
+        <div class="ritem">E</div>
+        <div class="ritem">F</div>
+    </div>
+    <p><a href="respon.html" rel="prev"><img src="imagens/voltar.png" alt="Voltar"></a></p>
 </body>
 </html>
