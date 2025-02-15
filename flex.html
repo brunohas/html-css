@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body, html {
+            height: 100vh;
+            min-width: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            padding: 30px;
+        }
+        h2 {
+            text-indent: 50px;
+            padding: 10px;
+            font-size: 2em;
+        }
+        h3 {
+            text-indent: 20px;
+            padding: 20px;
+            font-weight: normal;
+        }
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            padding: 5px;
+            width: 200px;
+        }
+        div.row {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: row;
+        }
+        div.rrow {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        div.column {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: column;
+        }
+        div.rcolumn {
+            background-color: lightsalmon;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        div.nowrap {
+            background-color: lightsalmon;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        div.wrap {
+            background-color: lightsalmon;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div.rwrap {
+            background-color: lightsalmon;
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplos de Flexbox</h1>
+    <hr>
+    <h2>flex-direction</h2>
+    <h3>flex-direction: row; (alinha da esquerda p/ direita)</h3>
+    <div class="row">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <h3>flex-direction: row-reverse; (alinha da direita p/ esquerda)</h3>
+    <div class="rrow">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <h3>flex-direction: column; (alinha em uma única coluna de cima para baixo)</h3>
+    <div class="column">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <h3>flex-direction: column-reverse; (alinha em uma única coluna de baixo para cima)</h3>
+    <div class="rcolumn">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <br>
+    <hr>
+    <h2>flex-wrap</h2>
+    <h3>flex-wrap: nowrap; (não permite quebra de linha)</h3>
+    <div class="nowrap">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <h3>flex-wrap: wrap; (quebra de linha qnd um dos itens flexíveis não puder mais ser compactado)</h3>
+    <div class="wrap">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <h3>flex-wrap: wrap-reverse; (quebra de linha na direção contrária, ou seja, para linha de cima)</h3>
+    <div class="rwrap">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
+    <br>
+    <hr>
+    <h2>flex-flow</h2>
+    <h3>flex-flow: row nowrap; (alinha esquerda p/ direita + não permite quebra de linha)</h3>
+    <h3>flex-flow: row wrap; (alinha esquerda p/ direita + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <h3>flex-flow: row wrap-reverse; (alinha esquerda p/ direita + quebra de linha ao contrária, para a linha acima)</h3>
+    <h3>flex-flow: row-reverse nowrap; (alinha direita p/ esquerda + não permite quebra de linha)</h3>
+    <h3>flex-flow: row-reverse wrap; (alinha direita p/ esquerda + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <h3>flex-flow: row-reverse wrap-reverse; (alinha direita p/ esquerda + quebra de linha ao contrária, para a linha acima)</h3>
+    <h3>flex-flow: column nowrap; (alinha única coluna de cima para baixo + não permite quebra de linha)</h3>
+    <h3>flex-flow: column wrap; (alinha única coluna de cima para baixo + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <h3>flex-flow: column wrap-reverse; (alinha única coluna de cima para baixo + quebra de linha ao contrária, para a linha acima)</h3>
+    <h3>flex-flow: column-reverse nowrap; (alinha única coluna de baixo para cima + não permite quebra de linha)</h3> 
+    <h3>flex-flow: column-reverse wrap; (alinha única coluna de baixo para cima + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <h3>flex-flow: column-reverse wrap-reverse; (alinha única coluna de baixo para cima + quebra de linha ao contrária, para a linha acima)</h3>
+</body>
+</html>

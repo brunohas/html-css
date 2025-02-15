@@ -439,6 +439,89 @@
                         <div class="ritem">F</div>
                     </div>
             </aside>
+            <h4>flex-wrap</h4>
+            <p>
+                A propriedade CSS <strong>flex-wrap</strong> define se os itens flexíveis devem ser forçados a ficar em uma única linha ou se podem ser quebrados em várias linhas. Para usar o <strong>flex-wrap</strong>, é preciso considerar o tamanho dos itens e do container, para que a distribuição dos elementos seja adequada ao design do layout. 
+            </p>
+            <aside>
+                <h3>flex-wrap: nowrap; (padrão)</h3>
+                <p>
+                    Valor padrão, não permite a quebra de linha.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="nowrap"&gt;                   |            div.nowrap {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: nowrap;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |            }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+            </aside>
+            <aside>
+                <h3>flex-wrap: wrap;</h3>
+                <p>
+                    Quebra de linha quando um dos itens flexíveis não puder mais ser compactado.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="wrap"&gt;                     |            div.wrap {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: wrap;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |            }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+            </aside>
+            <aside>
+                <h3>flex-wrap: wrap-reverse;</h3>
+                <p>
+                    Quebra a linha na direção contrária, ou seja, para a linha acima.
+                </p>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="rwrap"&gt;                    |            div.rwrap {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: wrap;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |            }
+                                                               |        &lt;/style&gt;
+                    </code></pre>
+            </aside>
+            <h4>flex-flow</h4>
+            <p>
+                A propriedade CSS <strong>flex-flow</strong> é uma propriedade shorthand (uma mesma declaração inclui vários valores relacionados a mais de uma propriedade) que inclui flex-direction e flex-wrap. Exemplo a seguir é <strong>flex-direction: row;</strong> e <strong>flex-wrap: nowrap;</strong>:
+            </p>
+            <aside>
+                <pre><code>
+                    &lt;body&gt;                                     |        &lt;style&gt;
+                (pai) &rarr; &lt;div class="rwrap"&gt;                    |            div.rwrap {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
+                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-flow: row nowrap;</mark>
+                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
+                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {
+                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
+                        &lt;/div&gt;                                 |                padding: 5px;
+                    &lt;/body&gt;                                    |            }
+                                                               |        &lt;/style&gt;
+                </code></pre>
+            </aside>
+            <p>
+                <a href="flex.html">Clique aqui</a> para ir na página com alguns exemplos de <strong>flex-direction</strong>, <strong>flex-wrap</strong>, e <strong>flex-flow</strong> (aumente e diminua a tela para ver melhor).
+            </p>
         </article>
     </main>
     <footer>
