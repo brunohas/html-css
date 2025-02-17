@@ -17,29 +17,9 @@
             text-align: center;
             flex: auto;
         }
-        div.ritem {
-            border: 1px solid black;
-            padding: 5px;
-        }
-        div.row {
-            background-color: lightsalmon;
-            display: flex;
-            flex-direction: row;
-        }
-        div.rrow {
-            background-color: lightsalmon;
-            display: flex;
-            flex-direction: row-reverse;
-        }
-        div.column {
-            background-color: lightsalmon;
-            display: flex;
-            flex-direction: column;
-        }
-        div.rcolumn {
-            background-color: lightsalmon;
-            display: flex;
-            flex-direction: column-reverse;
+        img {
+            display: block;
+            margin:auto;
         }
     </style>
 </head>
@@ -304,7 +284,7 @@
         <article>
             <h2>FLEXBOX</h2>
             <p>
-                O Flexbox é uma funcionalidade do CSS que permite organizar elementos em uma página da web de forma flexível, podemos organizar elementos em linhas e colunas, alinhar elementos horizontalmente e verticalmente, criar layouts dinâmicos, criar páginas que funcionam bem em diferentes tamanhos de tela, etc. Para usar o flexbox, é necessário especificar um container (pai) e atribuir a propriedade <strong>display: flex;</strong>, e para os itens (filho) que estão dentro do container, atribuir a propriedade <strong>flex: auto;</strong> para que consiga ficar flexível. Por exemplo:
+                O Flexbox é uma funcionalidade do CSS que permite organizar elementos em uma página da web de forma flexível, podemos organizar elementos em linhas e colunas, alinhar elementos horizontalmente e verticalmente, criar layouts dinâmicos, criar páginas que funcionam bem em diferentes tamanhos de tela, etc. Para usar o flexbox, é necessário especificar um container (pai) e atribuir a propriedade <strong>display: flex;</strong>, e para os itens (filho) que estão dentro do container, atribuir a propriedade <strong>flex: auto;</strong> (não permite espaço em branco dentro do elemento pai) para que consiga ficar flexível. Por exemplo:
             </p>
             <pre><code>
             &lt;body&gt;                                     |        &lt;style&gt;
@@ -327,197 +307,63 @@
                 <div class="item">E</div>
                 <div class="item">F</div>
             </div>
+            <p>
+                Segue foto de um exemplo de eixo da flexbox padrão:
+            </p>
+            <aside>
+                <br>
+                <img src="imagens/padrao.png" alt="Modelo de Flexbox">
+                <ul>
+                    <li>main-axis = eixo principal</li>
+                    <li>main-start = ponto inicial do eixo principal</li>
+                    <li>main-end = ponto final do eixo principal</li>
+                    <li>cross-axis = eixo transversal</li>
+                    <li>cross-start = ponto inicial do eixo transversal</li>
+                    <li>cross-end = ponto final do eixo transversal</li>
+                </ul>
+            </aside>
             <h4>flex-direction</h4>
             <p>
                 A propriedade <strong>flex-direction</strong> do CSS define a direção em que os elementos flexíveis serão exibidos. Ela é usada para definir o eixo principal e a direção (normal ou invertida). 
             </p>
             <aside>
-                <h3>flex-direction: row; (padrão)</h3>
-                <p>
-                    Alinha os elementos em linha, da esquerda para direita.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="row"&gt;                      |            div.row {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: row;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |                }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-                    <div class="row">
-                        <div class="ritem">A</div>
-                        <div class="ritem">B</div>
-                        <div class="ritem">C</div>
-                        <div class="ritem">D</div>
-                        <div class="ritem">E</div>
-                        <div class="ritem">F</div>
-                    </div>
-            </aside>
-            <aside>
-                <h3>flex-direction: row-reverse;</h3>
-                <p>
-                    Alinha os elementos em linha, da direita para esquerda.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="rrow"&gt;                     |            div.rrow {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: row-reverse;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px
-                    &lt;/body&gt;                                    |                ;}
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-                    <div class="rrow">
-                        <div class="ritem">A</div>
-                        <div class="ritem">B</div>
-                        <div class="ritem">C</div>
-                        <div class="ritem">D</div>
-                        <div class="ritem">E</div>
-                        <div class="ritem">F</div>
-                    </div>
-            </aside>
-            <aside>
-                <h3>flex-direction: column;</h3>
-                <p>
-                    Alinha os elementos em uma única coluna, de cima para baixo.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="column"&gt;                   |            div.column {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: column;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |                }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-                    <div class="column">
-                        <div class="ritem">A</div>
-                        <div class="ritem">B</div>
-                        <div class="ritem">C</div>
-                        <div class="ritem">D</div>
-                        <div class="ritem">E</div>
-                        <div class="ritem">F</div>
-                    </div>
-            </aside>
-            <aside>
-                <h3>flex-direction: column-reverse;</h3>
-                <p>
-                    Alinha os elementos em uma única coluna, de baixo para cima.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="rcolumn"&gt;                  |            div.rcolumn {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-direction: column-reverse;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |                }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-                    <div class="rcolumn">
-                        <div class="ritem">A</div>
-                        <div class="ritem">B</div>
-                        <div class="ritem">C</div>
-                        <div class="ritem">D</div>
-                        <div class="ritem">E</div>
-                        <div class="ritem">F</div>
-                    </div>
+                <ol>
+                    <li><strong>flex-direction: row;</strong> &rarr; alinha os elementos em linha, da esquerda para direita (padrão).</li>
+                    <li><strong>flex-direction: row-reverse;</strong> &rarr; alinha os elementos em linha, da direita para esquerda.</li>
+                    <li><strong>flex-direction: column;</strong> &rarr; alinha os elementos em uma única coluna, de cima para baixo.</li>
+                    <li><strong>flex-direction: column-reverse;</strong> &rarr; alinha os elementos em uma única coluna, de baixo para cima.</li>
+                </ol>
             </aside>
             <h4>flex-wrap</h4>
             <p>
                 A propriedade CSS <strong>flex-wrap</strong> define se os itens flexíveis devem ser forçados a ficar em uma única linha ou se podem ser quebrados em várias linhas. Para usar o <strong>flex-wrap</strong>, é preciso considerar o tamanho dos itens e do container, para que a distribuição dos elementos seja adequada ao design do layout. 
             </p>
             <aside>
-                <h3>flex-wrap: nowrap; (padrão)</h3>
-                <p>
-                    Valor padrão, não permite a quebra de linha.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="nowrap"&gt;                   |            div.nowrap {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: nowrap;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |            }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-            </aside>
-            <aside>
-                <h3>flex-wrap: wrap;</h3>
-                <p>
-                    Quebra de linha quando um dos itens flexíveis não puder mais ser compactado.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="wrap"&gt;                     |            div.wrap {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: wrap;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |            }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
-            </aside>
-            <aside>
-                <h3>flex-wrap: wrap-reverse;</h3>
-                <p>
-                    Quebra a linha na direção contrária, ou seja, para a linha acima.
-                </p>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="rwrap"&gt;                    |            div.rwrap {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-wrap: wrap;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {    
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |            }
-                                                               |        &lt;/style&gt;
-                    </code></pre>
+                <ol>
+                    <li><strong>flex-wrap: nowrap;</strong> &rarr; não permite a quebra de linha (padrão).</li>
+                    <li><strong>flex-wrap: wrap;</strong> &rarr; quebra de linha quando um dos itens flexíveis não puder mais ser compactado.</li>
+                    <li><strong>flex-wrap: wrap-reverse;</strong> &rarr; quebra de linha na direção contrária, ou seja, para linha de acima.</li>
+                </ol>
             </aside>
             <h4>flex-flow</h4>
             <p>
-                A propriedade CSS <strong>flex-flow</strong> é uma propriedade shorthand (uma mesma declaração inclui vários valores relacionados a mais de uma propriedade) que inclui flex-direction e flex-wrap. Exemplo a seguir é <strong>flex-direction: row;</strong> e <strong>flex-wrap: nowrap;</strong>:
+                A propriedade CSS <strong>flex-flow</strong> é uma propriedade shorthand (uma mesma declaração inclui vários valores relacionados a mais de uma propriedade) que inclui flex-direction e flex-wrap. Segue todos os tipos de <strong>flex-flow</strong>:
             </p>
             <aside>
-                <pre><code>
-                    &lt;body&gt;                                     |        &lt;style&gt;
-                (pai) &rarr; &lt;div class="rwrap"&gt;                    |            div.rwrap {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;A&lt;/div&gt;         |                background-color: lightsalmon;
-                (filho)  &rarr;  &lt;div class="ritem"&gt;B&lt;/div&gt;         |                <mark>display: flex;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;C&lt;/div&gt;         |                <mark>flex-flow: row nowrap;</mark>
-                (filho)  &rarr;  &lt;div class="ritem"&gt;D&lt;/div&gt;         |            }
-                (filho)  &rarr;  &lt;div class="ritem"&gt;E&lt;/div&gt;         |            div.ritem {
-                (filho)  &rarr;  &lt;div class="ritem"&gt;F&lt;/div&gt;         |                border: 1px solid black;
-                        &lt;/div&gt;                                 |                padding: 5px;
-                    &lt;/body&gt;                                    |            }
-                                                               |        &lt;/style&gt;
-                </code></pre>
+                <ol>
+                    <li><strong>flex-flow: row nowrap;</strong> &rarr; alinha da esquerda para direita + não permite quebra de linha (padrão).</li>
+                    <li><strong>flex-flow: row wrap;</strong> &rarr; alinha da esquerda para direita + quebra de linha quando item flexível não puder ser mais compactado.</li>
+                    <li><strong>flex-flow: row wrap-reverse;</strong> &rarr; alinha da esquerda para direita + quebra de linha ao contrário, para linha de cima.</li>
+                    <li><strong>flex-flow: row-reverse nowrap;</strong> &rarr; alinha da direita para esquerda + não permite quebra de linha.</li>
+                    <li><strong>flex-flow: row-reverse wrap;</strong> &rarr; alinha da direita para esquerda + quebra de linha quando item flexível não puder ser mais compactado.</li>
+                    <li><strong>flex-flow: row-reverse wrap-reverse;</strong> &rarr; alinha da direita para esquerda + quebra de linha ao contrário, para linha de cima.</li>
+                    <li><strong>flex-flow: columns nowrap;</strong> &rarr; alinha em uma única coluna de cima para baixo + não permite quebra de linha.</li>
+                    <li><strong>flex-flow: columns wrap;</strong> &rarr; alinha em uma única coluna de cima para baixo + quebra de linha quando item flexível não puder ser mais compactado.</li>
+                    <li><strong>flex-flow: columns wrap-reverse;</strong> &rarr; alinha em uma única coluna de cima para baixo + </li>
+                    <li><strong>flex-flow: columns-reverse nowrap;</strong> &rarr; alinha em uma única coluna de baixo para cima + não permite quebra de linha.</li>
+                    <li><strong>flex-flow: columns-reverse wrap;</strong> &rarr; alinha em uma única coluna de baixo para cima + quebra de linha quando item flexível não puder ser mais compactado.</li>
+                    <li><strong>flex-flow: columns-reverse wrap-reverse;</strong> &rarr; alinha em uma única coluna de baixo para cima + quebra de linha ao contrário, para linha de cima.</li>
+                </ol>
             </aside>
             <p>
                 <a href="flex.html">Clique aqui</a> para ir na página com alguns exemplos de <strong>flex-direction</strong>, <strong>flex-wrap</strong>, e <strong>flex-flow</strong> (aumente e diminua a tela para ver melhor).

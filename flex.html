@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <style>
         body, html {
-            min-width: 1100px;
             height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
             background-color: lightgrey;
@@ -119,11 +118,13 @@
             background-color: lightsalmon;
             display: flex;
             flex-flow: column wrap;
+            height: 100px;
         }
         div.flex9 {
             background-color: lightsalmon;
             display: flex;
             flex-flow: column wrap-reverse;
+            height: 80px;
         }
         div.flex10 {
             background-color: lightsalmon;
@@ -134,18 +135,20 @@
             background-color: lightsalmon;
             display: flex;
             flex-flow: column-reverse wrap;
+            height: 120px;
         }
         div.flex12 {
+            background-color: lightsalmon;
             display: flex;
             flex-flow: column-reverse wrap-reverse;
-            padding-bottom: 50px;
+            height: 90px;
         }
         img {
             display: block;
             margin: auto;
-            padding-bottom: 20px;
+            padding: 10px;
 
-            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.7));
         }
     </style>
 </head>
@@ -155,6 +158,7 @@
     <h2>flex-direction</h2>
     <h3>flex-direction: row; (alinha da esquerda p/ direita) - padrão</h3>
     <aside>
+        <img src="imagens/row.png" alt="Modelo de Flexbox">
         <pre>
             <code>
                 &lt;body&gt;                                         |        &lt;style&gt;
@@ -183,6 +187,7 @@
     </div>
     <h3>flex-direction: row-reverse; (alinha da direita p/ esquerda)</h3>
     <aside>
+        <img src="imagens/rrow.png" alt="Modelo de Flexbox">
         <pre>
             <code>
                 &lt;body&gt;                                         |        &lt;style&gt;
@@ -211,6 +216,7 @@
     </div>
     <h3>flex-direction: column; (alinha em uma única coluna de cima para baixo)</h3>
     <aside>
+        <img src="imagens/column.png" alt="Modelo de Flexbox">
         <pre>
             <code>
                 &lt;body&gt;                                         |        &lt;style&gt;
@@ -239,6 +245,7 @@
     </div>
     <h3>flex-direction: column-reverse; (alinha em uma única coluna de baixo para cima)</h3>
     <aside>
+        <img src="imagens/rcolumn.png" alt="Modelo de Flexbox">
         <pre>
             <code>
                 &lt;body&gt;                                         |        &lt;style&gt;
@@ -551,6 +558,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column wrap; (alinha única coluna de cima para baixo + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
+    </p>
     <aside>
         <pre>
             <code>
@@ -559,11 +569,12 @@
                         &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
                         &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
                         &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column wrap;</mark>
-                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
-                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
-                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
-                        &lt;/div&gt;                                 |                border: 1px solid black;
-                    &lt;/body&gt;                                    |           }
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>height: 100px;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {    
+                        &lt;/div&gt;                                 |                background-color: lightskyblue;
+                    &lt;/body&gt;                                    |                border: 1px solid black;
+                                                               |            }
                                                                |         &lt;/style&gt;
             </code>
         </pre>
@@ -578,6 +589,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column wrap-reverse; (alinha única coluna de cima para baixo + quebra de linha ao contrária, para a linha acima)</h3>
+    <p>
+        Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
+    </p>
     <aside>
         <pre>
             <code>
@@ -586,11 +600,12 @@
                         &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
                         &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
                         &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column wrap-reverse;</mark>
-                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
-                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
-                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
-                        &lt;/div&gt;                                 |                border: 1px solid black;
-                    &lt;/body&gt;                                    |           }
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>height: 80px;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {    
+                        &lt;/div&gt;                                 |                background-color: lightskyblue;
+                    &lt;/body&gt;                                    |                border: 1px solid black; 
+                                                               |            }
                                                                |         &lt;/style&gt;
             </code>
         </pre>
@@ -617,8 +632,8 @@
                         &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
                         &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
                         &lt;/div&gt;                                 |                border: 1px solid black;
-                    &lt;/body&gt;                                    |           }
-                                                               |         &lt;/style&gt;
+                    &lt;/body&gt;                                    |            }   
+                                                               |         &lt;/style&gt;        
             </code>
         </pre>
     </aside>
@@ -632,6 +647,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column-reverse wrap; (alinha única coluna de baixo para cima + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
+    </p>
     <aside>
         <pre>
             <code>
@@ -640,11 +658,12 @@
                         &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
                         &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
                         &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column-reverse wrap;</mark>
-                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
-                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
-                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
-                        &lt;/div&gt;                                 |                border: 1px solid black;
-                    &lt;/body&gt;                                    |           }
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>height: 120px;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {    
+                        &lt;/div&gt;                                 |                background-color: lightskyblue;
+                    &lt;/body&gt;                                    |                border: 1px solid black;
+                                                               |            }
                                                                |         &lt;/style&gt;
             </code>
         </pre>
@@ -659,6 +678,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column-reverse wrap-reverse; (alinha única coluna de baixo para cima + quebra de linha ao contrária, para a linha acima)</h3>
+    <p>
+        Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
+    </p>
     <aside>
         <pre>
             <code>
@@ -667,11 +689,12 @@
                         &lt;div class="item"&gt;A&lt;/div&gt;              |                background-color: lightsalmon;
                         &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
                         &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: column-reverse wrap-reverse;</mark>
-                        &lt;div class="item"&gt;D&lt;/div&gt;              |            }
-                        &lt;div class="item"&gt;E&lt;/div&gt;              |            div.item {
-                        &lt;div class="item"&gt;F&lt;/div&gt;              |                background-color: lightskyblue;
-                        &lt;/div&gt;                                 |                border: 1px solid black;
-                    &lt;/body&gt;                                    |           }
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>height: 90px;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {    
+                        &lt;/div&gt;                                 |                background-color: lightskyblue;
+                    &lt;/body&gt;                                    |                border: 1px solid black;
+                                                               |            }
                                                                |         &lt;/style&gt;
             </code>
         </pre>
