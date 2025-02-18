@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento itens Flexbox</title>
+    <link rel="shortcut icon" href="../imagens/icon.png" type="image/x-icon">
+    <style>
+        body, html {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgrey;
+        }
+        h1 {
+            text-align: center;
+            padding: 30px;
+        }
+        h2 {
+            text-indent: 50px;
+            padding: 10px;
+            font-size: 2em;
+            text-decoration: underline;
+        }
+        h3 {
+            text-indent: 20px;
+            padding: 20px;
+            font-weight: bold;
+        }
+        p {
+            text-indent: 80px;
+        }
+        aside {
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.66);
+            min-width: 450px;
+            max-width: 1000px;
+            background-color: white;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+        img {
+            display: block;
+            margin: auto;
+            padding: 10px;
+
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.7));
+        }
+        div.container {
+            background-color: lightsalmon;
+            height: 300px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+        }
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            width: 250px;
+        }
+        div#a1 {
+            align-self: auto;
+        }
+        div#a2 {
+            align-self: flex-start;
+        }
+        div#a3 {
+         align-self: flex-end;   
+        }
+        div#a4 {
+            align-self: center;
+        }
+        div#a5 {
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alinhamento de itens na Flexbox</h1>
+    <hr>
+    <h2>align-self - (alinhamento dos itens de um contêiner)</h2>
+    <h3>align-self: auto; - padrão</h3>
+    <p>
+        Herda as características de alinhamento vertical de seu pai (align-content ou align-items).
+    </p>
+    <h3>align-self: flex-start;</h3>
+    <p>
+        Alinhamento grudado com o <strong>cross-start</strong>.
+    </p>
+    <h3>align-self: flex-end;</h3>
+    <p>
+        Alinhamento grudado com o <strong>cross-end</strong>.
+    </p>
+    <h3>align-self: center;</h3>
+    <p>
+        Calcula o meio entre o <strong>cross-start</strong> e o <strong>cross-end</strong> e deixa os elementos no centro.
+    </p>
+    <h3>align-self: stretch;</h3>
+    <p>
+        Estica o elemento para que caiba no espaço inteiro do contêiner.
+    </p>
+    <hr>
+    <h3>Agora segue os exemplos de todos os align-self:</h3>
+    
+    <aside>
+        <img src="../imagens/align-self.png" alt="Modelo de Flexbox">
+        <pre>
+            <code>
+                                                       |        &lt;style&gt;
+                                                       |            div.conteiner { background-color: lightsalmon;
+        &lt;body&gt;                                         |                height: 300px;
+            &lt;div class="conteiner"&gt;                    |                <mark>display: flex;</mark>
+                &lt;div class="item" id="a1"&gt;A&lt;/div&gt;      |                <mark>flex-flow: row wrap;</mark>
+                &lt;div class="item" id="a2"&gt;B&lt;/div&gt;      |                <mark>align-items: flex-start;</mark>}   
+                &lt;div class="item" id="a3"&gt;C&lt;/div&gt;      |            div.item { background-color: lightskyblue;    
+                &lt;div class="item" id="a4"&gt;D&lt;/div&gt;      |                border: 1px solid black;
+                &lt;div class="item" id="a5"&gt;E&lt;/div&gt;      |                text-align: center;
+            &lt;/div&gt;                                     |                padding: 10px;
+        &lt;/body&gt;                                        |                width: 250px;}
+
+    div#a1 {              | div#a2 {                    | div#a3 {                  | div#a4 {                | div#a5 {
+        <mark>align-self: auto;</mark> |     <mark>align-self: flex-start;</mark> |     <mark>align-self: flex-end;</mark> |     <mark>align-self: center;</mark> |     <mark>align-self: stretch;</mark>
+    }                     | }                           | }                         | }                       | }
+            </code>
+        </pre>
+    </aside>
+    <div class="container">
+        <div class="item" id="a1">A</div>
+        <div class="item" id="a2">B</div>
+        <div class="item" id="a3">C</div>
+        <div class="item" id="a4">D</div>
+        <div class="item" id="a5">E</div>
+    </div>
+    <br>
+    <hr>
+    <a href="../paginas/respon.html" rel="prev"><img id="voltar" src="../imagens/voltar.png" alt="Voltar"></a>
+</body>
+</html>

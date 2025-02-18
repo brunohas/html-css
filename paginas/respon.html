@@ -17,9 +17,39 @@
             text-align: center;
             flex: auto;
         }
+        div.aitem {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
         img {
             display: block;
             margin:auto;
+        }
+        div#a1 {
+            order: 0;
+        }
+        div#a2 {
+            order: -2;
+        }
+        div#a3 {
+            order: 4;     
+        }
+        div#a4 {
+            order: 8;    
+        }
+        div#a5 {
+            order: 2;
+        }
+        div#a6 {
+            order: -4;
+        }
+        div#a7 {
+            order: 0;
+        }
+        div#a8 {
+            order: 2;
         }
     </style>
 </head>
@@ -397,7 +427,6 @@
                     <li><strong>align-items: center;</strong> &rarr; alinha os elementos no centro do eixo transversal.</li>
                 </ol>
             </aside>
-            
             <h4>align-content</h4>
             <p>
                 A propriedade CSS <strong>align-content</strong> serve para organizar as linhas de um contêiner flexível quando há espaço extra no eixo transversal, só pode ser utilizado quando tiver quebra de linha (<strong>flex-wrap: wrap;</strong> ou <strong>flex-wrap: wrap-reverse;</strong>).
@@ -416,6 +445,67 @@
             <p>
                 <a href="../paginas/alinhamento.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>justify-content</strong>, <strong>align-items</strong> e <strong>align-content</strong>.
             </p> 
+            <h4>align-self</h4>
+            <p>
+                A propriedade CSS <strong>align-self</strong> define o alinhamento de um item individual dentro de um flexbox ou contêiner de grade, substitui o valor <strong>align-items</strong> para itens flexíveis específicos, funciona diretamente no <strong>cross-axis</strong>.
+            </p>
+            <aside>
+                <ol>
+                    <li><strong>align-self: auto;</strong> &rarr; herda a característica de alinhamento vertical de seu pai, seja ele o <strong>align-content</strong> ou <strong>align-items</strong> (padrão).</li>
+                    <li><strong>align-self: flex-start;</strong> &rarr; alinhamento grudado com o <strong>cross-start</strong>.</li>
+                    <li><strong>align-self: flex-end;</strong> &rarr; alinhamento grudado com o <strong>cross-end</strong>.</li>
+                    <li><strong>align-self: center</strong> &rarr; calcula o meio entre o <strong>cross-start</strong> e o <strong>cross-end</strong> e deixa os elementos no centro.</li>
+                    <li><strong>align-self: stretch;</strong> &rarr; estica o elemento para que caiba no espaço inteiro do contêiner.</li>
+                </ol>
+            </aside>
+
+
+
+
+
+
+
+
+
+
+            <h4>order</h4>
+            <p>
+                A propriedade CSS <strong>order</strong> serve para definir a ordem de elementos em um contêiner flex (se atentar a direção flex-direction). Todo item em <strong>flex-box</strong> vai ter <strong>order: 0;</strong>, para alterar acrescentamos o parâmetro <strong>order: </strong> dentro da tag de estilo. A ordem é crescente, ou seja, do menor número (ou número negativo) para o maior, agora segue um exemplo: 
+            </p>
+            <aside>
+                <pre>
+                    <code>
+                                                               |        &lt;style&gt;
+                                                               |            div.conteiner {
+                &lt;body&gt;                                         |                background-color: lightsalmon;
+                    &lt;div class="conteiner"&gt;                    |                display: flex;
+                        &lt;div class="item" id="a1"&gt;A&lt;/div&gt;      |                flex-flow: row wrap;
+                        &lt;div class="item" id="a2"&gt;B&lt;/div&gt;      |            }     
+                        &lt;div class="item" id="a3"&gt;C&lt;/div&gt;      |            div.item {   
+                        &lt;div class="item" id="a4"&gt;D&lt;/div&gt;      |                background-color: lightskyblue;
+                        &lt;div class="item" id="a5"&gt;E&lt;/div&gt;      |                border: 1px solid black;
+                        &lt;div class="item" id="a6"&gt;F&lt;/div&gt;      |                text-align: center; 
+                        &lt;div class="item" id="a7"&gt;G&lt;/div&gt;      |                padding: 10px;
+                        &lt;div class="item" id="a8"&gt;H&lt;/div&gt;      |            }
+                    &lt;/div&gt;                                     | div#a1 {      | div#a2 {       | div#a3 {      | div#4 {
+                &lt;/body&gt;                                        |     order: 0; |     order: -2; |     order: 4; |     order: 8;
+                                                               | }             | }              | }             | }
+                                                               | div#a5 {      | div#a6 {       | div#a7 {      | div#a8 {
+                                                               |     order: 2; |     order: -4; |     order: 0; |     order: 2;
+                                                               | }             | }              | }             | }
+                    </code>
+                </pre>
+            </aside>
+            <div class="container">
+                <div class="aitem" id="a1">A</div>
+                <div class="aitem" id="a2">B</div>
+                <div class="aitem" id="a3">C</div>
+                <div class="aitem" id="a4">D</div>
+                <div class="aitem" id="a5">E</div>
+                <div class="aitem" id="a6">F</div>
+                <div class="aitem" id="a7">G</div>
+                <div class="aitem" id="a8">H</div>
+            </div>
         </article>
     </main>
     <footer>
