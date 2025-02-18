@@ -49,6 +49,13 @@
             background-color: lightskyblue;
             border: 1px solid black;
         }
+        div.aitem {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+            padding: 5px;
+        }
         div.start {
             background-color: lightsalmon;
             display: flex;
@@ -116,6 +123,55 @@
             flex-flow: row nowrap;
             justify-content: space-evenly;
             align-items: center;
+        }
+        div.astretch {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: stretch;
+        }
+        div.astart {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
+        }
+        div.aend {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-end;
+        }
+        div.acenter {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: center;
+        }
+        div.abet {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-between;
+        }
+        div.aaround {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-around;
+        }
+        div.aeven {
+            background-color: lightsalmon;
+            height: 150px;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-evenly;
         }
     </style>
 </head>
@@ -454,6 +510,282 @@
         <div class="item">F</div>
     </div>
     </aside>
+    <hr>
+    <h2>align-content - (alinha os elementos no eixo transversal, mas quando eles estão empacotados)</h2>
+    <h3>align-content: stretch; - padrão</h3>
+    <p>
+        Pega a dimensão inteira e divide em partes iguais em relação à quantidade de linhas ou colunas, e estica para que caiba na parte dividida
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: stretch;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="astretch">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: flex-start;</h3>
+    <p>
+        Pega todos os elementos e coloca grudados no <strong>cross-start</strong> e caso exista um espaço livre, fica grudado no <strong>cross-end</strong>
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: flex-start;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="astart">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: flex-end;</h3>
+    <p>
+        Pega todos os elementos e coloca grudados no <strong>cross-end</strong> e caso exista um espaço livre, fica grudado no <strong>cross-start</strong>
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: flex-end;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="aend">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: center;</h3>
+    <p>
+        Pega todos os elementos e alinha no centro do <strong>cross-axis</strong>, assim criando espaços brancos iguais nos lados
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: center;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="acenter">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: space-between;</h3>
+    <p>
+        Pega os primeiros elementos e coloca grudado com o <strong>cross-start</strong>, os últimos elementos grudados no <strong>cross-end</strong> e o espaço no meio é divido pelos demais elementos
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: space-between;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="abet">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: space-around;</h3>
+    <p>
+        Pega o container todo e divide pela quantidade de itens, depois centraliza os itens nesses espaços criados.
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: space-around;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="aaround">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+    <h3>align-content: space-evenly;</h3>
+    <p>
+        Ele faz um espaçamento igual em todos os elementos (espaçamento do <strong>cross-start</strong> até o primeiro item, é o mesmo espaçamento entre os itens, que também é o mesmo espaçamento que o último item com o <strong>cross-end</strong>)
+    </p>
+    <aside>
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 150px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row wrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>aling-content: space-evenly;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |            }
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            div.item {
+                        &lt;div class="item"&gt;G&lt;/div&gt;              |                background-color: lightskyblue;
+                        &lt;div class="item"&gt;H&lt;/div&gt;              |                border: 1px solid black;
+                        &lt;div class="item"&gt;I&lt;/div&gt;              |                width: 200px;
+                        &lt;div class="item"&gt;J&lt;/div&gt;              |                text-align: center;
+                        &lt;div class="item"&gt;K&lt;/div&gt;              |                padding: 5px;
+                    &lt;/div&gt;                                     |            }
+                &lt;/body&gt;                                        |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <div class="aeven">
+        <div class="aitem">A</div>
+        <div class="aitem">B</div>
+        <div class="aitem">C</div>
+        <div class="aitem">D</div>
+        <div class="aitem">E</div>
+        <div class="aitem">F</div>
+        <div class="aitem">G</div>
+        <div class="aitem">H</div>
+        <div class="aitem">I</div>
+        <div class="aitem">J</div>
+        <div class="aitem">K</div>
+    </div>
+
     <hr>
     <p><a href="respon.html" rel="prev"><img src="imagens/voltar.png" alt="Voltar"></a></p>
 </body>
