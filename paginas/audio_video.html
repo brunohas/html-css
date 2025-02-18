@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Áudio e Vídeo</title>
-    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../imagens/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 </head>
 <body>
@@ -14,13 +14,13 @@
         <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         <menu id="itens">
             <ul>
-                <li><a href="index.html" rel="prev">Home</a></li>
-                <li><a href="fonte.html" rel="next">Fonte</a></li>
-                <li><a href="imagem.html" rel="next">Imagens</a></li>
-                <li><a href="lista_tabela.html" rel="next">Listas/Tabelas</a></li>
-                <li><a href="cores.html" rel="next">Cores</a></li>
-                <li><a href="respon.html" rel="next">Responsividade</a></li>
-                <li><a href="form.html" rel="next">Formulários</a></li>
+                <li><a href="../index.html" rel="prev">Home</a></li>
+                <li><a href="../paginas/fonte.html" rel="next">Fonte</a></li>
+                <li><a href="../paginas/imagem.html" rel="next">Imagens</a></li>
+                <li><a href="../paginas/lista_tabela.html" rel="next">Listas/Tabelas</a></li>
+                <li><a href="../paginas/cores.html" rel="next">Cores</a></li>
+                <li><a href="../paginas/respon.html" rel="next">Responsividade</a></li>
+                <li><a href="../paginas/form.html" rel="next">Formulários</a></li>
             </ul>
         </menu>
     </header>
@@ -34,7 +34,7 @@
                 <pre><code>
     &lt;audio src="midia/THE BOX MEDLEY FUNK 2.mp3" controls&gt;&lt;/audio&gt;
                 </code></pre>
-                <audio src="midia/THE BOX MEDLEY FUNK 2 (part. MC Brinquedo, MC Tuto, MC Laranjinha e MC Cebezinho) ( Clipe Oficial ).mp3" controls></audio>
+                <audio src="../midia/THE BOX MEDLEY FUNK 2 (part. MC Brinquedo, MC Tuto, MC Laranjinha e MC Cebezinho) ( Clipe Oficial ).mp3" controls></audio>
             </aside>
             <p>
                 Também existe outros tipos de formatos de áudio (WAV e OGG), ver se tem compatibilidade com o navegador. Outra maneira de reproduzir áudios também é com a tag <strong>&lt;audio&gt;</strong>, porém não é necessário o parâmetro que já vem incluso <strong>(pode apagar o src=" ")</strong> se quiser pode acrescentar o parâmetro <strong>preload=" "</strong> (<strong>auto</strong> = só considera que a página carregou depois de carregar todo o áudio (não recomendado) / <strong>metadata</strong> = só carrega o nome, data, duração do arquivo / <strong>none</strong> = só carrega quando o usuário apertar play no controle). Depois colocar a tag <strong>&lt;source:src&gt;</strong> dentro da tag <strong>&lt;audio&gt;</strong>, assim abrindo outro parâmetro <strong>type=" "</strong>, para áudios em MP3 colocar o <strong>type="audio/mpeg"</strong> / para áudios em WAV colocar o <strong>type="audio/wav"</strong> / para áudios em OGG colocar o <strong>type="audio/ogg"</strong>.
@@ -78,9 +78,9 @@
                 </code></pre>
                     <div>
                         <video controls>
-                            <source src="midia/video-drift-600.mp4" type="video/mp4">
-                            <source src="midia/video-drift-600.webm" type="video/webm">
-                            <source src="midia/video-drift-600.ogv" type="video/ogv">
+                            <source src="../midia/video-drift-600.mp4" type="video/mp4">
+                            <source src="../midia/video-drift-600.webm" type="video/webm">
+                            <source src="../midia/video-drift-600.ogv" type="video/ogv">
                                 <p>
                                     Infelizmente seu navegador não consegue reproduzir vídeo.
                                 </p>
@@ -179,9 +179,9 @@
                     Clique em uma das páginas para ser direcionado.
                 </p>
                 <ul class="tres">
-                    <li><a href="index.html" target="frame">Página das Tags</a></li>
-                    <li><a href="imagem.html" target="frame">Página de Imagens</a></li>
-                    <li><a href="lista_tabela.html" target="frame">Página das Listas e Tabelas</a></li>
+                    <li><a href="../index.html" target="frame">Página das Tags</a></li>
+                    <li><a href="../paginas/imagem.html" target="frame">Página de Imagens</a></li>
+                    <li><a href="../paginas/lista_tabela.html" target="frame">Página das Listas e Tabelas</a></li>
                 </ul>
                 <div>
                     <iframe id="tela" name="frame" src="" frameborder="1" scolling="yes"></iframe>
