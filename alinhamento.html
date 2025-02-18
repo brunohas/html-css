@@ -85,6 +85,38 @@
             flex-flow: row nowrap;
             justify-content: space-around;
         }
+        div.stretch {
+            background-color: lightsalmon;
+            height: 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+        div.fstart {
+            background-color: lightsalmon;
+            height: 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+        div.fend {
+            background-color: lightsalmon;
+            height: 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+        div.fcenter {
+            background-color: lightsalmon;
+            height: 70px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -291,30 +323,138 @@
         Estica o <strong>cross-axis</strong> = eixo transversal
     </p> 
     <aside>
-
+        <img src="imagens/stretch.png" alt="Modelo de Flexbox">
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 70px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>justify-content: space-evenly;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |                <mark>aling-items: stretch;</mark>
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            }   
+                        &lt;/div&gt;                                 |            div.item { 
+                    &lt;/body&gt;                                    |                background-color: lightskyblue;
+                                                               |                border: 1px solid black;
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre> 
+    </aside>    
+    <div class="stretch">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     </aside>
     <h3>align-items: flex-start;</h3>
     <p>
-        Gruda os items no início do eixo transveral (cross-start) e caso exista um espaço livre, fica grudado no final do eixo transversal (cross-end).
+        Gruda os items no início do eixo transveral (<strong>cross-start</strong>) e caso exista um espaço livre, fica grudado no final do eixo transversal (<strong>cross-end</strong>).
     </p>
     <aside>
-
+        <img src="imagens/flex-start.png" alt="Modelo de Flexbox">
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 70px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>justify-content: space-evenly;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |                <mark>aling-items: flex-start;</mark>
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            }   
+                        &lt;/div&gt;                                 |            div.item { 
+                    &lt;/body&gt;                                    |                background-color: lightskyblue;
+                                                               |                border: 1px solid black;
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre> 
+    </aside>    
+    <div class="fstart">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     </aside>
     <h3>align-items: flex-end;</h3>
     <p>
-
+        Gruda os items no final do eixo transversal (<strong>cross-end</strong>) e caso exista um espaço livre, fica grudado no início do eixo transversal (<strong>cross-start</strong>).
     </p>
     <aside>
-
+        <img src="imagens/flex-end.png" alt="Modelo de Flexbox">
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 70px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>justify-content: space-evenly;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |                <mark>aling-items: flex-end;</mark>
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            }   
+                        &lt;/div&gt;                                 |            div.item { 
+                    &lt;/body&gt;                                    |                background-color: lightskyblue;
+                                                               |                border: 1px solid black;
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre> 
+    </aside>    
+    <div class="fend">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     </aside>
     <h3>align-items: center;</h3>
     <p>
-
+        Calcula o centro do container, e coloca todos os itens juntos no centro do eixo transversal (<strong>cross-axis</strong>), e os espaços em branco são distribuídos de forma igual nos lados (depende do <strong>flex-direction</strong>).
     </p>
     <aside>
-
+        <img src="imagens/items-center.png" alt="Modelo de Flexbox">
+        <pre>
+            <code>
+                                                               |        &lt;style&gt;
+                &lt;body&gt;                                         |            div.conteiner {
+                    &lt;div class="conteiner"&gt;                    |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;A&lt;/div&gt;              |                height: 70px;
+                        &lt;div class="item"&gt;B&lt;/div&gt;              |                <mark>display: flex;</mark>
+                        &lt;div class="item"&gt;C&lt;/div&gt;              |                <mark>flex-flow: row nowrap;</mark>
+                        &lt;div class="item"&gt;D&lt;/div&gt;              |                <mark>justify-content: space-evenly;</mark>
+                        &lt;div class="item"&gt;E&lt;/div&gt;              |                <mark>aling-items: flex-center;</mark>
+                        &lt;div class="item"&gt;F&lt;/div&gt;              |            }   
+                        &lt;/div&gt;                                 |            div.item { 
+                    &lt;/body&gt;                                    |                background-color: lightskyblue;
+                                                               |                border: 1px solid black;
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre> 
+    </aside>    
+    <div class="fcenter">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+    </div>
     </aside>
-
+    <hr>
     <p><a href="respon.html" rel="prev"><img src="imagens/voltar.png" alt="Voltar"></a></p>
 </body>
 </html>
