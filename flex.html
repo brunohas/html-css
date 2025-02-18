@@ -155,7 +155,7 @@
 <body>
     <h1>Exemplos de Flexbox</h1>
     <hr>
-    <h2>flex-direction</h2>
+    <h2>flex-direction - (direção em que os elementos flexíveis serão exibidos)</h2>
     <h3>flex-direction: row; (alinha da esquerda p/ direita) - padrão</h3>
     <aside>
         <img src="imagens/row.png" alt="Modelo de Flexbox">
@@ -274,8 +274,11 @@
     </div>
     <br>
     <hr>
-    <h2>flex-wrap</h2>
+    <h2>flex-wrap - (se os itens flexíveis devem ser forçados a ficar em uma única linha ou se podem ser quebrados em várias linhas)</h2>
     <h3>flex-wrap: nowrap; (não permite quebra de linha) - padrão</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -304,6 +307,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-wrap: wrap; (quebra de linha qnd um dos itens flexíveis não puder mais ser compactado)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -332,6 +338,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-wrap: wrap-reverse; (quebra de linha na direção contrária, ou seja, para linha de cima)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -361,8 +370,11 @@
     </div>
     <br>
     <hr>
-    <h2>flex-flow</h2>
+    <h2>flex-flow - (shorthand que inclui flex-duraction + flex-wrap)</h2>
     <h3>flex-flow: row nowrap; (alinha esquerda p/ direita + não permite quebra de linha) - padrão</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong> + <strong>flex-wrap: nowrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -391,6 +403,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: row wrap; (alinha esquerda p/ direita + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong> + <strong>flex-wrap: wrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -419,6 +434,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: row wrap-reverse; (alinha esquerda p/ direita + quebra de linha ao contrária, para a linha acima)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row;</strong> + <strong>flex-wrap: wrap-reverse;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -447,6 +465,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: row-reverse nowrap; (alinha direita p/ esquerda + não permite quebra de linha)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row-reverse;</strong> + <strong>flex-wrap: nowrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -475,6 +496,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: row-reverse wrap; (alinha direita p/ esquerda + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row-reverse;</strong> + <strong>flex-wrap: wrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -503,6 +527,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: row-reverse wrap-reverse; (alinha direita p/ esquerda + quebra de linha ao contrária, para a linha acima)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: row-reverse;</strong> + <strong>flex-wrap: wrap-reverse;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -531,6 +558,9 @@
         <div class="item">F</div>
     </div>
     <h3>flex-flow: column nowrap; (alinha única coluna de cima para baixo + não permite quebra de linha)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column;</strong> + <strong>flex-wrap: nowrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -558,6 +588,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column wrap; (alinha única coluna de cima para baixo + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column;</strong> + <strong>flex-wrap: wrap;</strong>.
+    </p>
     <p>
         Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
     </p>
@@ -590,6 +623,9 @@
     </div>
     <h3>flex-flow: column wrap-reverse; (alinha única coluna de cima para baixo + quebra de linha ao contrária, para a linha acima)</h3>
     <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column;</strong> + <strong>flex-wrap: wrap-reverse;</strong>.
+    </p>
+    <p>
         Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
     </p>
     <aside>
@@ -620,6 +656,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column-reverse nowrap; (alinha única coluna de baixo para cima + não permite quebra de linha)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column-reverse;</strong> + <strong>flex-wrap: nowrap;</strong>.
+    </p>
     <aside>
         <pre>
             <code>
@@ -647,6 +686,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column-reverse wrap; (alinha única coluna de baixo para cima + quebra de linha qnd item flexível não puder mais ser compactado)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column-reverse;</strong> + <strong>flex-wrap: wrap;</strong>.
+    </p>
     <p>
         Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
     </p>
@@ -678,6 +720,9 @@
         <div class="ritem">F</div>
     </div>
     <h3>flex-flow: column-reverse wrap-reverse; (alinha única coluna de baixo para cima + quebra de linha ao contrária, para a linha acima)</h3>
+    <p>
+        Obs: Esse exemplo esta com <strong>flex-direction: column-reverse;</strong> + <strong>flex-wrap: nowrap-reverse;</strong>.
+    </p>
     <p>
         Obs: Colocar um valor de <strong>height</strong> no elemento pai para conseguir fazer a quebra de linha.
     </p>
