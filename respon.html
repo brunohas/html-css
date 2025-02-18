@@ -364,13 +364,16 @@
                     <li><strong>flex-flow: columns-reverse wrap;</strong> &rarr; alinha em uma única coluna de baixo para cima + quebra de linha quando item flexível não puder ser mais compactado.</li>
                     <li><strong>flex-flow: columns-reverse wrap-reverse;</strong> &rarr; alinha em uma única coluna de baixo para cima + quebra de linha ao contrário, para linha de cima.</li>
                 </ol>
+                <p>
+                    Obs: Para fazer quebra de linhas em colunas, adicionar um valor de <strong>height</strong> no elemento pai.
+                </p>
             </aside>
             <p>
                 <a href="flex.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>flex-direction</strong>, <strong>flex-wrap</strong>, e <strong>flex-flow</strong> (aumente e diminua a tela para ver melhor).
             </p>
             <h4>justify-content</h4>
             <p>
-                A propriedade CSS <strong>justify-content</strong> faz o alinhamento em relação ao eixo principal (main-axis), se atentar a direção do eixo (<strong>flex-direction</strong>).
+                A propriedade CSS <strong>justify-content</strong> faz o alinhamento em relação ao eixo principal (<strong>main-axis</strong>), se atentar a direção do eixo (<strong>flex-direction</strong>).
             </p>
             <aside>
                 <ol>
@@ -381,9 +384,21 @@
                     <li><strong>justify-content: space-around;</strong> &rarr; distribui os elementos uniformemente, com espaço igual ao redor deles.</li>
                     <li><strong>justify-content: space-evenly;</strong> &rarr; distribui os elementos de modo que o espaçamento entre quaisquer dois seja igual.</li>
                 </ol>
-            </aside>   
+            </aside> 
+            <h4>align-items</h4>
             <p>
-                <a href="alinhamento.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>justify-content</strong>.
+                A propriedade CSS <strong>align-items</strong> faz o alinhamento em relação ao eixo transversal (<strong>cross-axis</strong>), se atentar a direção do eixo (<strong>flex direction</strong>).
+            </p>  
+            <aside>
+                <ol>
+                    <li><strong>align-items: stretch;</strong> &rarr; estica o elemento para que caiba no container (padrão).</li>
+                    <li><strong>align-items: flex-start;</strong> &rarr; alinha os elementos no início do eixo transversal, grudado no <strong>cross-start</strong>.</li>
+                    <li><strong>align-items: flex-end;</strong> &rarr; alinha os elementos no final do eixo transversal, grudado no <strong>cross-end</strong>.</li>
+                    <li><strong>align-items: center;</strong> &rarr; alinha os elementos no centro do eixo transversal.</li>
+                </ol>
+            </aside>
+            <p>
+                <a href="alinhamento.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>justify-content</strong> e <strong>align-items</strong>.
             </p> 
         </article>
     </main>
