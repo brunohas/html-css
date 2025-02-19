@@ -8,6 +8,7 @@
     <style>
         body, html {
             height: 100vh;
+            width: 98vw;
             font-family: Arial, Helvetica, sans-serif;
             background-color: lightgrey;
         }
@@ -74,6 +75,26 @@
         div#a5 {
             align-self: stretch;
         }
+        div.auto1 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        div.auto2 {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        div.aitem {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            flex-basis: auto;
+        }
+        div.pitem {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            flex-basis: 200px;
+        }
     </style>
 </head>
 <body>
@@ -107,17 +128,17 @@
         <img src="../imagens/align-self.png" alt="Modelo de Flexbox">
         <pre>
             <code>
-                                                       |        &lt;style&gt;
-                                                       |            div.conteiner { background-color: lightsalmon;
-        &lt;body&gt;                                         |                height: 300px;
-            &lt;div class="conteiner"&gt;                    |                <mark>display: flex;</mark>
-                &lt;div class="item" id="a1"&gt;A&lt;/div&gt;      |                <mark>flex-flow: row wrap;</mark>
-                &lt;div class="item" id="a2"&gt;B&lt;/div&gt;      |                <mark>align-items: flex-start;</mark>}   
-                &lt;div class="item" id="a3"&gt;C&lt;/div&gt;      |            div.item { background-color: lightskyblue;    
-                &lt;div class="item" id="a4"&gt;D&lt;/div&gt;      |                border: 1px solid black;
-                &lt;div class="item" id="a5"&gt;E&lt;/div&gt;      |                text-align: center;
-            &lt;/div&gt;                                     |                padding: 10px;
-        &lt;/body&gt;                                        |                width: 250px;}
+                                                            |        &lt;style&gt;
+                                                            |            div.conteiner { background-color: lightsalmon;
+        &lt;body&gt;                                              |                height: 300px;
+            &lt;div class="conteiner"&gt;                         |                <mark>display: flex;</mark>
+                &lt;div class="item" id="a1"&gt;auto&lt;/div&gt;        |                <mark>flex-flow: row wrap;</mark>
+                &lt;div class="item" id="a2"&gt;flex-start&lt;/div&gt;  |                <mark>align-items: flex-start;</mark>}   
+                &lt;div class="item" id="a3"&gt;flex-end&lt;/div&gt;    |            div.item { background-color: lightskyblue;    
+                &lt;div class="item" id="a4"&gt;center&lt;/div&gt;      |                border: 1px solid black;
+                &lt;div class="item" id="a5"&gt;stretch&lt;/div&gt;     |                text-align: center;
+            &lt;/div&gt;                                          |                padding: 10px;
+        &lt;/body&gt;                                             |                width: 250px;}
 
     div#a1 {              | div#a2 {                    | div#a3 {                  | div#a4 {                | div#a5 {
         <mark>align-self: auto;</mark> |     <mark>align-self: flex-start;</mark> |     <mark>align-self: flex-end;</mark> |     <mark>align-self: center;</mark> |     <mark>align-self: stretch;</mark>
@@ -126,13 +147,95 @@
         </pre>
     </aside>
     <div class="container">
-        <div class="item" id="a1">A</div>
-        <div class="item" id="a2">B</div>
-        <div class="item" id="a3">C</div>
-        <div class="item" id="a4">D</div>
-        <div class="item" id="a5">E</div>
+        <div class="item" id="a1">auto</div>
+        <div class="item" id="a2">flex-start</div>
+        <div class="item" id="a3">flex-end</div>
+        <div class="item" id="a4">center</div>
+        <div class="item" id="a5">stretch</div>
     </div>
     <br>
+    <hr>
+    <h2>flex-basis - (define o tamanho inicial dos elementos flex)</h2>
+    <h3>flex-basis: auto; - padrão</h3>
+    <p>
+        Define a largura ou altura máxima do elemento flex antes que ele seja redimensionado por outras propriedades.
+    </p>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;texto1&lt;/div&gt;         |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;texto2&lt;/div&gt;         |                display: flex;
+                        &lt;div class="item"&gt;texto3&lt;/div&gt;         |                flex-flow: row nowrap;
+                        &lt;div class="item"&gt;texto4&lt;/div&gt;         |            }    
+                        &lt;div class="item"&gt;texto5&lt;/div&gt;         |            div.item {
+                        &lt;div class="item"&gt;texto6&lt;/div&gt;         |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                <mark>flex-basis: auto;</mark>
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <h4>Exemplo sem quebra de linha (flex-flow: row nowrap)</h4>
+    <div class="auto1">
+        <div class="aitem">texto de exemplo</div>
+        <div class="aitem">texto de exemplo maior</div>
+        <div class="aitem">texto de exemplo maior ainda</div>
+        <div class="aitem">texto de exemplo maior ainda, para conseguir ver o flex-basis: auto</div>
+        <div class="aitem">texto se adapta ao tamanho de acordo com o texto</div>
+        <div class="aitem">outro texto de exemplo</div>
+    </div>
+    <h4>Exemplo com quebra de linha (flex-flow: row wrap)</h4>
+    <div class="auto2">
+        <div class="aitem">texto de exemplo</div>
+        <div class="aitem">texto de exemplo maior</div>
+        <div class="aitem">texto de exemplo maior ainda</div>
+        <div class="aitem">texto de exemplo maior ainda, para conseguir ver o flex-basis: auto</div>
+        <div class="aitem">texto se adapta ao tamanho de acordo com o texto</div>
+        <div class="aitem">outro texto de exemplo</div>
+    </div>
+    <h3>flex-basis: n°px</h3>
+    <p>
+        Parecido com <strong>width</strong>, ele define um tamanho em pixels para os elementos, porém se diminuir a tela ele adapta seu tamanho ao contêiner.
+    </p>
+    <aside>
+        <pre>
+            <code>
+                &lt;body&gt;                                         |        &lt;style&gt;
+                    &lt;div class="container"&gt;                    |            div.container {
+                        &lt;div class="item"&gt;texto1&lt;/div&gt;         |                background-color: lightsalmon;
+                        &lt;div class="item"&gt;texto2&lt;/div&gt;         |                display: flex;
+                        &lt;div class="item"&gt;texto3&lt;/div&gt;         |                flex-flow: row nowrap;
+                        &lt;div class="item"&gt;texto4&lt;/div&gt;         |            }    
+                        &lt;div class="item"&gt;texto5&lt;/div&gt;         |            div.item {
+                        &lt;div class="item"&gt;texto6&lt;/div&gt;         |                background-color: lightskyblue;
+                        &lt;/div&gt;                                 |                border: 1px solid black;
+                    &lt;/body&gt;                                    |                <mark>flex-basis: 200px;</mark>
+                                                               |            }
+                                                               |         &lt;/style&gt;
+            </code>
+        </pre>
+    </aside>
+    <h4>Exemplo sem quebra de linha (flex-flow: row nowrap)</h4>
+    <div class="auto1">
+        <div class="pitem">texto de exemplo</div>
+        <div class="pitem">texto de exemplo maior</div>
+        <div class="pitem">texto de exemplo maior ainda</div>
+        <div class="pitem">texto de exemplo maior ainda, para conseguir ver o flex-basis: auto</div>
+        <div class="pitem">texto se adapta ao tamanho de acordo com o texto</div>
+        <div class="pitem">outro texto de exemplo</div>
+    </div>
+    <h4>Exemplo com quebra de linha (flex-flow: row wrap)</h4>
+    <div class="auto2">
+        <div class="pitem">texto de exemplo</div>
+        <div class="pitem">texto de exemplo maior</div>
+        <div class="pitem">texto de exemplo maior ainda</div>
+        <div class="pitem">texto de exemplo maior ainda, para conseguir ver o flex-basis: auto</div>
+        <div class="pitem">texto se adapta ao tamanho de acordo com o texto</div>
+        <div class="pitem">outro texto de exemplo</div>
+    </div>
     <hr>
     <a href="../paginas/respon.html" rel="prev"><img id="voltar" src="../imagens/voltar.png" alt="Voltar"></a>
 </body>
