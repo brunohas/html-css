@@ -468,12 +468,29 @@
                     <li><strong>flex-basis: n°px;</strong> &rarr; define um tamanho para os elementos, parecido com <strong>width</strong>, porém se diminuir a tela ele adapta seu tamanho ao contêiner.</li>
                 </ol>
             </aside>
+            <h4>flex-grow / flex-shrink</h4>
             <p>
-                <a href="../paginas/alin_itens.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>align-self</strong> e <strong>flex-basis</strong>.
+                As propriedades CSS <strong>flex-grow</strong> e <strong>flex-shrink</strong> são usadas para definir como os elementos flexíveis se expandem ou se contraem em um contêiner. <strong>Flex-grow</strong> define a capacidade de um item flexível crescer para ocupar todo o espaço disponível, já o <strong>flex-shrink</strong> define o quanto um item flexível deve se contrair em relação aos outros itens flexíveis (ideal é utilizar com nowrap = sem quebra de linha). O valor é um número sem unidade, que serve para cálculo de proporção.
             </p>
-
-
+            <aside>
+                <h3>flex-grow</h3>
+                <p>
+                    O valor da propriedade é um número que indica a proporção de espaço que o item ocupará, se todos os itens tiverem um <strong>flex-grow: 1;</strong> o espaço restante será dividido igualmente entre todos. Mas se um item tiver o <strong>flex-grow: 2;</strong> ele ocupará o dobro do espaço, e assim adiante. Se <strong>flex-grow: 0;</strong> o item não irá crescer.
+                </p>
+            </aside>
+            <aside>
+                <h3>flex-shrink</h3>
+                <p>
+                    Se não houver espaço suficiente na linha, o item flexível será reduzido de acordo com o fator de redução flexível. Se o <strong>flex-shrink: 0;</strong> o elemento não encolherá, se <strong>flex-shrink: 1;</strong> o elementos encolherá, mas não ficará menor que seu conteúdo.
+                </p>
+            </aside>
+            <p>
+                <a href="../paginas/alin_itens.html" rel="next">Clique aqui</a> para ir na página com alguns exemplos de <strong>align-self</strong>, <strong>flex-basis</strong>, <strong>flex-grow</strong> e <strong>flex-shrink</strong>.
+            </p>
             
+
+
+
             <h4>order</h4>
             <p>
                 A propriedade CSS <strong>order</strong> serve para definir a ordem de elementos em um contêiner flex (se atentar a direção flex-direction). Todo item em <strong>flex-box</strong> vai ter <strong>order: 0;</strong>, para alterar acrescentamos o parâmetro <strong>order: </strong> dentro da tag de estilo. A ordem é crescente, ou seja, do menor número (ou número negativo) para o maior, agora segue um exemplo: 
